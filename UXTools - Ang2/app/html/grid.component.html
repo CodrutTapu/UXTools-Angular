@@ -1,0 +1,18 @@
+<div class="container grid">
+    <div class="row sortable">
+        <div *ngFor="#gE of gelem">
+            <div class="col-md-{{gE.dim}} grid-block">
+                <div class="grid-block-control ui-sortable-handle">
+                    <ul>
+                        <li class="minus"><span class="glyphicon glyphicon-chevron-left"></span></li>
+                        <li class="dimension">{{gE.dim / 2}}/6</li>
+                        <li class="plus"><span class="glyphicon glyphicon-chevron-right"></span></li>
+                        <li class="delete"><span class="glyphicon glyphicon-trash"></span></li>
+                        <li class="add"><span class="glyphicon glyphicon-plus"></span></li>
+                    </ul>
+                </div>
+                <div class="grid-block-content"></div>
+            </div>
+        </div>
+    </div>
+</div>

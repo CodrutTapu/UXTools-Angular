@@ -1,0 +1,1 @@
+{"version":3,"file":"gridElem.js","sourceRoot":"","sources":["../ts/gridElem.ts"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;YASA;gBAEI,kBAAY,GAAU;oBAClB,IAAI,CAAC,GAAG,GAAG,GAAG,CAAC;gBACnB,CAAC;gBAVL;oBAAC,gBAAS,CAAC;wBACP,QAAQ,EAAE,WAAW;wBACrB,QAAQ,EAAE,oBAAoB;wBAC9B,UAAU,EAAE,CAAC,8BAAa,CAAC;qBAC9B,CAAC;;4BAAA;gBAOF,eAAC;YAAD,CAAC,AALD,IAKC;YALD,+BAKC,CAAA"}
