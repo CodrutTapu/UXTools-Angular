@@ -1,0 +1,14 @@
+<div class="row sortable">
+    <div *ngFor="#gE of gridElements" class="col-md-{{gE.dim}} grid-block">
+        <div class="grid-block-control ui-sortable-handle">
+            <ul>
+                <li class="minus" (click)="minGridBlock(gE)"><span class="glyphicon glyphicon-chevron-left"></span></li>
+                <li class="dimension">{{gE.dim / 2}}/6</li>
+                <li class="plus" (click)="pluGridBlock(gE)"><span class="glyphicon glyphicon-chevron-right"></span></li>
+                <li class="delete" (click)="deleteGridBlock(gE)"><span class="glyphicon glyphicon-trash"></span></li>
+                <li class="add"><span class="glyphicon glyphicon-plus"></span></li>
+            </ul>
+        </div>
+        <div class="grid-block-content"></div>
+    </div>
+</div>

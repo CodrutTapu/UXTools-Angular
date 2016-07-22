@@ -1,4 +1,4 @@
-System.register(['angular2/core'], function(exports_1, context_1) {
+System.register(['angular2/core', './gridBlock.component', './gridElem'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,24 +10,42 @@ System.register(['angular2/core'], function(exports_1, context_1) {
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1;
+    var core_1, gridBlock_component_1, gridElem_1;
     var TopNavComponent;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
+            },
+            function (gridBlock_component_1_1) {
+                gridBlock_component_1 = gridBlock_component_1_1;
+            },
+            function (gridElem_1_1) {
+                gridElem_1 = gridElem_1_1;
             }],
         execute: function() {
             TopNavComponent = (function () {
                 function TopNavComponent() {
+                    this.gridElements = [new gridElem_1.gridElem(4), new gridElem_1.gridElem(4), new gridElem_1.gridElem(4)];
+                    setTimeout(function () {
+                        $(".sortable").sortable({
+                            handle: ".grid-block-control",
+                            connectWith: '.sortable-list',
+                            update: function () {
+                                var order = $('.sortable').sortable('serialize');
+                                console.log(order);
+                            }
+                        });
+                    }, 0);
                 }
                 TopNavComponent.prototype.addGridElement = function (dim) {
-                    console.log(dim);
+                    this.gridElements.push(new gridElem_1.gridElem(dim));
                 };
                 TopNavComponent = __decorate([
                     core_1.Component({
                         selector: 'top-navigation',
-                        templateUrl: 'app/html/topNav.component.html'
+                        templateUrl: 'app/html/topNav.component.html',
+                        directives: [gridBlock_component_1.GridBlock]
                     }), 
                     __metadata('design:paramtypes', [])
                 ], TopNavComponent);
