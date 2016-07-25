@@ -7,6 +7,4 @@ import {TopNavComponent} from './topNav.component';
     directives: [TopNavComponent]
 })
 
-export class AppComponent {
-
-}
+export class AppComponent {}

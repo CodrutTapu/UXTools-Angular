@@ -1,5 +1,5 @@
 <div class="row sortable">
-    <div *ngFor="#gE of gridElements" class="col-md-{{gE.dim}} grid-block">
+    <div *ngFor="#gE of gridElements" class="col-md-{{gE.dim}} grid-block" id="{{gE.id}}">
         <div class="grid-block-control ui-sortable-handle">
             <ul>
                 <li class="minus" (click)="minGridBlock(gE)"><span class="glyphicon glyphicon-chevron-left"></span></li>

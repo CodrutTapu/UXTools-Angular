@@ -482,6 +482,7 @@
 .grid {
     margin-top: 100px;
     border: 1px dashed #001926;
+    min-height: 30px;
 }
 .grid-block {
     margin: 10px 0;

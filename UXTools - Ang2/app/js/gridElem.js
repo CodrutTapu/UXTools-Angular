@@ -6,8 +6,9 @@ System.register([], function(exports_1, context_1) {
         setters:[],
         execute: function() {
             gridElem = (function () {
-                function gridElem(dim) {
+                function gridElem(dim, id) {
                     this.dim = dim;
+                    this.id = id;
                 }
                 return gridElem;
             }());

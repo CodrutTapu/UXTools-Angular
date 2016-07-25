@@ -26,20 +26,36 @@ System.register(['angular2/core', './gridBlock.component', './gridElem'], functi
         execute: function() {
             TopNavComponent = (function () {
                 function TopNavComponent() {
-                    this.gridElements = [new gridElem_1.gridElem(4), new gridElem_1.gridElem(4), new gridElem_1.gridElem(4)];
-                    setTimeout(function () {
-                        $(".sortable").sortable({
-                            handle: ".grid-block-control",
-                            connectWith: '.sortable-list',
-                            update: function () {
-                                var order = $('.sortable').sortable('serialize');
-                                console.log(order);
-                            }
-                        });
-                    }, 0);
+                    this.gridElements = [new gridElem_1.gridElem(4, 1), new gridElem_1.gridElem(4, 2), new gridElem_1.gridElem(4, 3)];
+                    this.id = 3;
+                    this.gridElementsNewOrder = JSON.parse(localStorage.getItem("gridElementsOrder"));
                 }
+                TopNavComponent.prototype.ngOnInit = function () {
+                    $.getScript('app.js');
+                };
                 TopNavComponent.prototype.addGridElement = function (dim) {
-                    this.gridElements.push(new gridElem_1.gridElem(dim));
+                    this.gridElements.push(new gridElem_1.gridElem(dim, this.id + 1));
+                    this.gridElementsNewOrder.push(String(this.id + 1));
+                    localStorage.setItem("gridElementsOrder", JSON.stringify(this.gridElementsNewOrder));
+                    this.id = this.id + 1;
+                };
+                TopNavComponent.prototype.arrange = function () {
+                    var gE = this.gridElements;
+                    console.log(this.gridElements[0]);
+                    console.log(this.gridElements[1]);
+                    console.log(this.gridElements[2]);
+                    var gEO = JSON.parse(localStorage.getItem("gridElementsOrder"));
+                    console.log(gEO);
+                    var i, j;
+                    for (i = 0; i < gEO.length; i++) {
+                        for (j = 0; j < gE.length; j++) {
+                            if (gEO[i] == gE[j].id) {
+                                console.log(i + ' --- ' + j);
+                                this.gridElements[i] = new gridElem_1.gridElem(gE[j].dim, gE[j].id);
+                                console.log(this.gridElements[i]);
+                            }
+                        }
+                    }
                 };
                 TopNavComponent = __decorate([
                     core_1.Component({
