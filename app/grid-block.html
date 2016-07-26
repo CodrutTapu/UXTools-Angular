@@ -1,0 +1,23 @@
+<div class="row sortable" dnd-sortable-container [sortableData]="gridElements">
+    <div *ngFor="#gE of gridElements; #i = index" class="grid-block col-md-{{gE.dim}}" id="{{gE.id}}" dnd-sortable [sortableIndex]="i">
+        <div class="grid-block-control">
+            <ul>
+                <li class="minus" (click)="minGridElem(gE)"><span class="glyphicon glyphicon-chevron-left"></span></li>
+                <li class="dimension">{{gE.dim / 2}}/6</li>
+                <li class="plus" (click)="maxGridElem(gE)"><span class="glyphicon glyphicon-chevron-right"></span></li>
+                <li class="delete" (click)="deleteGridElem(gE)"><span class="glyphicon glyphicon-trash"></span></li>
+                <li class="add" (click)="addModule(gE)"><span class="glyphicon glyphicon-plus"></span></li>
+            </ul>
+        </div>
+        <div class="grid-block-content">
+            <div [ngSwitch]="gE.classN">
+                 <text-module *ngSwitchCase="1" [gE]="gE"></text-module>
+               </div>
+        </div>
+
+    </div>
+</div>
+
+<pre>
+    {{gridElements | json}}
+</pre>
