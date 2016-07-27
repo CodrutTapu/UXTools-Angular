@@ -6,15 +6,22 @@
                 <li class="dimension">{{gE.dim / 2}}/6</li>
                 <li class="plus" (click)="maxGridElem(gE)"><span class="glyphicon glyphicon-chevron-right"></span></li>
                 <li class="delete" (click)="deleteGridElem(gE)"><span class="glyphicon glyphicon-trash"></span></li>
-                <li class="add" (click)="addModule(gE)"><span class="glyphicon glyphicon-plus"></span></li>
+                <li class="add" data-toggle="modal" data-target=".addModuleModal"><span class="glyphicon glyphicon-plus"></span></li>
             </ul>
         </div>
         <div class="grid-block-content">
             <div [ngSwitch]="gE.classN">
-                 <text-module *ngSwitchCase="1" [gE]="gE"></text-module>
+                    <text-module *ngSwitchCase="1" [gE]="gE"></text-module>
+                    <image-module *ngSwitchCase="2" [gE]="gE"></image-module>
+                    <bar-graph-module *ngSwitchCase="3" [gE]="gE"></bar-graph-module>
+                    <social-media-module *ngSwitchCase="4" [gE]="gE"></social-media-module>
+                    <tag-module *ngSwitchCase="5" [gE]="gE"></tag-module>
+                    <email-module *ngSwitchCase="6" [gE]="gE"></email-module>
+                    <scale-chart-module *ngSwitchCase="7" [gE]="gE"></scale-chart-module>
+                    <pie-chart-module *ngSwitchCase="8" [gE]="gE"></pie-chart-module>
                </div>
         </div>
-
+        <addModuleModal [gE]="gE"></addModuleModal>
     </div>
 </div>
 

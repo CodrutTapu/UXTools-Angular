@@ -1,0 +1,553 @@
+.demo {
+    margin-top: 250px;
+}
+.grid-stack-item-content {
+    background: orange;
+}
+/* TABLE OF CONTENTS
+1) Utility Classes
+2) Text Module
+3) Image Module
+4) Bar Graph Module
+5) Social Media Module
+6) Tag Module
+7) Email Module
+8) Scale Chart Module
+9) Pie Chart Module
+10) Module Buttons
+11) Others
+12) Grid
+13) Preloader
+*/
+/*
+==================================
+    1) Utility Classes
+==================================
+*/
+.white-brd {
+    border: 2px solid #F8F8F8;
+}
+.no-pad {
+    padding: 0;
+}
+/*
+==================================
+    2) Text Module
+==================================
+*/
+.text-module {
+    padding: 10px;
+}
+.text-module:hover {
+    border: 2px solid #001926;
+}
+.text-module p {
+    text-align: justify;
+}
+/*
+==================================
+    3) Image Module
+==================================
+*/
+.image-module {
+    padding: 10px;
+    position: relative;
+}
+.image-module:hover {
+    border: 2px solid #001926;
+}
+.image-module img {
+    display: block;
+    width: 100%;
+    position: relative;
+}
+.image-module .add-image {
+    height: 100%;
+    position: absolute;
+    padding: 50px 0 0 0;
+    text-align: center;
+    background: #f4f4f4;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: none;
+    z-index: 999;
+}
+.image-module .add-image input {
+    height: 34px;
+    border-radius: 0;
+}
+.image-module .add-image button {
+    height: 34px;
+    border-radius: 0;
+}
+.image-module .image-module-item-delete {
+    height: 20px;
+    width: 20px;
+    background: red;
+    color: #fff;
+    text-align: center;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    display: none;
+}
+/*
+==================================
+    4) Bar Graph Module
+==================================
+*/
+.bar-graph-module {
+    padding: 10px
+}
+.bar-graph-module .progress-wrapper {
+    margin-bottom: 15px;
+    position: relative;
+}
+.bar-graph-module .progress-wrapper p {
+    margin: 0;
+    cursor: text;
+}
+.bar-graph-module .progress-wrapper .v-slider {
+    height: 15px;
+    border-radius: 0;
+}
+.bar-graph-module .progress-wrapper .v-slider .ui-slider-range {
+    border-radius: 0;
+    background: #337ab7;
+}
+.bar-graph-module .progress-wrapper .v-slider:hover {
+    cursor: pointer;
+}
+.bar-graph-module .progress-wrapper .v-slider .ui-slider-handle {
+    display: none;
+}
+.bar-graph-module:hover {
+    border: 2px solid #001926;
+}
+.bar-graph-module .delete-progress-bar {
+    position: absolute;
+    right: -14px;
+    bottom: 0;
+    height: 15px;
+    width: 15px;
+    background: red;
+    text-align: center;
+    line-height: 15px;
+    font-size: 10px;
+    color: #fff;
+    cursor: pointer;
+    display: none;
+}
+/*
+==================================
+    5) Social Media Module
+==================================
+*/
+.social-media-module {
+    padding: 10px;
+    text-align: center;
+}
+.social-media-module ul {
+    list-style-type: none;
+}
+.social-media-module ul li {
+    display: inline;
+}
+.social-media-module ul li a {
+    color: #333;
+}
+.social-media-module ul li .facebook:hover {
+    color: #3b5998;
+}
+.social-media-module ul li .twitter:hover {
+    color: #54ABEE;
+}
+.social-media-module ul li .linkedin:hover {
+    color: #0077B5;
+}
+.social-media-module ul li .external-link:hover {
+    color: #2bb673;
+}
+.social-media-module:hover {
+    border: 2px solid #001926;
+}
+.social-media-module .edit-social-links {
+    background: #f4f4f4;
+    padding: 50px 0;
+    width: 100%;
+    display: none;
+}
+.social-media-module .edit-social-links-list  li {
+    width: 100%;
+    display: block;
+    text-align: left;
+    margin-bottom: 20px;
+}
+.social-media-module .edit-social-links-list  li input {
+    height: 34px;
+    border-radius: 0;
+    margin-left: 10px;
+    width: 70%;
+}
+.social-media-module .edit-social-links-list  li button {
+    height: 34px;
+    border-radius: 0;
+    width: 70%;
+    margin-left: 46px;
+}
+/*
+==================================
+    6) Tag Module
+==================================
+*/
+.tag-module {
+    padding: 10px;
+}
+.tag-module .tag {
+    float: left;
+    padding: 4px 25px;
+    margin: 5px;
+    background-color: #e3e5e6;
+    text-transform: capitalize;
+    position: relative;
+}
+.tag-module .note-editor.note-frame .note-editing-area .note-editable {
+    background: #e3e5e6;
+}
+.tag-module:hover {
+    border: 2px solid #001926;
+}
+.tag-module .tag .delete-tag {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 15px;
+    background: red;
+    color: #fff;
+    text-align: center;
+    cursor: pointer;
+    display: none;
+    height: 15px;
+    line-height: 15px;
+    font-size: 10px;
+}
+.tag-module p {
+    margin: 0;
+}
+/*
+==================================
+    7) Email Module
+==================================
+*/
+.email-module {
+    padding: 10px;
+    text-align: center;
+}
+.email-module h1 {
+    padding: 0 5px;
+}
+.email-module input {
+    border-radius: 0;
+}
+.email-module button {
+    border-radius: 0;
+}
+.email-module:hover {
+    border: 2px solid #001926;
+}
+.email-module .send-btn {
+    height: 34px;
+    background: #337ab7;
+    color: #fff;
+    line-height: 34px;
+    cursor: text;
+    padding: 0 7px;
+    margin: 0;
+    font-weight: bold;
+}
+/*
+==================================
+    8) Scale Chart Module
+==================================
+*/
+.scale-chart-module {
+    padding: 10px;
+}
+.scale-chart-module .slide-wrapper {
+    margin-bottom: 15px;
+    position: relative;
+}
+.scale-chart-module .v-slider {
+    border-radius: 0;
+    height: 15px;
+}
+.scale-chart-module .v-slider:hover {
+    cursor: pointer;
+}
+.scale-chart-module .v-slider .ui-slider-handle {
+    left: 39%;
+    height: 15px;
+    width: 15px;
+    border-radius: 0;
+    border: none;
+    top: -1px;
+    background: #337ab7;
+    margin-left: 0;
+}
+.scale-chart-module .v-slider .ui-slider-range {
+    display: none;
+}
+.scale-chart-module .slide-wrapper .slide-header .side-left {
+    float: left;
+    margin: 0;
+    width: 50%;
+}
+.scale-chart-module .slide-wrapper .slide-header .side-right {
+    float: right;
+    margin: 0;
+    width: 50%;
+    text-align: right;
+}
+.scale-chart-module:hover {
+    border: 2px solid #001926;
+}
+.scale-chart-module .delete-slide {
+    position: absolute;
+    right: -14px;
+    height: 15px;
+    width: 15px;
+    background: red;
+    text-align: center;
+    line-height: 15px;
+    font-size: 10px;
+    color: #fff;
+    cursor: pointer;
+    bottom: 0;
+    display: none;
+}
+/*
+==================================
+    9) Pie Chart Module
+==================================
+*/
+.pie-chart-module {
+    padding: 10px;
+    position: relative;
+}
+.pie-chart-module input, .pie-chart-module .btn{
+    border-radius: 0;
+    margin-bottom: 10px;
+}
+.pie-chart-module:hover {
+    border: 2px solid #001926;
+}
+.pie-chart-module .add-pie-segment, .pie-chart-module .remove-pie-segment  {
+    cursor: pointer;
+}
+.pie-chart-module .add-pie-segment:hover {
+    color: #337ab7;
+}
+.pie-chart-module .remove-pie-segment:hover {
+    color: #d9534f;
+}
+.pie-chart-module .create-pie-chart-box {
+    background: #f4f4f4;
+    padding: 0 20px;
+    width: 100%;
+    display: none;
+}
+/*
+==================================
+    10) Module Buttons
+==================================
+*/
+.module-buttons {
+    margin-top: -37px;
+    position: absolute;
+}
+.module-buttons ul {
+    list-style-type: none;
+    margin-left: -12px;
+    display: none;
+    width: 100px;
+    text-align: left;
+}
+.module-buttons ul li {
+    display: inline;
+    background: #001926;
+    color: #fff;
+    padding: 7px;
+    cursor: pointer;
+}
+.module-buttons ul li:hover {
+    background: #333;
+}
+.text-module:hover .module-buttons ul{
+    display: block;
+}
+.image-module:hover .module-buttons ul{
+    display: block;
+}
+.bar-graph-module:hover .module-buttons ul{
+    display: block;
+}
+.social-media-module:hover .module-buttons ul{
+    display: block;
+}
+.tag-module:hover .module-buttons ul{
+    display: block;
+}
+.email-module:hover .module-buttons ul{
+    display: block;
+}
+.scale-chart-module:hover .module-buttons ul{
+    display: block;
+}
+.pie-chart-module:hover .module-buttons ul{
+    display: block;
+}
+/*
+==================================
+    11) Others
+==================================
+*/
+.note-all {
+    position: fixed;
+    top: 51px;
+    left: 0;
+    margin: 0 !important;
+    background: #001926;
+    padding: 10px;
+    width: 100%;
+    z-index: 999;
+}
+.note-btn {
+    border-radius: 0;
+}
+.note-editor.note-frame .note-statusbar .note-resizebar {
+    display:none;
+}
+.note-editor.note-frame {
+    border: none;
+}
+.note-editor.note-frame .note-editing-area .note-editable {
+    padding: 0;
+}
+.note-popover .popover-content, .panel-heading.note-toolbar {
+    padding: 0;
+}
+.main-content-wrapper {
+    margin-top: 120px;
+}
+.canvas-wrapper {
+    border: 2px dashed #001926;
+    padding: 40px 30px;
+}
+.addModuleModal .modal-content {
+    border-radius: 0;
+}
+.addModuleModal .modal-header {
+    border-radius: 0;
+    background: #001926;
+    color: #fff;
+    padding: 0 0 0 15px;
+}
+.addModuleModal .modal-body {
+    padding: 30px 15px;
+}
+.addModuleModal .modal-body .col-md-3 {
+    margin-top: 20px;
+    text-align: center;
+}
+.addModuleModal .modal-body .col-md-3 p {
+    display: block;
+    height: 50px;
+    margin: auto;
+    padding: 5px 0 0 0;
+    background: red;
+    background: #001926;
+    color: #fff;
+    transition: background .5s;
+}
+.addModuleModal .modal-body .col-md-3 p:hover {
+    cursor: pointer;
+    background: #12587c;
+}
+/*
+==================================
+    12) Grid
+==================================
+*/
+.grid {
+    margin-top: 100px;
+    border: 1px dashed #001926;
+    min-height: 30px;
+}
+.grid-block {
+    margin: 10px 0;
+}
+.grid-block .grid-block-content {
+    background: #F8F8F8;
+    min-height: 45px;
+    border: 1px dashed #001926;
+    border-top: none;
+    padding: 35px 5px 2px 5px;
+}
+.grid-block  .grid-block-control ul {
+    list-style-type: none;
+    margin: 0 5px 0 5px;
+    padding: 0;
+    line-height: 27px;
+}
+.grid-block-control .delete, .grid-block-control .add {
+    float: right;
+}
+.grid-block-control ul li {
+    display: inline;
+    padding: 0 3px;
+}
+.grid-block-control ul li:hover {
+    cursor: pointer;
+}
+.grid [class*="col-md"]{
+    padding: 0 5px;
+}
+.grid-block .grid-block-control {
+    background: #001926;
+    color: #fff;
+    height: 25px;
+    z-index: 999;
+    cursor: move;
+}
+.dnd-drag-start {
+    -moz-transform:scale(0.8);
+    -webkit-transform:scale(0.8);
+    transform:scale(0.8);
+    opacity:0.7;
+}
+.dnd-drag-enter {
+    opacity:0.7;
+}
+.dnd-sortable-drag {
+  -moz-transform:scale(0.9);
+  -webkit-transform:scale(0.9);
+  transform:scale(0.9);
+  opacity:0.7;
+}
+/*
+==================================
+    13) Preloader
+==================================
+*/
+.js div#preloader {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 999;
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+    background: #333 url('http://files.mimoymima.com/images/loading.gif') no-repeat center center;
+}

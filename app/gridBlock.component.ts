@@ -2,12 +2,20 @@ import {Component} from '@angular/core';
 import {AppComponent} from './app.component';
 import {DND_PROVIDERS, DND_DIRECTIVES} from 'ng2-dnd/ng2-dnd';
 import {TextModule} from './text.module';
+import {ImageModule} from './image.module';
+import {AddModuleModal} from './addModuleModal.component';
+import {BarGraphModule} from './bar-graph.module';
+import {SocialMediaModule} from './social-media.module';
+import {TagModule} from './tag.module';
+import {EmailModule} from './email.module';
+import {ScaleChartModule} from './scale-chart.module';
+import {PieChartModule} from './pie-chart.module';
 
 @Component({
     selector: 'grid-block',
     templateUrl: 'app/grid-block.html',
     inputs: ['gridElements'],
-    directives: [DND_DIRECTIVES, TextModule]
+    directives: [DND_DIRECTIVES, TextModule, ImageModule, AddModuleModal, BarGraphModule, SocialMediaModule, TagModule, EmailModule, ScaleChartModule, PieChartModule]
 })
 
 export class GridBlock {
@@ -30,8 +38,5 @@ export class GridBlock {
     }
     deleteGridElem(gE) {
         this.gridElements.splice(this.gridElements.indexOf(gE), 1);
-    }
-    addModule(gE) {
-        gE.classN = 1;
     }
 }

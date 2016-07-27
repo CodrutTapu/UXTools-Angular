@@ -11,6 +11,14 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var ng2_dnd_1 = require('ng2-dnd/ng2-dnd');
 var text_module_1 = require('./text.module');
+var image_module_1 = require('./image.module');
+var addModuleModal_component_1 = require('./addModuleModal.component');
+var bar_graph_module_1 = require('./bar-graph.module');
+var social_media_module_1 = require('./social-media.module');
+var tag_module_1 = require('./tag.module');
+var email_module_1 = require('./email.module');
+var scale_chart_module_1 = require('./scale-chart.module');
+var pie_chart_module_1 = require('./pie-chart.module');
 var GridBlock = (function () {
     function GridBlock() {
     }
@@ -35,15 +43,12 @@ var GridBlock = (function () {
     GridBlock.prototype.deleteGridElem = function (gE) {
         this.gridElements.splice(this.gridElements.indexOf(gE), 1);
     };
-    GridBlock.prototype.addModule = function (gE) {
-        gE.classN = 1;
-    };
     GridBlock = __decorate([
         core_1.Component({
             selector: 'grid-block',
             templateUrl: 'app/grid-block.html',
             inputs: ['gridElements'],
-            directives: [ng2_dnd_1.DND_DIRECTIVES, text_module_1.TextModule]
+            directives: [ng2_dnd_1.DND_DIRECTIVES, text_module_1.TextModule, image_module_1.ImageModule, addModuleModal_component_1.AddModuleModal, bar_graph_module_1.BarGraphModule, social_media_module_1.SocialMediaModule, tag_module_1.TagModule, email_module_1.EmailModule, scale_chart_module_1.ScaleChartModule, pie_chart_module_1.PieChartModule]
         }), 
         __metadata('design:paramtypes', [])
     ], GridBlock);
