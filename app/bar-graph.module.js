@@ -13,7 +13,7 @@ var BarGraphModule = (function () {
     function BarGraphModule() {
     }
     BarGraphModule.prototype.deleteBarGraphModule = function (gE) {
-        gE.classN = 0;
+        gE.moduleType = {};
     };
     BarGraphModule = __decorate([
         core_1.Component({

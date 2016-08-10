@@ -1,11 +1,13 @@
 export class gridElem {
     id:number;
     dim:number;
-    classN:number;
+    moduleType:any;
+    color:string;
 
-    constructor(dim:number,id:number,classN:number) {
+    constructor(dim:number,id:number,moduleType:any,color:string) {
         this.dim = dim;
         this.id = id;
-        this.classN=classN;
+        this.moduleType = moduleType;
+        this.color = color;
     }
 }

@@ -34,17 +34,8 @@ $(document).on('click','.editable',function(){
 ==================================
 */
 $(document).on('click','.image-module .image-input-set-button',function(){
-    var val = $('.image-module .image-input-value').val();
     $(this).siblings('input:text').val('');
-    if (val === ""){
-        val = 'img/img-default.png';
-    }
-    localStorage.setItem("image-URL", val);
-    $('#image-result').attr('src',localStorage.getItem("image-URL"));
     $('.add-image').stop().hide(200);
-});
-$(document).on('click','.image-module .image-module-item-delete',function(){
-    $('#image-result').attr('src',"img/img-default.png");
 });
 $(document).on('mouseenter','.image-module',function(){
      $(this).find('.image-module-item-delete').stop().show(200);
@@ -54,9 +45,9 @@ $(document).on('mouseleave','.image-module',function(){
 });
 $(document).on('click','.image-module .add',function(){
     if( $('.add-image').is(':visible') ){
-        $('.add-image').stop().hide(200);
+        $(this).parents().eq(2).find('.add-image').stop().hide(200);
     }else {
-        $('.add-image').stop().show(200);
+        $(this).parents().eq(2).find('.add-image').stop().show(200);
     }
 });
 /*
@@ -125,17 +116,16 @@ $(document).on("click",".social-media-module .edit",function(){
     }
 });
 $(document).on("click",".social-media-module .update-social-links",function(){
-    var val = $('.social-media-module .facebook-link-edit').val();
-    $(".social-links-list .facebook").prop("href",val);
-    val = $('.social-media-module .twitter-link-edit').val();
-    $(".social-links-list .twitter").prop("href",val);
-    val = $('.social-media-module .linkedin-link-edit').val();
-    $(".social-links-list .linkedin").prop("href",val);
-    val = $('.social-media-module .external-link-edit').val();
-    $(".social-links-list .external-link").prop("href",val);
     $('.social-links-list').stop().show(200);
     $('.edit-social-links').stop().hide(200);
 });
+/*
+==================================
+    Email Module
+==================================
+*/
+
+
 /*
 ==================================
     Tag Module

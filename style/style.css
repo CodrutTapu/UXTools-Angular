@@ -501,6 +501,19 @@
     padding: 0;
     line-height: 27px;
 }
+.grid-block  .grid-block-control .dropdown-menu {
+    border-radius: 0;
+    line-height: 5px;
+    top: 24px;
+    left: -120px;
+}
+.grid-block  .grid-block-control .dropdown-menu li {
+    padding: 0;
+}
+.grid-block  .grid-block-control .dropdown-menu a:hover {
+    background: #001926;
+    color: #fff;
+}
 .grid-block-control .delete, .grid-block-control .add {
     float: right;
 }

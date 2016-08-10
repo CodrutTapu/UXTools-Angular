@@ -12,13 +12,14 @@ var core_1 = require('@angular/core');
 var ng2_dnd_1 = require('ng2-dnd/ng2-dnd');
 var gridBlock_component_1 = require('./gridBlock.component');
 var gridElem_1 = require('./gridElem');
+var textModule_1 = require('./textModule');
 var TopNavComponent = (function () {
     function TopNavComponent() {
-        this.gridElements = [new gridElem_1.gridElem(4, 1, 1), new gridElem_1.gridElem(4, 2, 1), new gridElem_1.gridElem(4, 3, 1)];
+        this.gridElements = [new gridElem_1.gridElem(4, 1, new textModule_1.textModule(1, 'text-module'), 'color'), new gridElem_1.gridElem(4, 2, new textModule_1.textModule(1, 'text-module'), 'color'), new gridElem_1.gridElem(4, 3, new textModule_1.textModule(1, 'text-module'), 'color')];
         this.id = 3;
     }
     TopNavComponent.prototype.addGridElement = function (dim) {
-        this.gridElements.push(new gridElem_1.gridElem(dim, this.id + 1, 0));
+        this.gridElements.push(new gridElem_1.gridElem(dim, this.id + 1, 0, 'color'));
         this.id = this.id + 1;
     };
     TopNavComponent = __decorate([

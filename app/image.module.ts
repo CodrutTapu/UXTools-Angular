@@ -10,7 +10,14 @@ import {GridBlock} from './gridBlock.component';
 
 })
 export class ImageModule {
+    imageUrl;
     deleteImageModule(gE) {
-        gE.classN = 0;
+        gE.moduleType = {};
+    }
+    changeImageUrl(gE) {
+        gE.moduleType.url = this.imageUrl;
+    }
+    deleteImageUrl(gE) {
+        gE.moduleType.url = 'img/img-default.png';
     }
 }

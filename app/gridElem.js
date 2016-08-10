@@ -1,9 +1,10 @@
 "use strict";
 var gridElem = (function () {
-    function gridElem(dim, id, classN) {
+    function gridElem(dim, id, moduleType, color) {
         this.dim = dim;
         this.id = id;
-        this.classN = classN;
+        this.moduleType = moduleType;
+        this.color = color;
     }
     return gridElem;
 }());

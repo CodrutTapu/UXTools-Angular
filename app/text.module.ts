@@ -11,6 +11,6 @@ import {GridBlock} from './gridBlock.component';
 })
 export class TextModule {
     deleteTextModule(gE) {
-        gE.classN = 0;
+        gE.moduleType = {};
     }
 }

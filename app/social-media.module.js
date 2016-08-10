@@ -13,7 +13,13 @@ var SocialMediaModule = (function () {
     function SocialMediaModule() {
     }
     SocialMediaModule.prototype.deleteSocialMediaModule = function (gE) {
-        gE.classN = 0;
+        gE.moduleType = {};
+    };
+    SocialMediaModule.prototype.updateSocialLinks = function (gE) {
+        gE.moduleType.facebookUrl = this.facebookUrl;
+        gE.moduleType.twitterUrl = this.twitterUrl;
+        gE.moduleType.linkedinUrl = this.linkedinUrl;
+        gE.moduleType.externalUrl = this.externalUrl;
     };
     SocialMediaModule = __decorate([
         core_1.Component({

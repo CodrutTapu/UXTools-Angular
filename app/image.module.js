@@ -13,7 +13,13 @@ var ImageModule = (function () {
     function ImageModule() {
     }
     ImageModule.prototype.deleteImageModule = function (gE) {
-        gE.classN = 0;
+        gE.moduleType = {};
+    };
+    ImageModule.prototype.changeImageUrl = function (gE) {
+        gE.moduleType.url = this.imageUrl;
+    };
+    ImageModule.prototype.deleteImageUrl = function (gE) {
+        gE.moduleType.url = 'img/img-default.png';
     };
     ImageModule = __decorate([
         core_1.Component({

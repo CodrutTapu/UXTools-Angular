@@ -10,7 +10,17 @@ import {GridBlock} from './gridBlock.component';
 
 })
 export class SocialMediaModule {
+    facebookUrl;
+    twitterUrl;
+    linkedinUrl;
+    externalUrl;
     deleteSocialMediaModule(gE) {
-        gE.classN = 0;
+        gE.moduleType = {};
+    }
+    updateSocialLinks(gE) {
+        gE.moduleType.facebookUrl = this.facebookUrl;
+        gE.moduleType.twitterUrl = this.twitterUrl;
+        gE.moduleType.linkedinUrl = this.linkedinUrl;
+        gE.moduleType.externalUrl = this.externalUrl;
     }
 }

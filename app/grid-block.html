@@ -4,13 +4,26 @@
             <ul>
                 <li class="minus" (click)="minGridElem(gE)"><span class="glyphicon glyphicon-chevron-left"></span></li>
                 <li class="dimension">{{gE.dim / 2}}/6</li>
+                <!-- <li><input type="color" name="favcolor" value="#F8F8F8" [(ngModel)]="gridBlockColor"></li> -->
                 <li class="plus" (click)="maxGridElem(gE)"><span class="glyphicon glyphicon-chevron-right"></span></li>
                 <li class="delete" (click)="deleteGridElem(gE)"><span class="glyphicon glyphicon-trash"></span></li>
-                <li class="add" data-toggle="modal" data-target=".addModuleModal"><span class="glyphicon glyphicon-plus"></span></li>
+                <div class="btn-group add">
+                    <li data-toggle="dropdown"><span class="glyphicon glyphicon-plus"></span></li>
+                    <ul class="dropdown-menu">
+                        <li (click)="addTextModule(gE)"><a href="#"><span class="glyphicon glyphicon-text-width"></span> Text</a></li>
+                        <li (click)="addImageModule(gE)"><a href="#"><span class="glyphicon glyphicon-picture"></span> Image</a></li>
+                        <li (click)="addBarGraphModule(gE)"><a href="#"><span class="glyphicon glyphicon-tasks"></span> Bar Graph</a></li>
+                        <li (click)="addSocialMediaModule(gE)"><a href="#"><span class="glyphicon glyphicon-user"></span> Social Media</a></li>
+                        <li (click)="addTagModule(gE)"><a href="#"><span class="glyphicon glyphicon-barcode"></span> Tags</a></li>
+                        <li (click)="addEmailModule(gE)"><a href="#"><span class="glyphicon glyphicon-envelope"></span> Email</a></li>
+                        <li (click)="addScaleChartModule(gE)"><a href="#"><span class="glyphicon glyphicon-th-list"></span> Scale Chart</a></li>
+                        <li (click)="addPieChartModule(gE)"><a href="#"><span class="glyphicon glyphicon-record"></span> Pie Chart</a></li>
+                    </ul>
+                </div>
             </ul>
         </div>
         <div class="grid-block-content">
-            <div [ngSwitch]="gE.classN">
+            <div [ngSwitch]="gE.moduleType.id">
                     <text-module *ngSwitchCase="1" [gE]="gE"></text-module>
                     <image-module *ngSwitchCase="2" [gE]="gE"></image-module>
                     <bar-graph-module *ngSwitchCase="3" [gE]="gE"></bar-graph-module>
@@ -21,7 +34,6 @@
                     <pie-chart-module *ngSwitchCase="8" [gE]="gE"></pie-chart-module>
                </div>
         </div>
-        <addModuleModal [gE]="gE"></addModuleModal>
     </div>
 </div>
 

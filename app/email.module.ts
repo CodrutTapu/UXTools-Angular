@@ -11,7 +11,11 @@ import {GridBlock} from './gridBlock.component';
 })
 
 export class EmailModule {
+    email;
     deleteEmailModule(gE) {
-        gE.classN = 0;
+        gE.moduleType = {};
+    }
+    updateEmail(gE) {
+        gE.moduleType.email = this.email;
     }
 }

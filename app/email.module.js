@@ -13,7 +13,10 @@ var EmailModule = (function () {
     function EmailModule() {
     }
     EmailModule.prototype.deleteEmailModule = function (gE) {
-        gE.classN = 0;
+        gE.moduleType = {};
+    };
+    EmailModule.prototype.updateEmail = function (gE) {
+        gE.moduleType.email = this.email;
     };
     EmailModule = __decorate([
         core_1.Component({

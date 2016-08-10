@@ -13,7 +13,7 @@ var TextModule = (function () {
     function TextModule() {
     }
     TextModule.prototype.deleteTextModule = function (gE) {
-        gE.classN = 0;
+        gE.moduleType = {};
     };
     TextModule = __decorate([
         core_1.Component({

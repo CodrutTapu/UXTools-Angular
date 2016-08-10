@@ -11,6 +11,6 @@ import {GridBlock} from './gridBlock.component';
 })
 export class BarGraphModule {
     deleteBarGraphModule(gE) {
-        gE.classN = 0;
+        gE.moduleType = {};
     }
 }
