@@ -15,6 +15,18 @@ var BarGraphModule = (function () {
     BarGraphModule.prototype.deleteBarGraphModule = function (gE) {
         gE.moduleType = {};
     };
+    BarGraphModule.prototype.ngOnInit = function () {
+        $(".bar-graph-module .v-slider").slider({
+            orientation: "horizontal",
+            range: "min",
+            min: 0,
+            max: 100,
+            value: 60,
+            slide: function (event, ui) {
+                $(".amount").val(ui.value);
+            }
+        });
+    };
     BarGraphModule = __decorate([
         core_1.Component({
             selector: 'bar-graph-module',

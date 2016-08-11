@@ -9,11 +9,20 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var tagModuleTag_1 = require('./tagModuleTag');
 var TagModule = (function () {
     function TagModule() {
+        this.i = 4;
     }
     TagModule.prototype.deleteTagModule = function (gE) {
-        gE.classN = 0;
+        gE.moduleType = {};
+    };
+    TagModule.prototype.addTag = function (gE) {
+        gE.moduleType.tags.push(new tagModuleTag_1.tagModuleTag('Tag ' + this.i));
+        this.i++;
+    };
+    TagModule.prototype.deleteTag = function (gE, tag) {
+        gE.moduleType.tags.splice(gE.moduleType.tags.indexOf(tag), 1);
     };
     TagModule = __decorate([
         core_1.Component({

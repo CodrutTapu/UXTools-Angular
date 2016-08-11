@@ -13,7 +13,7 @@ var ScaleChartModule = (function () {
     function ScaleChartModule() {
     }
     ScaleChartModule.prototype.deleteScaleChartModule = function (gE) {
-        gE.classN = 0;
+        gE.moduleType = {};
     };
     ScaleChartModule = __decorate([
         core_1.Component({

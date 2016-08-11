@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import {AppComponent} from './app.component';
 import {bootstrap} from '@angular/platform-browser-dynamic';
 import {GridBlock} from './gridBlock.component';
+import {tagModuleTag} from './tagModuleTag';
 
 @Component({
   selector: 'tag-module',
@@ -10,7 +11,15 @@ import {GridBlock} from './gridBlock.component';
 
 })
 export class TagModule {
+    i:number = 4;
     deleteTagModule(gE) {
-        gE.classN = 0;
+        gE.moduleType = {};
+    }
+    addTag(gE) {
+        gE.moduleType.tags.push(new tagModuleTag('Tag ' + this.i));
+        this.i++;
+    }
+    deleteTag(gE,tag) {
+        gE.moduleType.tags.splice(gE.moduleType.tags.indexOf(tag), 1);
     }
 }

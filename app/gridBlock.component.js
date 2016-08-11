@@ -16,13 +16,18 @@ var image_module_1 = require('./image.module');
 var imageModule_1 = require('./imageModule');
 var bar_graph_module_1 = require('./bar-graph.module');
 var barGraphModule_1 = require('./barGraphModule');
+var barGraphBar_1 = require('./barGraphBar');
 var social_media_module_1 = require('./social-media.module');
 var socialMediaModule_1 = require('./socialMediaModule');
 var tag_module_1 = require('./tag.module');
+var tagModule_1 = require('./tagModule');
+var tagModuleTag_1 = require('./tagModuleTag');
 var email_module_1 = require('./email.module');
 var emailModule_1 = require('./emailModule');
 var scale_chart_module_1 = require('./scale-chart.module');
+var scaleChartModule_1 = require('./scaleChartModule');
 var pie_chart_module_1 = require('./pie-chart.module');
+var pieChartModule_1 = require('./pieChartModule');
 var GridBlock = (function () {
     function GridBlock() {
     }
@@ -54,22 +59,22 @@ var GridBlock = (function () {
         gE.moduleType = new imageModule_1.imageModule(2, 'image-module', 'img/img-default.png');
     };
     GridBlock.prototype.addBarGraphModule = function (gE) {
-        gE.moduleType = new barGraphModule_1.barGraphModule(3, 'bar-graph-module');
+        gE.moduleType = new barGraphModule_1.barGraphModule(3, 'bar-graph-module', [new barGraphBar_1.barGraphBar(30), new barGraphBar_1.barGraphBar(40), new barGraphBar_1.barGraphBar(50)]);
     };
     GridBlock.prototype.addSocialMediaModule = function (gE) {
         gE.moduleType = new socialMediaModule_1.socialMediaModule(4, 'social-media-module', 'facebook', 'twitter', 'linkedin', 'external');
     };
     GridBlock.prototype.addTagModule = function (gE) {
-        gE.classN = 5;
+        gE.moduleType = new tagModule_1.tagModule(5, 'tags-module', [new tagModuleTag_1.tagModuleTag('Tag 1'), new tagModuleTag_1.tagModuleTag('Tag 2'), new tagModuleTag_1.tagModuleTag('Tag 3')]);
     };
     GridBlock.prototype.addEmailModule = function (gE) {
         gE.moduleType = new emailModule_1.emailModule(6, 'email-module', 'you@yourmail.com');
     };
     GridBlock.prototype.addScaleChartModule = function (gE) {
-        gE.classN = 7;
+        gE.moduleType = new scaleChartModule_1.scaleChartModule(7, 'scale-chart-module');
     };
     GridBlock.prototype.addPieChartModule = function (gE) {
-        gE.classN = 8;
+        gE.moduleType = new pieChartModule_1.pieChartModule(8, 'pie-chart-module');
     };
     GridBlock = __decorate([
         core_1.Component({

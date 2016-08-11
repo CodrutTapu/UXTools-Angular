@@ -1,8 +1,9 @@
 "use strict";
 var barGraphModule = (function () {
-    function barGraphModule(id, name) {
+    function barGraphModule(id, name, bars) {
         this.id = id;
         this.name = name;
+        this.bars = bars;
     }
     return barGraphModule;
 }());
