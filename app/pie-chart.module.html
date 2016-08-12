@@ -8,22 +8,18 @@
     <div class="create-pie-chart-box">
         <div class="row">
             <div class="col-md-12">
-                <h2>Add <span class="add-pie-segment"><i class="fa fa-plus-circle" aria-hidden="true"></i></span> / Remove <span class="remove-pie-segment"><i class="fa fa-minus-circle" aria-hidden="true"></i></span></h2>
+                <h2><span (click)="addPieSegment(gE)" class="add-pie-segment"><i class="fa fa-plus-circle" aria-hidden="true"></i> Add </span> / <span (click)="removePieSegment(gE)" class="remove-pie-segment"><i class="fa fa-minus-circle" aria-hidden="true"></i> Remove </span></h2>
             </div>
             <div class="col-md-6 pie-labels-list">
                 <h4>Labels</h4>
-                <input class="pie-label form-control" type="text" name="name" value="Red" required>
-                <input class="pie-label form-control" type="text" name="name" value="Blue" required>
-                <input class="pie-label form-control" type="text" name="name" value="Yellow" required>
+                <input *ngFor="let lb of gE.moduleType.labels" class="pie-label form-control" type="text" name="name" value="{{lb}}" (keyup)="lbUpdate($event,lb,gE)" required>
             </div>
             <div class="col-md-6 pie-data-list">
                 <h4>Data</h4>
-                <input class="pie-data form-control" type="number" name="name" value="12" required>
-                <input class="pie-data form-control" type="number" name="name" value="19" required>
-                <input class="pie-data form-control" type="number" name="name" value="3" required>
+                <input *ngFor="let dt of gE.moduleType.data" class="pie-data form-control" type="number" name="name" value="{{dt}}" (keyup)="dtUpdate($event,dt,gE)" required>
             </div>
             <div class="col-md-12">
-                <button class="create-pie-chart btn btn-primary" name="button">Create</button>
+                <button class="create-pie-chart btn btn-primary" name="button" (click)="createNewPieChart(gE)">Create</button>
             </div>
         </div>
     </div>

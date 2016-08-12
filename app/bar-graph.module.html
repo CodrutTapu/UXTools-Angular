@@ -8,25 +8,13 @@
     <div class="editable">
         <h1>Bar Graph</h1>
     </div>
-    <div class="progress-wrapper">
-        <p class="editable">Label</p>
-        <div class="v-slider"></div>
-        <div class="delete-progress-bar">
-            <i class="fa fa-times" aria-hidden="true"></i>
-        </div>
-    </div>
-    <div class="progress-wrapper">
-        <p class="editable">Label</p>
-        <div class="v-slider"></div>
-        <div class="delete-progress-bar">
-            <i class="fa fa-times" aria-hidden="true"></i>
-        </div>
-    </div>
-    <div class="progress-wrapper">
-        <p class="editable">Label</p>
-        <div class="v-slider"></div>
-        <div class="delete-progress-bar">
-            <i class="fa fa-times" aria-hidden="true"></i>
+    <div *ngFor="let bar of gE.moduleType.bars">
+        <div class="progress-wrapper">
+            <p class="editable">Label</p>
+            <div class="v-slider"></div>
+            <div class="delete-progress-bar">
+                <i class="fa fa-times" aria-hidden="true"></i>
+            </div>
         </div>
     </div>
 </div>

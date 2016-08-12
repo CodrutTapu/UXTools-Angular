@@ -110,7 +110,7 @@
     cursor: text;
 }
 .bar-graph-module .progress-wrapper .v-slider {
-    height: 15px;
+    height: 18px;
     border-radius: 0;
 }
 .bar-graph-module .progress-wrapper .v-slider .ui-slider-range {
@@ -130,11 +130,11 @@
     position: absolute;
     right: -14px;
     bottom: 0;
-    height: 15px;
+    height: 18px;
     width: 15px;
     background: red;
     text-align: center;
-    line-height: 15px;
+    line-height: 18px;
     font-size: 10px;
     color: #fff;
     cursor: pointer;
@@ -548,6 +548,10 @@
   -webkit-transform:scale(0.9);
   transform:scale(0.9);
   opacity:0.7;
+}
+.grid-block .grid-block-control .add .dropdown-menu li a {
+    padding: 8px 20px;
+    border-bottom: 1px solid #001926;
 }
 /*
 ==================================

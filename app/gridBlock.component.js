@@ -74,7 +74,7 @@ var GridBlock = (function () {
         gE.moduleType = new scaleChartModule_1.scaleChartModule(7, 'scale-chart-module');
     };
     GridBlock.prototype.addPieChartModule = function (gE) {
-        gE.moduleType = new pieChartModule_1.pieChartModule(8, 'pie-chart-module');
+        gE.moduleType = new pieChartModule_1.pieChartModule(8, 'pie-chart-module', ["Red", "Blue", "Yellow"], [12, 19, 3]);
     };
     GridBlock = __decorate([
         core_1.Component({

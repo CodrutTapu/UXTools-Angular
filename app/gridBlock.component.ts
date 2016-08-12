@@ -70,6 +70,6 @@ export class GridBlock {
         gE.moduleType = new scaleChartModule(7,'scale-chart-module');
     }
     addPieChartModule(gE) {
-        gE.moduleType = new pieChartModule(8,'pie-chart-module');
+        gE.moduleType = new pieChartModule(8,'pie-chart-module',["Red", "Blue", "Yellow"],[12, 19, 3]);
     }
 }

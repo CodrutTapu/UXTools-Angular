@@ -13,10 +13,10 @@ import {textModule} from './textModule';
 })
 
 export class TopNavComponent {
-    gridElements:Array<gridElem> = [new gridElem(4,1,new textModule(1,'text-module'),'color'), new gridElem(4,2,new textModule(1,'text-module'),'color'), new gridElem(4,3,new textModule(1,'text-module'),'color')];
+    gridElements:Array<gridElem> = [new gridElem(4,1,new textModule(1,'text-module')), new gridElem(4,2,new textModule(1,'text-module')), new gridElem(4,3,new textModule(1,'text-module'))];
     id:number= 3;
     addGridElement(dim:number) {
-        this.gridElements.push(new gridElem(dim,this.id+1,0,'color'));
+        this.gridElements.push(new gridElem(dim,this.id+1,0));
         this.id = this.id+1;
     }
 }
