@@ -1,8 +1,9 @@
 "use strict";
 var textModule = (function () {
-    function textModule(id, name) {
+    function textModule(id, name, content) {
         this.id = id;
         this.name = name;
+        this.content = content;
     }
     return textModule;
 }());

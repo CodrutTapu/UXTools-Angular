@@ -9,11 +9,21 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var scaleChartModuleScale_1 = require('./scaleChartModuleScale');
 var ScaleChartModule = (function () {
     function ScaleChartModule() {
     }
     ScaleChartModule.prototype.deleteScaleChartModule = function (gE) {
         gE.moduleType = {};
+    };
+    ScaleChartModule.prototype.updateScaleValue = function (event, scale) {
+        scale.value = event.target.value;
+    };
+    ScaleChartModule.prototype.addScale = function (gE) {
+        gE.moduleType.scales.push(new scaleChartModuleScale_1.scaleChartModuleScale('sideA', 'sideB', 50));
+    };
+    ScaleChartModule.prototype.deleteScale = function (gE, scale) {
+        gE.moduleType.scales.splice(gE.moduleType.scales.indexOf(scale), 1);
     };
     ScaleChartModule = __decorate([
         core_1.Component({

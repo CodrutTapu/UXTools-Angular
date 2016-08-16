@@ -17,6 +17,7 @@ import {EmailModule} from './email.module';
 import {emailModule} from './emailModule';
 import {ScaleChartModule} from './scale-chart.module';
 import {scaleChartModule} from './scaleChartModule';
+import {scaleChartModuleScale} from './scaleChartModuleScale';
 import {PieChartModule} from './pie-chart.module';
 import {pieChartModule} from './pieChartModule';
 
@@ -49,13 +50,13 @@ export class GridBlock {
         this.gridElements.splice(this.gridElements.indexOf(gE), 1);
     }
     addTextModule(gE) {
-        gE.moduleType = new textModule(1,'text-module');
+        gE.moduleType = new textModule(1,'text-module','');
     }
     addImageModule(gE) {
         gE.moduleType = new imageModule(2,'image-module','img/img-default.png');
     }
     addBarGraphModule(gE) {
-        gE.moduleType = new barGraphModule(3,'bar-graph-module',[new barGraphBar(30),new barGraphBar(40),new barGraphBar(50)]);
+        gE.moduleType = new barGraphModule(3,'bar-graph-module','title',[new barGraphBar(30,'label'),new barGraphBar(50,'label'),new barGraphBar(100,'label')]);
     }
     addSocialMediaModule(gE) {
         gE.moduleType = new socialMediaModule(4,'social-media-module','facebook','twitter','linkedin','external');
@@ -64,12 +65,12 @@ export class GridBlock {
         gE.moduleType = new tagModule(5,'tags-module',[new tagModuleTag('Tag 1'),new tagModuleTag('Tag 2'),new tagModuleTag('Tag 3')]);
     }
     addEmailModule(gE) {
-        gE.moduleType = new emailModule(6,'email-module','you@yourmail.com');
+        gE.moduleType = new emailModule(6,'email-module','you@yourmail.com','');
     }
     addScaleChartModule(gE) {
-        gE.moduleType = new scaleChartModule(7,'scale-chart-module');
+        gE.moduleType = new scaleChartModule(7,'scale-chart-module','title',[new scaleChartModuleScale('sideA','sideB',0),new scaleChartModuleScale('sideA','sideB',50),new scaleChartModuleScale('sideA','sideB',100)]);
     }
     addPieChartModule(gE) {
-        gE.moduleType = new pieChartModule(8,'pie-chart-module',["Red", "Blue", "Yellow"],[12, 19, 3]);
+        gE.moduleType = new pieChartModule(8,'pie-chart-module','title',["Red", "Blue", "Yellow"],[12, 19, 3]);
     }
 }

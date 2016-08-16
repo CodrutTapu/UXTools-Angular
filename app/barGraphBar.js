@@ -1,7 +1,8 @@
 "use strict";
 var barGraphBar = (function () {
-    function barGraphBar(value) {
+    function barGraphBar(value, label) {
         this.value = value;
+        this.label = label;
     }
     return barGraphBar;
 }());

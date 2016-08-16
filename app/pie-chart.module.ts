@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import {AppComponent} from './app.component';
 import {bootstrap} from '@angular/platform-browser-dynamic';
 import {GridBlock} from './gridBlock.component';
+declare var $: any;
+declare var Chart:any;
 
 @Component({
   selector: 'pie-chart-module',
@@ -13,6 +15,64 @@ import {GridBlock} from './gridBlock.component';
 export class PieChartModule {
     deletePieChartModule(gE) {
         gE.moduleType = {};
+    }
+    addPieSegment(gE) {
+        gE.moduleType.labels.push("");
+        gE.moduleType.data.push("");
+    }
+    removePieSegment(gE) {
+        gE.moduleType.labels.pop();
+        gE.moduleType.data.pop();
+    }
+    lbUpdate(event:any,lb,gE) {
+        gE.moduleType.labels[gE.moduleType.labels.indexOf(lb)] = event.target.value;
+    }
+    dtUpdate(event:any,dt,gE) {
+        gE.moduleType.data[gE.moduleType.data.indexOf(dt)] = event.target.value;
+    }
+    createNewPieChart(gE) {
+            var pcModule = $('.pie-chart-module');
+            $('#pieChart').remove();
+            $('.pie-chart-content').append("<canvas id='pieChart' width='400' height='400'></canvas>");
+            var ctx = document.getElementById("pieChart");
+            var pieChart = new Chart(ctx, {
+                type: 'pie',
+                data: {
+                    labels: gE.moduleType.labels,
+                    datasets: [{
+                        data: gE.moduleType.data,
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(255, 206, 86, 0.2)',
+                            'rgba(75, 192, 192, 0.2)',
+                            'rgba(153, 102, 255, 0.2)',
+                            'rgba(255, 159, 64, 0.2)',
+                            'rgba(191, 63, 127, 0.2)',
+                            'rgba(38, 12, 12, 0.2)',
+                            'rgba(3, 124, 21, 0.2)',
+                            'rgba(242, 230, 63, 0.2)'
+
+                        ],
+                        borderColor: [
+                            'rgba(255,99,132,1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 206, 86, 1)',
+                            'rgba(75, 192, 192, 1)',
+                            'rgba(153, 102, 255, 1)',
+                            'rgba(255, 159, 64, 1)',
+                            'rgba(191, 63, 127, 1)',
+                            'rgba(38, 12, 12, 1)',
+                            'rgba(3, 124, 21, 1)',
+                            'rgba(242, 230, 63, 1)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                showScale: false
+            });
+            pcModule.find('.pie-chart-content').stop().show(200);
+            pcModule.find('.create-pie-chart-box').stop().hide(200);
     }
     ngOnInit() {
         var ctx = document.getElementById("pieChart");
@@ -36,14 +96,6 @@ export class PieChartModule {
                 }]
             },
             showScale: false
-        });
-        $(document).on('click','.pie-chart-module .add',function(){
-            var pcModule = $('.pie-chart-module');
-            if( $('.create-pie-chart-box').is(':visible') ){
-                pcModule.find('.create-pie-chart-box').stop().hide(200);
-            }else {
-                pcModule.find('.create-pie-chart-box').stop().show(200);
-            }
         });
     }
 }

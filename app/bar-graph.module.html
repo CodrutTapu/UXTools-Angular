@@ -1,7 +1,7 @@
 <div class="bar-graph-module white-brd"><!-- Bar Graph Module -->
     <div class="module-buttons">
         <ul class="no-pad">
-            <li class="add"><i class="fa fa-plus fa-lg" aria-hidden="true"></i></li>
+            <li class="add" (click)="addBarGraph(gE)"><i class="fa fa-plus fa-lg" aria-hidden="true"></i></li>
             <li class="delete" (click)="deleteBarGraphModule(gE)"><i class="fa fa-trash fa-lg" aria-hidden="true"></i></li>
         </ul>
     </div>
@@ -9,11 +9,19 @@
         <h1>Bar Graph</h1>
     </div>
     <div *ngFor="let bar of gE.moduleType.bars">
-        <div class="progress-wrapper">
-            <p class="editable">Label</p>
-            <div class="v-slider"></div>
-            <div class="delete-progress-bar">
-                <i class="fa fa-times" aria-hidden="true"></i>
+        <div class="progress-wrapper clearfix">
+            <div class="side-left">
+                <p class="editable">Label</p>
+            </div>
+            <!-- <div class="side-right">
+                <input type="number" value="{{bar.value}}" (keyup)="barValueUpdate($event,bar)" (click)="barValueUpdate($event,bar)" min="0" max="100">
+            </div> -->
+            <div class="progress" (click)="test($event,bar)">
+                <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" [style.width]="bar.value+'%'">
+                </div>
+            </div>
+            <div class="delete-progress-bar" (click)="deleteBar(gE,bar)">
+                <i aria-hidden="true" class="fa fa-times"></i>
             </div>
         </div>
     </div>
