@@ -15,6 +15,12 @@ var TextModule = (function () {
     TextModule.prototype.deleteTextModule = function (gE) {
         gE.moduleType = {};
     };
+    TextModule.prototype.updateTextModule = function (event, gE) {
+        gE.moduleType.content = $(event.srcElement).parents().eq(2).find('.text-module-content').html();
+    };
+    TextModule.prototype.test = function (event) {
+        console.log(event);
+    };
     TextModule = __decorate([
         core_1.Component({
             selector: 'text-module',

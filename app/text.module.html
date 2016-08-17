@@ -2,10 +2,12 @@
     <div class="module-buttons">
         <ul class="no-pad">
             <li (click)="deleteTextModule(gE)" class="delete"><i class="fa fa-trash fa-lg" aria-hidden="true"></i></li>
+            <li (click)="updateTextModule($event,gE)">save</li>
         </ul>
     </div>
     <div class="editable">
-        <h1>Text Field</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In pharetra felis in sem porta feugiat.</p>
+        <div class="text-module-content" [innerHTML]="gE.moduleType.content"  (mouseleave)="test($event)">
+
+        </div>
     </div>
 </div>

@@ -20,6 +20,7 @@ import {scaleChartModule} from './scaleChartModule';
 import {scaleChartModuleScale} from './scaleChartModuleScale';
 import {PieChartModule} from './pie-chart.module';
 import {pieChartModule} from './pieChartModule';
+declare var $: any;
 
 @Component({
     selector: 'grid-block',
@@ -50,7 +51,7 @@ export class GridBlock {
         this.gridElements.splice(this.gridElements.indexOf(gE), 1);
     }
     addTextModule(gE) {
-        gE.moduleType = new textModule(1,'text-module','');
+        gE.moduleType = new textModule(1,'text-module','<h1>Text Field</h1><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In pharetra felis in sem porta feugiat.</p>');
     }
     addImageModule(gE) {
         gE.moduleType = new imageModule(2,'image-module','img/img-default.png');
@@ -72,5 +73,12 @@ export class GridBlock {
     }
     addPieChartModule(gE) {
         gE.moduleType = new pieChartModule(8,'pie-chart-module','title',["Red", "Blue", "Yellow"],[12, 19, 3]);
+    }
+    closeTextEditor(event:any) {
+        if( event.srcElement.className == 'row sortable' ) {
+            $('.editable').each(function(){
+                $(this).summernote('destroy');
+            });
+        }
     }
 }

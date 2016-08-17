@@ -54,7 +54,7 @@ var GridBlock = (function () {
         this.gridElements.splice(this.gridElements.indexOf(gE), 1);
     };
     GridBlock.prototype.addTextModule = function (gE) {
-        gE.moduleType = new textModule_1.textModule(1, 'text-module', '');
+        gE.moduleType = new textModule_1.textModule(1, 'text-module', '<h1>Text Field</h1><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In pharetra felis in sem porta feugiat.</p>');
     };
     GridBlock.prototype.addImageModule = function (gE) {
         gE.moduleType = new imageModule_1.imageModule(2, 'image-module', 'img/img-default.png');
@@ -76,6 +76,13 @@ var GridBlock = (function () {
     };
     GridBlock.prototype.addPieChartModule = function (gE) {
         gE.moduleType = new pieChartModule_1.pieChartModule(8, 'pie-chart-module', 'title', ["Red", "Blue", "Yellow"], [12, 19, 3]);
+    };
+    GridBlock.prototype.closeTextEditor = function (event) {
+        if (event.srcElement.className == 'row sortable') {
+            $('.editable').each(function () {
+                $(this).summernote('destroy');
+            });
+        }
     };
     GridBlock = __decorate([
         core_1.Component({

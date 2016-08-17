@@ -1,4 +1,4 @@
-<div class="row sortable" dnd-sortable-container [sortableData]="gridElements">
+<div class="row sortable" dnd-sortable-container [sortableData]="gridElements" (click)="closeTextEditor($event)">
     <div *ngFor="let gE of gridElements; let i = index" class="grid-block col-md-{{gE.dim}}" id="{{gE.id}}" >
         <div class="grid-block-control" dnd-sortable [sortableIndex]="i">
             <ul>
@@ -31,7 +31,7 @@
                     <email-module *ngSwitchCase="6" [gE]="gE"></email-module>
                     <scale-chart-module *ngSwitchCase="7" [gE]="gE"></scale-chart-module>
                     <pie-chart-module *ngSwitchCase="8" [gE]="gE"></pie-chart-module>
-               </div>
+            </div>
         </div>
     </div>
 </div>

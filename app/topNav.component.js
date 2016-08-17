@@ -15,7 +15,7 @@ var gridElem_1 = require('./gridElem');
 var textModule_1 = require('./textModule');
 var TopNavComponent = (function () {
     function TopNavComponent() {
-        this.gridElements = [new gridElem_1.gridElem(4, 1, new textModule_1.textModule(1, 'text-module', '')), new gridElem_1.gridElem(4, 2, new textModule_1.textModule(1, 'text-module', '')), new gridElem_1.gridElem(4, 3, new textModule_1.textModule(1, 'text-module', ''))];
+        this.gridElements = [new gridElem_1.gridElem(4, 1, new textModule_1.textModule(1, 'text-module', '<h1>Text Field 1</h1><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In pharetra felis in sem porta feugiat.</p>')), new gridElem_1.gridElem(4, 2, new textModule_1.textModule(1, 'text-module', '<h1>Text Field 2</h1><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In pharetra felis in sem porta feugiat.</p>')), new gridElem_1.gridElem(4, 3, new textModule_1.textModule(1, 'text-module', '<h1>Text Field 3</h1><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In pharetra felis in sem porta feugiat.</p>'))];
         this.id = 3;
     }
     TopNavComponent.prototype.addGridElement = function (dim) {
