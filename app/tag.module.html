@@ -5,5 +5,8 @@
             <li class="delete" (click)="deleteTagModule(gE)"><i class="fa fa-trash fa-lg" aria-hidden="true"></i></li>
         </ul>
     </div>
-    <div class="tag" *ngFor="let tag of gE.moduleType.tags"><p class="editable">{{tag.name}}</p><div class="delete-tag" (click)="deleteTag(gE, tag)"><i class="fa fa-times" aria-hidden="true"></i></div></div>
+    <div class="tag" *ngFor="let tag of gE.moduleType.tags" (mouseleave)="updateTag($event,tag)">
+        <p class="editable" [innerHTML]="tag.name"></p>
+        <div class="delete-tag" (click)="deleteTag(gE, tag)"><i class="fa fa-times" aria-hidden="true"></i></div>
+    </div>
 </div>

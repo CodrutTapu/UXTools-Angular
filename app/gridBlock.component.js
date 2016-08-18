@@ -54,19 +54,19 @@ var GridBlock = (function () {
         this.gridElements.splice(this.gridElements.indexOf(gE), 1);
     };
     GridBlock.prototype.addTextModule = function (gE) {
-        gE.moduleType = new textModule_1.textModule(1, 'text-module', '<h1>Text Field</h1><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In pharetra felis in sem porta feugiat.</p>');
+        gE.moduleType = new textModule_1.textModule(1, 'text-module', '<h1>New Text Field</h1><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In pharetra felis in sem porta feugiat.</p>');
     };
     GridBlock.prototype.addImageModule = function (gE) {
         gE.moduleType = new imageModule_1.imageModule(2, 'image-module', 'img/img-default.png');
     };
     GridBlock.prototype.addBarGraphModule = function (gE) {
-        gE.moduleType = new barGraphModule_1.barGraphModule(3, 'bar-graph-module', 'title', [new barGraphBar_1.barGraphBar(30, 'label'), new barGraphBar_1.barGraphBar(50, 'label'), new barGraphBar_1.barGraphBar(100, 'label')]);
+        gE.moduleType = new barGraphModule_1.barGraphModule(3, 'bar-graph-module', '<h1>Bar Graph</h1>', [new barGraphBar_1.barGraphBar(30, '<p>Label 1</p>'), new barGraphBar_1.barGraphBar(50, '<p>Label 2</p>'), new barGraphBar_1.barGraphBar(100, '<p>Label 3</p>')]);
     };
     GridBlock.prototype.addSocialMediaModule = function (gE) {
         gE.moduleType = new socialMediaModule_1.socialMediaModule(4, 'social-media-module', 'facebook', 'twitter', 'linkedin', 'external');
     };
     GridBlock.prototype.addTagModule = function (gE) {
-        gE.moduleType = new tagModule_1.tagModule(5, 'tags-module', [new tagModuleTag_1.tagModuleTag('Tag 1'), new tagModuleTag_1.tagModuleTag('Tag 2'), new tagModuleTag_1.tagModuleTag('Tag 3')]);
+        gE.moduleType = new tagModule_1.tagModule(5, 'tags-module', [new tagModuleTag_1.tagModuleTag('<p>Tag 1</p>'), new tagModuleTag_1.tagModuleTag('<p>Tag 2</p>'), new tagModuleTag_1.tagModuleTag('<p>Tag 3</p>')]);
     };
     GridBlock.prototype.addEmailModule = function (gE) {
         gE.moduleType = new emailModule_1.emailModule(6, 'email-module', 'you@yourmail.com', '');
@@ -77,8 +77,8 @@ var GridBlock = (function () {
     GridBlock.prototype.addPieChartModule = function (gE) {
         gE.moduleType = new pieChartModule_1.pieChartModule(8, 'pie-chart-module', 'title', ["Red", "Blue", "Yellow"], [12, 19, 3]);
     };
-    GridBlock.prototype.closeTextEditor = function (event) {
-        if (event.srcElement.className == 'row sortable') {
+    GridBlock.prototype.closeTextEditor = function (event, gE) {
+        if (event.srcElement.className == 'row sortable' || event.srcElement.className == 'grid-block-content') {
             $('.editable').each(function () {
                 $(this).summernote('destroy');
             });

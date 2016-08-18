@@ -11,15 +11,18 @@ import {tagModuleTag} from './tagModuleTag';
 
 })
 export class TagModule {
-    i:number = 4;
     deleteTagModule(gE) {
         gE.moduleType = {};
     }
     addTag(gE) {
-        gE.moduleType.tags.push(new tagModuleTag('Tag ' + this.i));
-        this.i++;
+        gE.moduleType.tags.push(new tagModuleTag('<p>New Tag</p>'));
     }
     deleteTag(gE,tag) {
         gE.moduleType.tags.splice(gE.moduleType.tags.indexOf(tag), 1);
+    }
+    updateTag(event:any,tag) {
+        setTimeout(function(){
+            tag.name = event.srcElement.firstElementChild.innerHTML;
+        }, 3000);
     }
 }

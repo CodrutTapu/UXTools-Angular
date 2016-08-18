@@ -12,17 +12,20 @@ var core_1 = require('@angular/core');
 var tagModuleTag_1 = require('./tagModuleTag');
 var TagModule = (function () {
     function TagModule() {
-        this.i = 4;
     }
     TagModule.prototype.deleteTagModule = function (gE) {
         gE.moduleType = {};
     };
     TagModule.prototype.addTag = function (gE) {
-        gE.moduleType.tags.push(new tagModuleTag_1.tagModuleTag('Tag ' + this.i));
-        this.i++;
+        gE.moduleType.tags.push(new tagModuleTag_1.tagModuleTag('<p>New Tag</p>'));
     };
     TagModule.prototype.deleteTag = function (gE, tag) {
         gE.moduleType.tags.splice(gE.moduleType.tags.indexOf(tag), 1);
+    };
+    TagModule.prototype.updateTag = function (event, tag) {
+        setTimeout(function () {
+            tag.name = event.srcElement.firstElementChild.innerHTML;
+        }, 3000);
     };
     TagModule = __decorate([
         core_1.Component({

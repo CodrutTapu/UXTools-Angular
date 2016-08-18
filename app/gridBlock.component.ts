@@ -51,19 +51,19 @@ export class GridBlock {
         this.gridElements.splice(this.gridElements.indexOf(gE), 1);
     }
     addTextModule(gE) {
-        gE.moduleType = new textModule(1,'text-module','<h1>Text Field</h1><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In pharetra felis in sem porta feugiat.</p>');
+        gE.moduleType = new textModule(1,'text-module','<h1>New Text Field</h1><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In pharetra felis in sem porta feugiat.</p>');
     }
     addImageModule(gE) {
         gE.moduleType = new imageModule(2,'image-module','img/img-default.png');
     }
     addBarGraphModule(gE) {
-        gE.moduleType = new barGraphModule(3,'bar-graph-module','title',[new barGraphBar(30,'label'),new barGraphBar(50,'label'),new barGraphBar(100,'label')]);
+        gE.moduleType = new barGraphModule(3,'bar-graph-module','<h1>Bar Graph</h1>',[new barGraphBar(30,'<p>Label 1</p>'),new barGraphBar(50,'<p>Label 2</p>'),new barGraphBar(100,'<p>Label 3</p>')]);
     }
     addSocialMediaModule(gE) {
         gE.moduleType = new socialMediaModule(4,'social-media-module','facebook','twitter','linkedin','external');
     }
     addTagModule(gE) {
-        gE.moduleType = new tagModule(5,'tags-module',[new tagModuleTag('Tag 1'),new tagModuleTag('Tag 2'),new tagModuleTag('Tag 3')]);
+        gE.moduleType = new tagModule(5,'tags-module',[new tagModuleTag('<p>Tag 1</p>'),new tagModuleTag('<p>Tag 2</p>'),new tagModuleTag('<p>Tag 3</p>')]);
     }
     addEmailModule(gE) {
         gE.moduleType = new emailModule(6,'email-module','you@yourmail.com','');
@@ -74,8 +74,8 @@ export class GridBlock {
     addPieChartModule(gE) {
         gE.moduleType = new pieChartModule(8,'pie-chart-module','title',["Red", "Blue", "Yellow"],[12, 19, 3]);
     }
-    closeTextEditor(event:any) {
-        if( event.srcElement.className == 'row sortable' ) {
+    closeTextEditor(event:any,gE) {
+        if( event.srcElement.className == 'row sortable' || event.srcElement.className == 'grid-block-content') {
             $('.editable').each(function(){
                 $(this).summernote('destroy');
             });

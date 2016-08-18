@@ -16,24 +16,25 @@ var BarGraphModule = (function () {
     BarGraphModule.prototype.deleteBarGraphModule = function (gE) {
         gE.moduleType = {};
     };
-    //  barValueUpdate(event:any,bar) {
-    //      if(event.target.value > 100) {
-    //          bar.value  = 100;
-    //      } else if (event.target.value < 0 ) {
-    //          bar.value  = 0;
-    //      } else {
-    //          bar.value = event.target.value;
-    //      }
-    // }
     BarGraphModule.prototype.addBarGraph = function (gE) {
-        gE.moduleType.bars.push(new barGraphBar_1.barGraphBar(50, 'Label'));
+        gE.moduleType.bars.push(new barGraphBar_1.barGraphBar(50, '<p>New Label</p>'));
     };
     BarGraphModule.prototype.deleteBar = function (gE, bar) {
         gE.moduleType.bars.splice(gE.moduleType.bars.indexOf(bar), 1);
     };
-    BarGraphModule.prototype.test = function (event, bar) {
+    BarGraphModule.prototype.adjustBarLength = function (event, bar) {
         var pBLength = $('.progress').width();
         bar.value = Math.ceil((event.layerX * 100) / pBLength);
+    };
+    BarGraphModule.prototype.updateBarGraphTitle = function (event, gE) {
+        setTimeout(function () {
+            gE.moduleType.title = event.fromElement.innerHTML;
+        }, 3000);
+    };
+    BarGraphModule.prototype.updateBarLabel = function (event, bar) {
+        setTimeout(function () {
+            bar.label = event.fromElement.innerHTML;
+        }, 3000);
     };
     BarGraphModule = __decorate([
         core_1.Component({

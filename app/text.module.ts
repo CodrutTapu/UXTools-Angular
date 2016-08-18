@@ -15,9 +15,8 @@ export class TextModule {
         gE.moduleType = {};
     }
     updateTextModule(event:any,gE) {
-        gE.moduleType.content = $(event.srcElement).parents().eq(2).find('.text-module-content').html();
-    }
-    test(event:any) {
-        console.log(event);
+        setTimeout(function(){
+            gE.moduleType.content = event.fromElement.lastElementChild.innerHTML;
+        }, 3000);
     }
 }

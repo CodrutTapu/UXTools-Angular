@@ -15,23 +15,24 @@ export class BarGraphModule {
     deleteBarGraphModule(gE) {
         gE.moduleType = {};
     }
-   //  barValueUpdate(event:any,bar) {
-   //      if(event.target.value > 100) {
-   //          bar.value  = 100;
-   //      } else if (event.target.value < 0 ) {
-   //          bar.value  = 0;
-   //      } else {
-   //          bar.value = event.target.value;
-   //      }
-   // }
    addBarGraph(gE) {
-       gE.moduleType.bars.push(new barGraphBar(50,'Label'));
+       gE.moduleType.bars.push(new barGraphBar(50,'<p>New Label</p>'));
    }
    deleteBar(gE,bar) {
        gE.moduleType.bars.splice(gE.moduleType.bars.indexOf(bar), 1);
    }
-   test(event:any,bar) {
+   adjustBarLength(event:any,bar) {
        var pBLength = $('.progress').width();
        bar.value = Math.ceil((event.layerX*100)/pBLength);
+   }
+   updateBarGraphTitle(event:any,gE) {
+       setTimeout(function(){
+           gE.moduleType.title = event.fromElement.innerHTML;
+       }, 3000);
+   }
+   updateBarLabel(event:any,bar) {
+       setTimeout(function(){
+           bar.label = event.fromElement.innerHTML;
+       }, 3000);
    }
 }
