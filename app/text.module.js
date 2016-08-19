@@ -15,10 +15,20 @@ var TextModule = (function () {
     TextModule.prototype.deleteTextModule = function (gE) {
         gE.moduleType = {};
     };
-    TextModule.prototype.updateTextModule = function (event, gE) {
-        setTimeout(function () {
-            gE.moduleType.content = event.fromElement.lastElementChild.innerHTML;
-        }, 3000);
+    TextModule.prototype.updateTextModule = function (gE) {
+        $(document).off('click', '.editable-text-content').on('click', '.editable-text-content', function () {
+            $(this).summernote({
+                toolbar: [
+                    ['all', ['style', 'fontname', 'fontsize', 'color', 'bold', 'italic', 'underline', 'strikethrough', 'clear', 'paragraph', 'hr', 'ol', 'ul', 'picture', 'video', 'link', 'codeview', 'table', 'undo']]
+                ],
+                disableDragAndDrop: true,
+                callbacks: {
+                    onChange: function (contents, $editable) {
+                        gE.moduleType.content = contents;
+                    }
+                }
+            });
+        });
     };
     TextModule = __decorate([
         core_1.Component({

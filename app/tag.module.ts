@@ -3,6 +3,7 @@ import {AppComponent} from './app.component';
 import {bootstrap} from '@angular/platform-browser-dynamic';
 import {GridBlock} from './gridBlock.component';
 import {tagModuleTag} from './tagModuleTag';
+declare var $: any;
 
 @Component({
   selector: 'tag-module',
@@ -20,9 +21,20 @@ export class TagModule {
     deleteTag(gE,tag) {
         gE.moduleType.tags.splice(gE.moduleType.tags.indexOf(tag), 1);
     }
-    updateTag(event:any,tag) {
-        setTimeout(function(){
-            tag.name = event.srcElement.firstElementChild.innerHTML;
-        }, 3000);
+    updateTag(tag) {
+        $(document).off('click','.editable-tag').on('click','.editable-tag',function(){
+            $(this).summernote({
+                toolbar: [
+                    ['all', ['style','fontname', 'fontsize', 'color', 'bold', 'italic', 'underline', 'strikethrough','clear', 'paragraph', 'hr', 'ol', 'ul', 'picture', 'video', 'link', 'codeview', 'table', 'undo']]
+                ],
+                disableDragAndDrop: true,
+                callbacks: {
+                    onChange: function(contents, $editable) {
+                      tag.name = contents;
+                    }
+                }
+            });
+        });
+
     }
 }

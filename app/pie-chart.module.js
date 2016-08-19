@@ -96,6 +96,21 @@ var PieChartModule = (function () {
             showScale: false
         });
     };
+    PieChartModule.prototype.updatePieTitle = function (gE) {
+        $(document).off('click', '.editable-pie-title').on('click', '.editable-pie-title', function () {
+            $(this).summernote({
+                toolbar: [
+                    ['all', ['style', 'fontname', 'fontsize', 'color', 'bold', 'italic', 'underline', 'strikethrough', 'clear', 'paragraph', 'hr', 'ol', 'ul', 'picture', 'video', 'link', 'codeview', 'table', 'undo']]
+                ],
+                disableDragAndDrop: true,
+                callbacks: {
+                    onChange: function (contents, $editable) {
+                        gE.moduleType.title = contents;
+                    }
+                }
+            });
+        });
+    };
     PieChartModule = __decorate([
         core_1.Component({
             selector: 'pie-chart-module',

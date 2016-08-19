@@ -18,6 +18,21 @@ var EmailModule = (function () {
     EmailModule.prototype.updateEmail = function (gE) {
         gE.moduleType.email = this.email;
     };
+    EmailModule.prototype.updateEmailContent = function (gE) {
+        $(document).off('click', '.editable-email-content').on('click', '.editable-email-content', function () {
+            $(this).summernote({
+                toolbar: [
+                    ['all', ['style', 'fontname', 'fontsize', 'color', 'bold', 'italic', 'underline', 'strikethrough', 'clear', 'paragraph', 'hr', 'ol', 'ul', 'picture', 'video', 'link', 'codeview', 'table', 'undo']]
+                ],
+                disableDragAndDrop: true,
+                callbacks: {
+                    onChange: function (contents, $editable) {
+                        gE.moduleType.content = contents;
+                    }
+                }
+            });
+        });
+    };
     EmailModule = __decorate([
         core_1.Component({
             selector: 'email-module',

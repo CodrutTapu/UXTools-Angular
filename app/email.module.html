@@ -4,10 +4,7 @@
             <li class="delete" (click)="deleteEmailModule(gE)"><i class="fa fa-trash fa-lg" aria-hidden="true"></i></li>
         </ul>
     </div>
-    <div class="editable">
-        <h1>This is a form field to collect emails.</h1>
-        <p>Give them a good reason.</p>
-    </div>
+    <div class="editable-email-content" [innerHTML]="gE.moduleType.content" (click)=updateEmailContent(gE)></div>
     <form class="form-inline">
         <div class="form-group">
             <label for="Email" class="hidden">Name</label>

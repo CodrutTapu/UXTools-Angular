@@ -10,22 +10,6 @@ $(document).ready(function($) {
 });
 /*
 ==================================
-    Summernote Initialize
-==================================
-*/
-$(document).on('click','.editable',function(){
-    $('.editable').each(function(){
-        $(this).summernote('destroy');
-    });
-    $(this).summernote({
-        toolbar: [
-            ['all', ['style','fontname', 'fontsize', 'color', 'bold', 'italic', 'underline', 'strikethrough','clear', 'paragraph', 'hr', 'ol', 'ul', 'picture', 'video', 'link', 'codeview', 'table', 'undo']]
-        ],
-        disableDragAndDrop: true
-    });
-});
-/*
-==================================
     Image Module
 ==================================
 */
@@ -117,4 +101,15 @@ $(document).on('click','.pie-chart-module .add',function(){
     }else {
         pcModule.find('.create-pie-chart-box').stop().show(200);
     }
+});
+/*
+==================================
+    Accordion Module
+==================================
+*/
+$(document).on("mouseenter",".accordion-module .panel",function(){
+    $(this).find('.delete-accordion-item').stop().show(200);
+});
+$(document).on("mouseleave",".accordion-module .panel",function(){
+    $(this).find('.delete-accordion-item').stop().hide(200);
 });

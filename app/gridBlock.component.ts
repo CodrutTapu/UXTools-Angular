@@ -20,13 +20,16 @@ import {scaleChartModule} from './scaleChartModule';
 import {scaleChartModuleScale} from './scaleChartModuleScale';
 import {PieChartModule} from './pie-chart.module';
 import {pieChartModule} from './pieChartModule';
+import {AccordionModule} from './accordion.module';
+import {accordionModule} from './accordionModule';
+import {accordionItem} from './accordionItem';
 declare var $: any;
 
 @Component({
     selector: 'grid-block',
     templateUrl: 'app/grid-block.html',
     inputs: ['gridElements'],
-    directives: [DND_DIRECTIVES, TextModule, ImageModule, BarGraphModule, SocialMediaModule, TagModule, EmailModule, ScaleChartModule, PieChartModule]
+    directives: [DND_DIRECTIVES, TextModule, ImageModule, BarGraphModule, SocialMediaModule, TagModule, EmailModule, ScaleChartModule, PieChartModule, AccordionModule]
 })
 
 export class GridBlock {
@@ -66,17 +69,47 @@ export class GridBlock {
         gE.moduleType = new tagModule(5,'tags-module',[new tagModuleTag('<p>Tag 1</p>'),new tagModuleTag('<p>Tag 2</p>'),new tagModuleTag('<p>Tag 3</p>')]);
     }
     addEmailModule(gE) {
-        gE.moduleType = new emailModule(6,'email-module','you@yourmail.com','');
+        gE.moduleType = new emailModule(6,'email-module','you@yourmail.com','<h1>This is a form field to collect emails.</h1><p>Give them a good reason.</p>');
     }
     addScaleChartModule(gE) {
-        gE.moduleType = new scaleChartModule(7,'scale-chart-module','title',[new scaleChartModuleScale('sideA','sideB',0),new scaleChartModuleScale('sideA','sideB',50),new scaleChartModuleScale('sideA','sideB',100)]);
+        gE.moduleType = new scaleChartModule(7,'scale-chart-module','<h1>Scale Chart</h1>',[new scaleChartModuleScale('<p>Side A</p>','<p>Side B</p>',0),new scaleChartModuleScale('<p>Side A</p>','<p>Side B</p>',50),new scaleChartModuleScale('<p>Side A</p>','<p>Side B</p>',100)]);
     }
     addPieChartModule(gE) {
-        gE.moduleType = new pieChartModule(8,'pie-chart-module','title',["Red", "Blue", "Yellow"],[12, 19, 3]);
+        gE.moduleType = new pieChartModule(8,'pie-chart-module','<h1>Pie Chart</h1>',["Red", "Blue", "Yellow"],[12, 19, 3]);
+    }
+    addAccordionModule(gE) {
+        gE.moduleType = new accordionModule(9,'accordion-module','<h1>Accordion</h1>',[new accordionItem('item1','<p>Item 1</p>','<p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.</p>'), new accordionItem('item2','<p>Item 2</p>','<p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.</p>'), new accordionItem('item3','<p>Item 3</p>','<p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.</p>')]);
     }
     closeTextEditor(event:any,gE) {
         if( event.srcElement.className == 'row sortable' || event.srcElement.className == 'grid-block-content') {
             $('.editable').each(function(){
+                $(this).summernote('destroy');
+            });
+            $('.editable-scale-title').each(function(){
+                $(this).summernote('destroy');
+            });
+            $('.editable-sideA').each(function(){
+                $(this).summernote('destroy');
+            });
+            $('.editable-sideB').each(function(){
+                $(this).summernote('destroy');
+            });
+            $('.editable-pie-title').each(function(){
+                $(this).summernote('destroy');
+            });
+            $('.editable-email-content').each(function(){
+                $(this).summernote('destroy');
+            });
+            $('.editable-tag').each(function(){
+                $(this).summernote('destroy');
+            });
+            $('.editable-text-content').each(function(){
+                $(this).summernote('destroy');
+            });
+            $('.editable-barGrpah-title').each(function(){
+                $(this).summernote('destroy');
+            });
+            $('.editable-bar-label').each(function(){
                 $(this).summernote('destroy');
             });
         }

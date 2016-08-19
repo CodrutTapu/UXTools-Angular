@@ -20,10 +20,55 @@ var ScaleChartModule = (function () {
         scale.value = event.target.value;
     };
     ScaleChartModule.prototype.addScale = function (gE) {
-        gE.moduleType.scales.push(new scaleChartModuleScale_1.scaleChartModuleScale('sideA', 'sideB', 50));
+        gE.moduleType.scales.push(new scaleChartModuleScale_1.scaleChartModuleScale('side A', 'side B', 50));
     };
     ScaleChartModule.prototype.deleteScale = function (gE, scale) {
         gE.moduleType.scales.splice(gE.moduleType.scales.indexOf(scale), 1);
+    };
+    ScaleChartModule.prototype.updateScaleTitle = function (gE) {
+        $(document).off('click', '.editable-scale-title').on('click', '.editable-scale-title', function () {
+            $(this).summernote({
+                toolbar: [
+                    ['all', ['style', 'fontname', 'fontsize', 'color', 'bold', 'italic', 'underline', 'strikethrough', 'clear', 'paragraph', 'hr', 'ol', 'ul', 'picture', 'video', 'link', 'codeview', 'table', 'undo']]
+                ],
+                disableDragAndDrop: true,
+                callbacks: {
+                    onChange: function (contents, $editable) {
+                        gE.moduleType.title = contents;
+                    }
+                }
+            });
+        });
+    };
+    ScaleChartModule.prototype.updateScaleSideA = function (scale) {
+        $(document).off('click', '.editable-sideA').on('click', '.editable-sideA', function () {
+            $(this).summernote({
+                toolbar: [
+                    ['all', ['style', 'fontname', 'fontsize', 'color', 'bold', 'italic', 'underline', 'strikethrough', 'clear', 'paragraph', 'hr', 'ol', 'ul', 'picture', 'video', 'link', 'codeview', 'table', 'undo']]
+                ],
+                disableDragAndDrop: true,
+                callbacks: {
+                    onChange: function (contents, $editable) {
+                        scale.sideA = contents;
+                    }
+                }
+            });
+        });
+    };
+    ScaleChartModule.prototype.updateScaleSideB = function (scale) {
+        $(document).off('click', '.editable-sideB').on('click', '.editable-sideB', function () {
+            $(this).summernote({
+                toolbar: [
+                    ['all', ['style', 'fontname', 'fontsize', 'color', 'bold', 'italic', 'underline', 'strikethrough', 'clear', 'paragraph', 'hr', 'ol', 'ul', 'picture', 'video', 'link', 'codeview', 'table', 'undo']]
+                ],
+                disableDragAndDrop: true,
+                callbacks: {
+                    onChange: function (contents, $editable) {
+                        scale.sideB = contents;
+                    }
+                }
+            });
+        });
     };
     ScaleChartModule = __decorate([
         core_1.Component({

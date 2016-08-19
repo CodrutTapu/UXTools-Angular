@@ -17,6 +17,7 @@
                         <li (click)="addEmailModule(gE)"><a href="#"><span class="glyphicon glyphicon-envelope"></span> Email</a></li>
                         <li (click)="addScaleChartModule(gE)"><a href="#"><span class="glyphicon glyphicon-th-list"></span> Scale Chart</a></li>
                         <li (click)="addPieChartModule(gE)"><a href="#"><span class="glyphicon glyphicon-record"></span> Pie Chart</a></li>
+                        <li (click)="addAccordionModule(gE)"><a href="#"><span class="glyphicon glyphicon-menu-hamburger"></span> Accordion</a></li>
                     </ul>
                 </div>
             </ul>
@@ -31,6 +32,7 @@
                     <email-module *ngSwitchCase="6" [gE]="gE"></email-module>
                     <scale-chart-module *ngSwitchCase="7" [gE]="gE"></scale-chart-module>
                     <pie-chart-module *ngSwitchCase="8" [gE]="gE"></pie-chart-module>
+                    <accordion-module *ngSwitchCase="9" [gE]="gE"></accordion-module>
             </div>
         </div>
     </div>

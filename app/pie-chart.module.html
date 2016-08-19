@@ -24,9 +24,7 @@
         </div>
     </div>
     <div class="pie-chart-content">
-        <div class="editable">
-            <h1>Pie Chart</h1>
-        </div>
+        <div class="editable-pie-title" [innerHTML]="gE.moduleType.title" (click)="updatePieTitle(gE)"></div>
         <canvas id="pieChart" width="400" height="400"></canvas>
     </div>
 </div>

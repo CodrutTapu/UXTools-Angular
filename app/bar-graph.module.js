@@ -26,15 +26,35 @@ var BarGraphModule = (function () {
         var pBLength = $('.progress').width();
         bar.value = Math.ceil((event.layerX * 100) / pBLength);
     };
-    BarGraphModule.prototype.updateBarGraphTitle = function (event, gE) {
-        setTimeout(function () {
-            gE.moduleType.title = event.fromElement.innerHTML;
-        }, 3000);
+    BarGraphModule.prototype.updateBarGraphTitle = function (gE) {
+        $(document).off('click', '.editable-barGrpah-title').on('click', '.editable-barGrpah-title', function () {
+            $(this).summernote({
+                toolbar: [
+                    ['all', ['style', 'fontname', 'fontsize', 'color', 'bold', 'italic', 'underline', 'strikethrough', 'clear', 'paragraph', 'hr', 'ol', 'ul', 'picture', 'video', 'link', 'codeview', 'table', 'undo']]
+                ],
+                disableDragAndDrop: true,
+                callbacks: {
+                    onChange: function (contents, $editable) {
+                        gE.moduleType.title = contents;
+                    }
+                }
+            });
+        });
     };
-    BarGraphModule.prototype.updateBarLabel = function (event, bar) {
-        setTimeout(function () {
-            bar.label = event.fromElement.innerHTML;
-        }, 3000);
+    BarGraphModule.prototype.updateBarLabel = function (bar) {
+        $(document).off('click', '.editable-bar-label').on('click', '.editable-bar-label', function () {
+            $(this).summernote({
+                toolbar: [
+                    ['all', ['style', 'fontname', 'fontsize', 'color', 'bold', 'italic', 'underline', 'strikethrough', 'clear', 'paragraph', 'hr', 'ol', 'ul', 'picture', 'video', 'link', 'codeview', 'table', 'undo']]
+                ],
+                disableDragAndDrop: true,
+                callbacks: {
+                    onChange: function (contents, $editable) {
+                        bar.label = contents;
+                    }
+                }
+            });
+        });
     };
     BarGraphModule = __decorate([
         core_1.Component({

@@ -22,10 +22,20 @@ var TagModule = (function () {
     TagModule.prototype.deleteTag = function (gE, tag) {
         gE.moduleType.tags.splice(gE.moduleType.tags.indexOf(tag), 1);
     };
-    TagModule.prototype.updateTag = function (event, tag) {
-        setTimeout(function () {
-            tag.name = event.srcElement.firstElementChild.innerHTML;
-        }, 3000);
+    TagModule.prototype.updateTag = function (tag) {
+        $(document).off('click', '.editable-tag').on('click', '.editable-tag', function () {
+            $(this).summernote({
+                toolbar: [
+                    ['all', ['style', 'fontname', 'fontsize', 'color', 'bold', 'italic', 'underline', 'strikethrough', 'clear', 'paragraph', 'hr', 'ol', 'ul', 'picture', 'video', 'link', 'codeview', 'table', 'undo']]
+                ],
+                disableDragAndDrop: true,
+                callbacks: {
+                    onChange: function (contents, $editable) {
+                        tag.name = contents;
+                    }
+                }
+            });
+        });
     };
     TagModule = __decorate([
         core_1.Component({

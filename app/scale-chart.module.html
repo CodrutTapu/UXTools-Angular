@@ -5,17 +5,15 @@
             <li class="delete" (click)="deleteScaleChartModule(gE)"><i class="fa fa-trash fa-lg" aria-hidden="true"></i></li>
         </ul>
     </div>
-    <div class="editable">
-        <h1>Scale Chart</h1>
-    </div>
+    <div class="editable-scale-title" [innerHTML]="gE.moduleType.title" (click)="updateScaleTitle(gE)"></div>
     <div *ngFor="let scale of gE.moduleType.scales">
         <div class="slide-wrapper">
             <div class="slide-header clearfix">
                 <div class="side-left">
-                    <p class="editable">Side A</p>
+                    <p class="editable-sideA" (click)="updateScaleSideA(scale)" [innerHTML]="scale.sideA"></p>
                 </div>
                 <div class="side-right">
-                    <p class="editable">Side B</p>
+                    <p class="editable-sideB" (click)="updateScaleSideB(scale)" [innerHTML]="scale.sideB"></p>
                 </div>
             </div>
             <input type="range" value="{{scale.value}}" (click)="updateScaleValue($event,scale)">

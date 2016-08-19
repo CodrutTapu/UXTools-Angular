@@ -14,9 +14,19 @@ export class TextModule {
     deleteTextModule(gE) {
         gE.moduleType = {};
     }
-    updateTextModule(event:any,gE) {
-        setTimeout(function(){
-            gE.moduleType.content = event.fromElement.lastElementChild.innerHTML;
-        }, 3000);
+    updateTextModule(gE) {
+        $(document).off('click','.editable-text-content').on('click','.editable-text-content',function(){
+            $(this).summernote({
+                toolbar: [
+                    ['all', ['style','fontname', 'fontsize', 'color', 'bold', 'italic', 'underline', 'strikethrough','clear', 'paragraph', 'hr', 'ol', 'ul', 'picture', 'video', 'link', 'codeview', 'table', 'undo']]
+                ],
+                disableDragAndDrop: true,
+                callbacks: {
+                    onChange: function(contents, $editable) {
+                      gE.moduleType.content = contents;
+                    }
+                }
+            });
+        });
     }
 }
