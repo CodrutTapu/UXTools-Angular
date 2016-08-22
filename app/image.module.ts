@@ -6,6 +6,7 @@ import {GridBlock} from './gridBlock.component';
 @Component({
   selector: 'image-module',
   templateUrl: 'app/image.module.html',
+  styleUrls: ['app/image.module.css'],
   inputs: ['gE']
 
 })

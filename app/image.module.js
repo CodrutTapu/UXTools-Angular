@@ -25,6 +25,7 @@ var ImageModule = (function () {
         core_1.Component({
             selector: 'image-module',
             templateUrl: 'app/image.module.html',
+            styleUrls: ['app/image.module.css'],
             inputs: ['gE']
         }), 
         __metadata('design:paramtypes', [])

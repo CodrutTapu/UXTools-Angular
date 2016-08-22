@@ -41,6 +41,7 @@ var TagModule = (function () {
         core_1.Component({
             selector: 'tag-module',
             templateUrl: 'app/tag.module.html',
+            styleUrls: ['app/tag.module.css'],
             inputs: ['gE']
         }), 
         __metadata('design:paramtypes', [])

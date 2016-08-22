@@ -25,6 +25,7 @@ var SocialMediaModule = (function () {
         core_1.Component({
             selector: 'social-media-module',
             templateUrl: 'app/social-media.module.html',
+            styleUrls: ['app/social-media.module.css'],
             inputs: ['gE']
         }), 
         __metadata('design:paramtypes', [])

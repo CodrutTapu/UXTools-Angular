@@ -1,0 +1,36 @@
+/*
+==================================
+    Tag Module
+==================================
+*/
+.tag-module {
+    padding: 10px;
+}
+.tag-module .tag {
+    float: left;
+    padding: 4px 25px;
+    margin: 5px;
+    background-color: #e3e5e6;
+    text-transform: capitalize;
+    position: relative;
+}
+.tag-module .note-editor.note-frame .note-editing-area .note-editable {
+    background: #e3e5e6;
+}
+.tag-module:hover {
+    border: 2px solid #001926;
+}
+.tag-module .tag .delete-tag {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 15px;
+    background: red;
+    color: #fff;
+    text-align: center;
+    cursor: pointer;
+    display: none;
+    height: 15px;
+    line-height: 15px;
+    font-size: 10px;
+}

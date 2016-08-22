@@ -74,6 +74,7 @@ var ScaleChartModule = (function () {
         core_1.Component({
             selector: 'scale-chart-module',
             templateUrl: 'app/scale-chart.module.html',
+            styleUrls: ['app/scale-chart.module.css'],
             inputs: ['gE']
         }), 
         __metadata('design:paramtypes', [])

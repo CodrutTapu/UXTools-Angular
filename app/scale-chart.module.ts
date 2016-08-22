@@ -8,6 +8,7 @@ declare var $: any;
 @Component({
   selector: 'scale-chart-module',
   templateUrl: 'app/scale-chart.module.html',
+  styleUrls: ['app/scale-chart.module.css'],
   inputs: ['gE']
 })
 

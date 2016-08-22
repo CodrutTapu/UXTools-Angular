@@ -7,6 +7,7 @@ declare var $: any;
 @Component({
   selector: 'text-module',
   templateUrl: 'app/text.module.html',
+  styleUrls:  ['app/text.module.css'],
   inputs: ['gE']
 
 })

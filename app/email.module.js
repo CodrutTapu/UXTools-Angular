@@ -37,6 +37,7 @@ var EmailModule = (function () {
         core_1.Component({
             selector: 'email-module',
             templateUrl: 'app/email.module.html',
+            styleUrls: ['app/email.module.css'],
             inputs: ['gE']
         }), 
         __metadata('design:paramtypes', [])

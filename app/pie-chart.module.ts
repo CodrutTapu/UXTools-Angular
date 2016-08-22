@@ -8,6 +8,7 @@ declare var Chart:any;
 @Component({
   selector: 'pie-chart-module',
   templateUrl: 'app/pie-chart.module.html',
+  styleUrls: ['app/pie-chart.module.css'],
   inputs: ['gE']
 
 })

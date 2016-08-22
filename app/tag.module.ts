@@ -8,6 +8,7 @@ declare var $: any;
 @Component({
   selector: 'tag-module',
   templateUrl: 'app/tag.module.html',
+  styleUrls: ['app/tag.module.css'],
   inputs: ['gE']
 
 })

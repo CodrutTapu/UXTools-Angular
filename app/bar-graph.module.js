@@ -60,6 +60,7 @@ var BarGraphModule = (function () {
         core_1.Component({
             selector: 'bar-graph-module',
             templateUrl: 'app/bar-graph.module.html',
+            styleUrls: ['app/bar-graph.module.css'],
             inputs: ['gE']
         }), 
         __metadata('design:paramtypes', [])

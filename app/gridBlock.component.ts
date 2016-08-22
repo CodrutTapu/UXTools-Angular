@@ -112,6 +112,15 @@ export class GridBlock {
             $('.editable-bar-label').each(function(){
                 $(this).summernote('destroy');
             });
+            $('.editable-accordion-title').each(function(){
+                $(this).summernote('destroy');
+            });
+            $('.editable-accordion-item-title').each(function(){
+                $(this).summernote('destroy');
+            });
+            $('.editable-accordion-item-content').each(function(){
+                $(this).summernote('destroy');
+            });
         }
     }
 }

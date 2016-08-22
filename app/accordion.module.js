@@ -24,10 +24,56 @@ var AccordionModule = (function () {
     AccordionModule.prototype.deleteAccordionItem = function (gE, item) {
         gE.moduleType.items.splice(gE.moduleType.items.indexOf(item), 1);
     };
+    AccordionModule.prototype.updateAccordionTitle = function (gE) {
+        $(document).off('click', '.editable-accordion-title').on('click', '.editable-accordion-title', function () {
+            $(this).summernote({
+                toolbar: [
+                    ['all', ['style', 'fontname', 'fontsize', 'color', 'bold', 'italic', 'underline', 'strikethrough', 'clear', 'paragraph', 'hr', 'ol', 'ul', 'picture', 'video', 'link', 'codeview', 'table', 'undo']]
+                ],
+                disableDragAndDrop: true,
+                callbacks: {
+                    onChange: function (contents, $editable) {
+                        gE.moduleType.title = contents;
+                    }
+                }
+            });
+        });
+    };
+    AccordionModule.prototype.updateAccordionItemTitle = function (item) {
+        $(document).off('click', '.editable-accordion-item-title').on('click', '.editable-accordion-item-title', function () {
+            $(this).summernote({
+                toolbar: [
+                    ['all', ['style', 'fontname', 'fontsize', 'color', 'bold', 'italic', 'underline', 'strikethrough', 'clear', 'paragraph', 'hr', 'ol', 'ul', 'picture', 'video', 'link', 'codeview', 'table', 'undo']]
+                ],
+                disableDragAndDrop: true,
+                callbacks: {
+                    onChange: function (contents, $editable) {
+                        item.title = contents;
+                    }
+                }
+            });
+        });
+    };
+    AccordionModule.prototype.updateAccordionItemContent = function (item) {
+        $(document).off('click', '.editable-accordion-item-content').on('click', '.editable-accordion-item-content', function () {
+            $(this).summernote({
+                toolbar: [
+                    ['all', ['style', 'fontname', 'fontsize', 'color', 'bold', 'italic', 'underline', 'strikethrough', 'clear', 'paragraph', 'hr', 'ol', 'ul', 'picture', 'video', 'link', 'codeview', 'table', 'undo']]
+                ],
+                disableDragAndDrop: true,
+                callbacks: {
+                    onChange: function (contents, $editable) {
+                        item.content = contents;
+                    }
+                }
+            });
+        });
+    };
     AccordionModule = __decorate([
         core_1.Component({
             selector: 'accordion-module',
             templateUrl: 'app/accordion.module.html',
+            styleUrls: ['app/accordion.module.css'],
             inputs: ['gE']
         }), 
         __metadata('design:paramtypes', [])
