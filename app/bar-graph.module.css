@@ -23,7 +23,7 @@
 .bar-graph-module .delete-progress-bar {
     position: absolute;
     right: 0px;
-    top: 12px;
+    top: -1px;
     height: 18px;
     width: 18px;
     background: red;

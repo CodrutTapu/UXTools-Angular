@@ -242,3 +242,6 @@ input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer
 .scale-chart-module .slide-wrapper .slide-header .side-right p {
     margin: 0;
 }
+.accordion-module .panel-title p {
+    margin: 0;
+}

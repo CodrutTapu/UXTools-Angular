@@ -28,5 +28,11 @@
 </nav>
 
 <div class="container grid">
+    <pre>
+        <button (click)="httpGet(gridElements)">Get Request</button><br>
+        <p>Output: {{getData}}</p>
+        <button (click)="httpPost(gridElements)">Post Request</button><br>
+        <p>Output: {{postData}}</p>
+    </pre>
     <grid-block [gridElements]="gridElements"></grid-block>
 </div>

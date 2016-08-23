@@ -15,9 +15,6 @@
 .accordion-module .panel {
     border-radius: 0;
 }
-.accordion-module .panel-title p {
-    margin: 0;
-}
 .accordion-module .panel-heading {
     position: relative;
     background: #fff;

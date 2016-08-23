@@ -5,11 +5,13 @@ import {bootstrap} from '@angular/platform-browser-dynamic';
 import {GridBlock} from './gridBlock.component';
 import {gridElem} from './gridElem';
 import {textModule} from './textModule';
+import {HTTTPService} from './http.service';
 
 @Component({
     selector: 'top-navigation',
     templateUrl: 'app/topNav.component.html',
-    directives: [DND_DIRECTIVES, GridBlock]
+    directives: [DND_DIRECTIVES, GridBlock],
+    providers: [HTTTPService]
 })
 
 export class TopNavComponent {
@@ -18,5 +20,26 @@ export class TopNavComponent {
     addGridElement(dim:number) {
         this.gridElements.push(new gridElem(dim,this.id+1,0));
         this.id = this.id+1;
+    }
+    getData: string;
+    postData: string;
+
+    constructor (private _httpService: HTTTPService) {}
+
+    httpGet(gridElements) {
+        this._httpService.getJSON()
+            .subscribe(
+                data => this.gridElements = data,
+                error => alert(Error),
+                    () => console.log('Finish!')
+            );
+    }
+    httpPost(gridElements) {
+        this._httpService.postJSON(gridElements)
+            .subscribe(
+                data => this.postData = data,
+                error => alert(Error),
+                    () => console.log('Finish!')
+            );
     }
 }

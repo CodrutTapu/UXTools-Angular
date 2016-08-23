@@ -13,8 +13,10 @@ var ng2_dnd_1 = require('ng2-dnd/ng2-dnd');
 var gridBlock_component_1 = require('./gridBlock.component');
 var gridElem_1 = require('./gridElem');
 var textModule_1 = require('./textModule');
+var http_service_1 = require('./http.service');
 var TopNavComponent = (function () {
-    function TopNavComponent() {
+    function TopNavComponent(_httpService) {
+        this._httpService = _httpService;
         this.gridElements = [new gridElem_1.gridElem(4, 1, new textModule_1.textModule(1, 'text-module', '<h1>Text Field 1</h1><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In pharetra felis in sem porta feugiat.</p>')), new gridElem_1.gridElem(4, 2, new textModule_1.textModule(1, 'text-module', '<h1>Text Field 2</h1><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In pharetra felis in sem porta feugiat.</p>')), new gridElem_1.gridElem(4, 3, new textModule_1.textModule(1, 'text-module', '<h1>Text Field 3</h1><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In pharetra felis in sem porta feugiat.</p>'))];
         this.id = 3;
     }
@@ -22,13 +24,24 @@ var TopNavComponent = (function () {
         this.gridElements.push(new gridElem_1.gridElem(dim, this.id + 1, 0));
         this.id = this.id + 1;
     };
+    TopNavComponent.prototype.httpGet = function (gridElements) {
+        var _this = this;
+        this._httpService.getJSON()
+            .subscribe(function (data) { return _this.gridElements = data; }, function (error) { return alert(Error); }, function () { return console.log('Finish!'); });
+    };
+    TopNavComponent.prototype.httpPost = function (gridElements) {
+        var _this = this;
+        this._httpService.postJSON(gridElements)
+            .subscribe(function (data) { return _this.postData = data; }, function (error) { return alert(Error); }, function () { return console.log('Finish!'); });
+    };
     TopNavComponent = __decorate([
         core_1.Component({
             selector: 'top-navigation',
             templateUrl: 'app/topNav.component.html',
-            directives: [ng2_dnd_1.DND_DIRECTIVES, gridBlock_component_1.GridBlock]
+            directives: [ng2_dnd_1.DND_DIRECTIVES, gridBlock_component_1.GridBlock],
+            providers: [http_service_1.HTTTPService]
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [http_service_1.HTTTPService])
     ], TopNavComponent);
     return TopNavComponent;
 }());
