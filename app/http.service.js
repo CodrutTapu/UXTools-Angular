@@ -17,15 +17,14 @@ var HTTTPService = (function () {
         this._http = _http;
     }
     HTTTPService.prototype.getJSON = function () {
-        return this._http.get('http://localhost:3000/persona')
+        return this._http.get('http://localhost:3000/users')
             .map(function (res) { return res.json(); });
     };
     HTTTPService.prototype.postJSON = function (json) {
-        json = JSON.stringify(json);
-        //var params = 'json=' + json;
+        var param = JSON.stringify(json);
         var headers = new http_2.Headers();
-        headers.append('Content-Type', 'application/x-www-form-urlencoded');
-        return this._http.post('http://localhost:3000/persona', json, {
+        headers.append('Content-Type', 'application/json');
+        return this._http.post('http://localhost:3000/users', param, {
             headers: headers
         })
             .map(function (res) { return res.json(); });

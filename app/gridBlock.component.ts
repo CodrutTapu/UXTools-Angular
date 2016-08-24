@@ -28,7 +28,7 @@ declare var $: any;
 @Component({
     selector: 'grid-block',
     templateUrl: 'app/grid-block.html',
-    inputs: ['gridElements'],
+    inputs: ['gridElements','currentUser'],
     directives: [DND_DIRECTIVES, TextModule, ImageModule, BarGraphModule, SocialMediaModule, TagModule, EmailModule, ScaleChartModule, PieChartModule, AccordionModule]
 })
 

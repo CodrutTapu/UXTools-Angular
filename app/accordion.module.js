@@ -69,6 +69,11 @@ var AccordionModule = (function () {
             });
         });
     };
+    AccordionModule.prototype.ngOnInit = function () {
+        $('.accordion-module').on('show.bs.collapse', '.collapse', function () {
+            $('.accordion-module').find('.collapse.in').collapse('hide');
+        });
+    };
     AccordionModule = __decorate([
         core_1.Component({
             selector: 'accordion-module',

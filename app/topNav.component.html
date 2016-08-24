@@ -11,6 +11,7 @@
         </div>
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
+                <li (click)="addPersona()"><a href="#">Add Persona</a></li>
                 <li class="dropdown grid-selector">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">Add Layout Element <span class="caret"></span></a>
                     <ul class="dropdown-menu">
@@ -23,16 +24,14 @@
                     </ul>
                 </li>
             </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li (click)="httpGet(currentUser)"><a href="#">Load</a></li>
+                <li (click)="httpPost(currentUser)"><a href="#">Save</a></li>
+            </ul>
         </div>
     </div>
 </nav>
 
 <div class="container grid">
-    <pre>
-        <button (click)="httpGet(gridElements)">Get Request</button><br>
-        <p>Output: {{getData}}</p>
-        <button (click)="httpPost(gridElements)">Post Request</button><br>
-        <p>Output: {{postData}}</p>
-    </pre>
-    <grid-block [gridElements]="gridElements"></grid-block>
+    <grid-block [gridElements]="gridElements" [currentUser]="currentUser"></grid-block>
 </div>

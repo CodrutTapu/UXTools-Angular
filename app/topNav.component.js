@@ -12,34 +12,41 @@ var core_1 = require('@angular/core');
 var ng2_dnd_1 = require('ng2-dnd/ng2-dnd');
 var gridBlock_component_1 = require('./gridBlock.component');
 var gridElem_1 = require('./gridElem');
+var user_1 = require('./user');
 var textModule_1 = require('./textModule');
 var http_service_1 = require('./http.service');
 var TopNavComponent = (function () {
     function TopNavComponent(_httpService) {
         this._httpService = _httpService;
-        this.gridElements = [new gridElem_1.gridElem(4, 1, new textModule_1.textModule(1, 'text-module', '<h1>Text Field 1</h1><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In pharetra felis in sem porta feugiat.</p>')), new gridElem_1.gridElem(4, 2, new textModule_1.textModule(1, 'text-module', '<h1>Text Field 2</h1><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In pharetra felis in sem porta feugiat.</p>')), new gridElem_1.gridElem(4, 3, new textModule_1.textModule(1, 'text-module', '<h1>Text Field 3</h1><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In pharetra felis in sem porta feugiat.</p>'))];
+        this.currentUser = new user_1.user(99087, 'John Doe', '');
+        //gridElements:Array<gridElem> = [new gridElem(4,1,new textModule(1,'text-module','<h1>Text Field 1</h1><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In pharetra felis in sem porta feugiat.</p>')), new gridElem(4,2,new textModule(1,'text-module','<h1>Text Field 2</h1><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In pharetra felis in sem porta feugiat.</p>')), new gridElem(4,3,new textModule(1,'text-module','<h1>Text Field 3</h1><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In pharetra felis in sem porta feugiat.</p>'))];
+        this.gridElements = [];
         this.id = 3;
     }
+    TopNavComponent.prototype.addPersona = function () {
+        this.currentUser.documents = [new gridElem_1.gridElem(4, 1, new textModule_1.textModule(1, 'text-module', '<h1>Text Field 1</h1><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In pharetra felis in sem porta feugiat.</p>')), new gridElem_1.gridElem(4, 2, new textModule_1.textModule(1, 'text-module', '<h1>Text Field 2</h1><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In pharetra felis in sem porta feugiat.</p>')), new gridElem_1.gridElem(4, 3, new textModule_1.textModule(1, 'text-module', '<h1>Text Field 3</h1><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In pharetra felis in sem porta feugiat.</p>'))];
+        this.gridElements = this.currentUser.documents;
+    };
     TopNavComponent.prototype.addGridElement = function (dim) {
         this.gridElements.push(new gridElem_1.gridElem(dim, this.id + 1, 0));
         this.id = this.id + 1;
     };
-    TopNavComponent.prototype.httpGet = function (gridElements) {
+    TopNavComponent.prototype.httpGet = function (currentUser) {
         var _this = this;
         this._httpService.getJSON()
-            .subscribe(function (data) { return _this.gridElements = data; }, function (error) { return alert(Error); }, function () { return console.log('Finish!'); });
+            .subscribe(function (data) { return _this.currentUser = data; }, function (error) { return alert(Error); }, function () { return _this.gridElements = _this.currentUser[0].documents; });
     };
-    TopNavComponent.prototype.httpPost = function (gridElements) {
+    TopNavComponent.prototype.httpPost = function (currentUser) {
         var _this = this;
-        this._httpService.postJSON(gridElements)
-            .subscribe(function (data) { return _this.postData = data; }, function (error) { return alert(Error); }, function () { return console.log('Finish!'); });
+        this._httpService.postJSON(currentUser)
+            .subscribe(function (data) { return _this.postData = JSON.stringify(data); }, function (error) { return alert(Error); }, function () { return console.log('Finish!'); });
     };
     TopNavComponent = __decorate([
         core_1.Component({
             selector: 'top-navigation',
             templateUrl: 'app/topNav.component.html',
             directives: [ng2_dnd_1.DND_DIRECTIVES, gridBlock_component_1.GridBlock],
-            providers: [http_service_1.HTTTPService]
+            providers: [http_service_1.HTTTPService],
         }), 
         __metadata('design:paramtypes', [http_service_1.HTTTPService])
     ], TopNavComponent);

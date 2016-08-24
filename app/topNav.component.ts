@@ -4,6 +4,7 @@ import {DND_PROVIDERS, DND_DIRECTIVES} from 'ng2-dnd/ng2-dnd';
 import {bootstrap} from '@angular/platform-browser-dynamic';
 import {GridBlock} from './gridBlock.component';
 import {gridElem} from './gridElem';
+import {user} from './user';
 import {textModule} from './textModule';
 import {HTTTPService} from './http.service';
 
@@ -11,33 +12,41 @@ import {HTTTPService} from './http.service';
     selector: 'top-navigation',
     templateUrl: 'app/topNav.component.html',
     directives: [DND_DIRECTIVES, GridBlock],
-    providers: [HTTTPService]
+    providers: [HTTTPService],
 })
 
 export class TopNavComponent {
-    gridElements:Array<gridElem> = [new gridElem(4,1,new textModule(1,'text-module','<h1>Text Field 1</h1><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In pharetra felis in sem porta feugiat.</p>')), new gridElem(4,2,new textModule(1,'text-module','<h1>Text Field 2</h1><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In pharetra felis in sem porta feugiat.</p>')), new gridElem(4,3,new textModule(1,'text-module','<h1>Text Field 3</h1><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In pharetra felis in sem porta feugiat.</p>'))];
+    postData:string;
+    currentUser:any = new user(99087,'John Doe','');
+    //gridElements:Array<gridElem> = [new gridElem(4,1,new textModule(1,'text-module','<h1>Text Field 1</h1><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In pharetra felis in sem porta feugiat.</p>')), new gridElem(4,2,new textModule(1,'text-module','<h1>Text Field 2</h1><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In pharetra felis in sem porta feugiat.</p>')), new gridElem(4,3,new textModule(1,'text-module','<h1>Text Field 3</h1><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In pharetra felis in sem porta feugiat.</p>'))];
+    gridElements:Array<gridElem> = [];
     id:number= 3;
+
+    addPersona() {
+        this.currentUser.documents = [new gridElem(4,1,new textModule(1,'text-module','<h1>Text Field 1</h1><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In pharetra felis in sem porta feugiat.</p>')), new gridElem(4,2,new textModule(1,'text-module','<h1>Text Field 2</h1><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In pharetra felis in sem porta feugiat.</p>')), new gridElem(4,3,new textModule(1,'text-module','<h1>Text Field 3</h1><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In pharetra felis in sem porta feugiat.</p>'))];
+        this.gridElements = this.currentUser.documents;
+    }
+
     addGridElement(dim:number) {
         this.gridElements.push(new gridElem(dim,this.id+1,0));
         this.id = this.id+1;
     }
-    getData: string;
-    postData: string;
 
     constructor (private _httpService: HTTTPService) {}
 
-    httpGet(gridElements) {
+    httpGet(currentUser) {
         this._httpService.getJSON()
             .subscribe(
-                data => this.gridElements = data,
+                data => this.currentUser = data,
                 error => alert(Error),
-                    () => console.log('Finish!')
+                    () => this.gridElements = this.currentUser[0].documents
             );
     }
-    httpPost(gridElements) {
-        this._httpService.postJSON(gridElements)
+
+    httpPost(currentUser) {
+        this._httpService.postJSON(currentUser)
             .subscribe(
-                data => this.postData = data,
+                data => this.postData = JSON.stringify(data),
                 error => alert(Error),
                     () => console.log('Finish!')
             );

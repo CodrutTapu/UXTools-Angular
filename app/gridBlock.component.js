@@ -130,7 +130,7 @@ var GridBlock = (function () {
         core_1.Component({
             selector: 'grid-block',
             templateUrl: 'app/grid-block.html',
-            inputs: ['gridElements'],
+            inputs: ['gridElements', 'currentUser'],
             directives: [ng2_dnd_1.DND_DIRECTIVES, text_module_1.TextModule, image_module_1.ImageModule, bar_graph_module_1.BarGraphModule, social_media_module_1.SocialMediaModule, tag_module_1.TagModule, email_module_1.EmailModule, scale_chart_module_1.ScaleChartModule, pie_chart_module_1.PieChartModule, accordion_module_1.AccordionModule]
         }), 
         __metadata('design:paramtypes', [])
