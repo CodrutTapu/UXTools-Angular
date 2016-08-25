@@ -106,3 +106,14 @@ $(document).on("mouseenter",".accordion-module .panel",function(){
 $(document).on("mouseleave",".accordion-module .panel",function(){
     $(this).find('.delete-accordion-item').stop().hide(200);
 });
+/*
+==================================
+    Tabs Module
+==================================
+*/
+$(document).on("mouseenter",".tabs-module .tab-title",function(){
+    $(this).find('.delete-tabs-item').stop().show(200);
+});
+$(document).on("mouseleave",".tabs-module .tab-title",function(){
+    $(this).find('.delete-tabs-item').stop().hide(200);
+});

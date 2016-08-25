@@ -1,0 +1,23 @@
+<div class="tabs-module white-brd"><!-- Tabs Module -->
+    <div class="module-buttons">
+        <ul class="no-pad">
+            <li class="add" (click)="addTabsItem(gE)"><i class="fa fa-plus fa-lg" aria-hidden="true"></i></li>
+            <li class="delete" (click)="deleteTabsModule(gE)"><i class="fa fa-trash fa-lg" aria-hidden="true"></i></li>
+        </ul>
+    </div>
+    <div>
+      <!-- Nav tabs -->
+      <ul class="nav nav-tabs" role="tablist">
+        <li *ngFor="let item of gE.moduleType.items; let index = index" [class.active]="index == 0" role="presentation" class="tab-title"><a href="#{{item.id}}{{gE.id}}" aria-controls="home" role="tab" data-toggle="tab" [innerHTML]="item.title" (click)="updateTabsItemTitle(item)"></a>
+            <div class="delete-tabs-item" (click)="deleteTabsItem(gE,item)">
+                <i aria-hidden="true" class="fa fa-times"></i>
+            </div>
+        </li>
+      </ul>
+      <!-- Tab panes -->
+      <div class="tab-content">
+        <div *ngFor="let item of gE.moduleType.items; let index = index" role="tabpanel" [class.active]="index == 0" class="editable-tabs-item-content tab-pane fade in" id="{{item.id}}{{gE.id}}" [innerHTML]="item.content" (click)="updateTabsItemContent(item)"></div>
+      </div>
+
+    </div>
+</div>

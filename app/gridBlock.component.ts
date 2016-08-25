@@ -23,13 +23,17 @@ import {pieChartModule} from './pieChartModule';
 import {AccordionModule} from './accordion.module';
 import {accordionModule} from './accordionModule';
 import {accordionItem} from './accordionItem';
+import {TabsModule} from './tabs.module';
+import {tabsModule} from './tabsModule';
+import {tabsItem} from './tabsItem';
+
 declare var $: any;
 
 @Component({
     selector: 'grid-block',
     templateUrl: 'app/grid-block.html',
     inputs: ['gridElements','currentUser'],
-    directives: [DND_DIRECTIVES, TextModule, ImageModule, BarGraphModule, SocialMediaModule, TagModule, EmailModule, ScaleChartModule, PieChartModule, AccordionModule]
+    directives: [DND_DIRECTIVES, TextModule, ImageModule, BarGraphModule, SocialMediaModule, TagModule, EmailModule, ScaleChartModule, PieChartModule, AccordionModule, TabsModule]
 })
 
 export class GridBlock {
@@ -80,6 +84,9 @@ export class GridBlock {
     addAccordionModule(gE) {
         gE.moduleType = new accordionModule(9,'accordion-module','<h1>Accordion</h1>',[new accordionItem('item1','<p>Item 1</p>','<p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.</p>'), new accordionItem('item2','<p>Item 2</p>','<p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.</p>'), new accordionItem('item3','<p>Item 3</p>','<p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.</p>')]);
     }
+    addTabsModule(gE) {
+        gE.moduleType = new tabsModule(10,'tabs-module',[new tabsItem('item1','<p>Tab 1</p>','<p>Nulla condimentum finibus massa, sit amet viverra purus luctus ac. Fusce ut erat sapien 1.</p>'),new tabsItem('item2','<p>Tab 2</p>','<p>Nulla condimentum finibus massa, sit amet viverra purus luctus ac. Fusce ut erat sapien 2.</p>'),new tabsItem('item3','<p>Tab 3</p>','<p>Nulla condimentum finibus massa, sit amet viverra purus luctus ac. Fusce ut erat sapien 3.</p>')]);
+    }
     closeTextEditor(event:any,gE) {
         if( event.srcElement.className == 'row sortable' || event.srcElement.className == 'grid-block-content') {
             $('.editable').each(function(){
@@ -119,6 +126,13 @@ export class GridBlock {
                 $(this).summernote('destroy');
             });
             $('.editable-accordion-item-content').each(function(){
+                $(this).summernote('destroy');
+            });
+            $('.editable-tabs-item-content').each(function(){
+                $(this).summernote('destroy');
+                $(this).removeAttr("style");
+            });
+            $('.editable-tabs-item-title').each(function(){
                 $(this).summernote('destroy');
             });
         }

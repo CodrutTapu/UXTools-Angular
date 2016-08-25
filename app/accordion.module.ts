@@ -71,7 +71,8 @@ export class AccordionModule {
     }
     ngOnInit() {
         $('.accordion-module').on('show.bs.collapse','.collapse', function() {
-            $('.accordion-module').find('.collapse.in').collapse('hide');
+            
+            $(this).parents().eq(2).find('.collapse.in').collapse('hide');
         });
     }
 }

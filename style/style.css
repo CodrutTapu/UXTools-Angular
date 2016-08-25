@@ -34,7 +34,7 @@ input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer
 ==================================
 */
 .module-buttons {
-    margin-top: -37px;
+    margin-top: -36px;
     position: absolute;
 }
 .module-buttons ul {
@@ -79,6 +79,9 @@ input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer
     display: block;
 }
 .accordion-module:hover .module-buttons ul {
+    display: block;
+}
+.tabs-module:hover .module-buttons ul {
     display: block;
 }
 /*
@@ -244,4 +247,10 @@ input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer
 }
 .accordion-module .panel-title p {
     margin: 0;
+}
+.tabs-module .nav-tabs li a p {
+    margin: 8px 0 0 0;
+}
+.tabs-module .note-editable {
+    padding: 10px !important;
 }

@@ -32,6 +32,9 @@ var pieChartModule_1 = require('./pieChartModule');
 var accordion_module_1 = require('./accordion.module');
 var accordionModule_1 = require('./accordionModule');
 var accordionItem_1 = require('./accordionItem');
+var tabs_module_1 = require('./tabs.module');
+var tabsModule_1 = require('./tabsModule');
+var tabsItem_1 = require('./tabsItem');
 var GridBlock = (function () {
     function GridBlock() {
     }
@@ -83,6 +86,9 @@ var GridBlock = (function () {
     GridBlock.prototype.addAccordionModule = function (gE) {
         gE.moduleType = new accordionModule_1.accordionModule(9, 'accordion-module', '<h1>Accordion</h1>', [new accordionItem_1.accordionItem('item1', '<p>Item 1</p>', '<p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.</p>'), new accordionItem_1.accordionItem('item2', '<p>Item 2</p>', '<p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.</p>'), new accordionItem_1.accordionItem('item3', '<p>Item 3</p>', '<p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.</p>')]);
     };
+    GridBlock.prototype.addTabsModule = function (gE) {
+        gE.moduleType = new tabsModule_1.tabsModule(10, 'tabs-module', [new tabsItem_1.tabsItem('item1', '<p>Tab 1</p>', '<p>Nulla condimentum finibus massa, sit amet viverra purus luctus ac. Fusce ut erat sapien 1.</p>'), new tabsItem_1.tabsItem('item2', '<p>Tab 2</p>', '<p>Nulla condimentum finibus massa, sit amet viverra purus luctus ac. Fusce ut erat sapien 2.</p>'), new tabsItem_1.tabsItem('item3', '<p>Tab 3</p>', '<p>Nulla condimentum finibus massa, sit amet viverra purus luctus ac. Fusce ut erat sapien 3.</p>')]);
+    };
     GridBlock.prototype.closeTextEditor = function (event, gE) {
         if (event.srcElement.className == 'row sortable' || event.srcElement.className == 'grid-block-content') {
             $('.editable').each(function () {
@@ -124,6 +130,13 @@ var GridBlock = (function () {
             $('.editable-accordion-item-content').each(function () {
                 $(this).summernote('destroy');
             });
+            $('.editable-tabs-item-content').each(function () {
+                $(this).summernote('destroy');
+                $(this).removeAttr("style");
+            });
+            $('.editable-tabs-item-title').each(function () {
+                $(this).summernote('destroy');
+            });
         }
     };
     GridBlock = __decorate([
@@ -131,7 +144,7 @@ var GridBlock = (function () {
             selector: 'grid-block',
             templateUrl: 'app/grid-block.html',
             inputs: ['gridElements', 'currentUser'],
-            directives: [ng2_dnd_1.DND_DIRECTIVES, text_module_1.TextModule, image_module_1.ImageModule, bar_graph_module_1.BarGraphModule, social_media_module_1.SocialMediaModule, tag_module_1.TagModule, email_module_1.EmailModule, scale_chart_module_1.ScaleChartModule, pie_chart_module_1.PieChartModule, accordion_module_1.AccordionModule]
+            directives: [ng2_dnd_1.DND_DIRECTIVES, text_module_1.TextModule, image_module_1.ImageModule, bar_graph_module_1.BarGraphModule, social_media_module_1.SocialMediaModule, tag_module_1.TagModule, email_module_1.EmailModule, scale_chart_module_1.ScaleChartModule, pie_chart_module_1.PieChartModule, accordion_module_1.AccordionModule, tabs_module_1.TabsModule]
         }), 
         __metadata('design:paramtypes', [])
     ], GridBlock);

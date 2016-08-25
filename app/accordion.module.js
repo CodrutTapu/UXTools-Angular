@@ -71,7 +71,7 @@ var AccordionModule = (function () {
     };
     AccordionModule.prototype.ngOnInit = function () {
         $('.accordion-module').on('show.bs.collapse', '.collapse', function () {
-            $('.accordion-module').find('.collapse.in').collapse('hide');
+            $(this).parents().eq(2).find('.collapse.in').collapse('hide');
         });
     };
     AccordionModule = __decorate([
