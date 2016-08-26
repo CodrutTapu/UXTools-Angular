@@ -117,3 +117,19 @@ $(document).on("mouseenter",".tabs-module .tab-title",function(){
 $(document).on("mouseleave",".tabs-module .tab-title",function(){
     $(this).find('.delete-tabs-item').stop().hide(200);
 });
+/*
+==================================
+    Embed Module
+==================================
+*/
+$(document).on('click','.embed-module .embed-input-set-button',function(){
+    $(this).siblings('input:text').val('');
+    $('.add-embed').stop().hide(200);
+});
+$(document).on('click','.embed-module .add',function(){
+    if( $('.add-embed').is(':visible') ){
+        $(this).parents().eq(2).find('.add-embed').stop().hide(200);
+    }else {
+        $(this).parents().eq(2).find('.add-embed').stop().show(200);
+    }
+})

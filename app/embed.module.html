@@ -1,0 +1,17 @@
+<div class="embed-module white-brd"><!-- Embed Module -->
+    <div class="module-buttons">
+        <ul class="no-pad">
+            <li class="add"><i class="fa fa-plus fa-lg" aria-hidden="true"></i></li>
+            <li (click)="deleteEmbedModule(gE)" class="delete"><i class="fa fa-trash fa-lg" aria-hidden="true"></i></li>
+        </ul>
+    </div>
+    <div class="editable-embed-title" [innerHTML]="gE.moduleType.title" (click)="updateEmbedTitle(gE)"></div>
+    <div class="embed-responsive embed-responsive-16by9">
+      <iframe class="embed-responsive-item" [src]="url"></iframe>
+    </div>
+    <div class="add-embed">
+        <h2>Add URL</h2>
+        <input type="url" class="embed-input-value" [(ngModel)]="embedUrl">
+        <button type="button" name="button" class="embed-input-set-button btn btn-primary" (click)="changeEmbedUrl(gE)">Add</button>
+    </div>
+</div>

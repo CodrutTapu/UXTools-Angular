@@ -26,6 +26,8 @@ import {accordionItem} from './accordionItem';
 import {TabsModule} from './tabs.module';
 import {tabsModule} from './tabsModule';
 import {tabsItem} from './tabsItem';
+import {EmbedModule} from './embed.module';
+import {embedModule} from './embedModule';
 
 declare var $: any;
 
@@ -33,7 +35,7 @@ declare var $: any;
     selector: 'grid-block',
     templateUrl: 'app/grid-block.html',
     inputs: ['gridElements','currentUser'],
-    directives: [DND_DIRECTIVES, TextModule, ImageModule, BarGraphModule, SocialMediaModule, TagModule, EmailModule, ScaleChartModule, PieChartModule, AccordionModule, TabsModule]
+    directives: [DND_DIRECTIVES, TextModule, ImageModule, BarGraphModule, SocialMediaModule, TagModule, EmailModule, ScaleChartModule, PieChartModule, AccordionModule, TabsModule, EmbedModule]
 })
 
 export class GridBlock {
@@ -87,6 +89,9 @@ export class GridBlock {
     addTabsModule(gE) {
         gE.moduleType = new tabsModule(10,'tabs-module',[new tabsItem('item1','<p>Tab 1</p>','<p>Nulla condimentum finibus massa, sit amet viverra purus luctus ac. Fusce ut erat sapien 1.</p>'),new tabsItem('item2','<p>Tab 2</p>','<p>Nulla condimentum finibus massa, sit amet viverra purus luctus ac. Fusce ut erat sapien 2.</p>'),new tabsItem('item3','<p>Tab 3</p>','<p>Nulla condimentum finibus massa, sit amet viverra purus luctus ac. Fusce ut erat sapien 3.</p>')]);
     }
+    addEmbedModule(gE) {
+        gE.moduleType = new embedModule(11,'embed-module','<h1>Embed</h1>','https://www.youtube.com/embed/rn5s6H_Yamo');
+    }
     closeTextEditor(event:any,gE) {
         if( event.srcElement.className == 'row sortable' || event.srcElement.className == 'grid-block-content') {
             $('.editable').each(function(){
@@ -133,6 +138,9 @@ export class GridBlock {
                 $(this).removeAttr("style");
             });
             $('.editable-tabs-item-title').each(function(){
+                $(this).summernote('destroy');
+            });
+            $('.editable-embed-title').each(function(){
                 $(this).summernote('destroy');
             });
         }

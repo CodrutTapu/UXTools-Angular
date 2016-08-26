@@ -1,6 +1,6 @@
 "use strict";
-var user = (function () {
-    function user(id, firstName, lastName, email, password, documents) {
+var embed = (function () {
+    function embed(id, firstName, lastName, email, password, documents) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -8,7 +8,7 @@ var user = (function () {
         this.password = this.password;
         this.documents = documents;
     }
-    return user;
+    return embed;
 }());
-exports.user = user;
-//# sourceMappingURL=user.js.map
+exports.embed = embed;
+//# sourceMappingURL=embed.js.map

@@ -13,19 +13,20 @@ var ng2_dnd_1 = require('ng2-dnd/ng2-dnd');
 var gridBlock_component_1 = require('./gridBlock.component');
 var gridElem_1 = require('./gridElem');
 var user_1 = require('./user');
+var persona_1 = require('./persona');
 var textModule_1 = require('./textModule');
 var http_service_1 = require('./http.service');
 var TopNavComponent = (function () {
     function TopNavComponent(_httpService) {
         this._httpService = _httpService;
-        this.currentUser = new user_1.user(99087, 'John Doe', '');
+        this.currentUser = new user_1.user(99087, 'John', 'Doe', 'johndoe@gmail.com', 'pa$$w0rd', []);
         //gridElements:Array<gridElem> = [new gridElem(4,1,new textModule(1,'text-module','<h1>Text Field 1</h1><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In pharetra felis in sem porta feugiat.</p>')), new gridElem(4,2,new textModule(1,'text-module','<h1>Text Field 2</h1><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In pharetra felis in sem porta feugiat.</p>')), new gridElem(4,3,new textModule(1,'text-module','<h1>Text Field 3</h1><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In pharetra felis in sem porta feugiat.</p>'))];
         this.gridElements = [];
         this.id = 3;
     }
     TopNavComponent.prototype.addPersona = function () {
-        this.currentUser.documents = [new gridElem_1.gridElem(4, 1, new textModule_1.textModule(1, 'text-module', '<h1>Text Field 1</h1><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In pharetra felis in sem porta feugiat.</p>')), new gridElem_1.gridElem(4, 2, new textModule_1.textModule(1, 'text-module', '<h1>Text Field 2</h1><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In pharetra felis in sem porta feugiat.</p>')), new gridElem_1.gridElem(4, 3, new textModule_1.textModule(1, 'text-module', '<h1>Text Field 3</h1><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In pharetra felis in sem porta feugiat.</p>'))];
-        this.gridElements = this.currentUser.documents;
+        this.currentUser.documents.push(new persona_1.persona('default-persona', [new gridElem_1.gridElem(4, 1, new textModule_1.textModule(1, 'text-module', '<h1>Text Field 1</h1><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In pharetra felis in sem porta feugiat.</p>')), new gridElem_1.gridElem(4, 2, new textModule_1.textModule(1, 'text-module', '<h1>Text Field 2</h1><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In pharetra felis in sem porta feugiat.</p>')), new gridElem_1.gridElem(4, 3, new textModule_1.textModule(1, 'text-module', '<h1>Text Field 3</h1><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In pharetra felis in sem porta feugiat.</p>'))]));
+        this.gridElements = this.currentUser.documents[0].content;
     };
     TopNavComponent.prototype.addGridElement = function (dim) {
         this.gridElements.push(new gridElem_1.gridElem(dim, this.id + 1, 0));
@@ -34,7 +35,7 @@ var TopNavComponent = (function () {
     TopNavComponent.prototype.httpGet = function (currentUser) {
         var _this = this;
         this._httpService.getJSON()
-            .subscribe(function (data) { return _this.currentUser = data; }, function (error) { return alert(Error); }, function () { return _this.gridElements = _this.currentUser[0].documents; });
+            .subscribe(function (data) { return _this.currentUser = data; }, function (error) { return alert(Error); }, function () { return _this.gridElements = _this.currentUser[1].documents[0].content; });
     };
     TopNavComponent.prototype.httpPost = function (currentUser) {
         var _this = this;

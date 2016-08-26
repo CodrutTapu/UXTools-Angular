@@ -84,6 +84,9 @@ input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer
 .tabs-module:hover .module-buttons ul {
     display: block;
 }
+.embed-module:hover .module-buttons ul {
+    display: block;
+}
 /*
 ==================================
     3) Preloader

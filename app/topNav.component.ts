@@ -5,6 +5,7 @@ import {bootstrap} from '@angular/platform-browser-dynamic';
 import {GridBlock} from './gridBlock.component';
 import {gridElem} from './gridElem';
 import {user} from './user';
+import {persona} from './persona';
 import {textModule} from './textModule';
 import {HTTTPService} from './http.service';
 
@@ -17,14 +18,14 @@ import {HTTTPService} from './http.service';
 
 export class TopNavComponent {
     postData:string;
-    currentUser:any = new user(99087,'John Doe','');
+    currentUser:user = new user(99087,'John','Doe','johndoe@gmail.com','pa$$w0rd',[]);
     //gridElements:Array<gridElem> = [new gridElem(4,1,new textModule(1,'text-module','<h1>Text Field 1</h1><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In pharetra felis in sem porta feugiat.</p>')), new gridElem(4,2,new textModule(1,'text-module','<h1>Text Field 2</h1><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In pharetra felis in sem porta feugiat.</p>')), new gridElem(4,3,new textModule(1,'text-module','<h1>Text Field 3</h1><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In pharetra felis in sem porta feugiat.</p>'))];
     gridElements:Array<gridElem> = [];
     id:number= 3;
 
     addPersona() {
-        this.currentUser.documents = [new gridElem(4,1,new textModule(1,'text-module','<h1>Text Field 1</h1><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In pharetra felis in sem porta feugiat.</p>')), new gridElem(4,2,new textModule(1,'text-module','<h1>Text Field 2</h1><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In pharetra felis in sem porta feugiat.</p>')), new gridElem(4,3,new textModule(1,'text-module','<h1>Text Field 3</h1><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In pharetra felis in sem porta feugiat.</p>'))];
-        this.gridElements = this.currentUser.documents;
+        this.currentUser.documents.push(new persona('default-persona',[new gridElem(4,1,new textModule(1,'text-module','<h1>Text Field 1</h1><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In pharetra felis in sem porta feugiat.</p>')), new gridElem(4,2,new textModule(1,'text-module','<h1>Text Field 2</h1><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In pharetra felis in sem porta feugiat.</p>')), new gridElem(4,3,new textModule(1,'text-module','<h1>Text Field 3</h1><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In pharetra felis in sem porta feugiat.</p>'))]));
+        this.gridElements = this.currentUser.documents[0].content;
     }
 
     addGridElement(dim:number) {
@@ -39,7 +40,7 @@ export class TopNavComponent {
             .subscribe(
                 data => this.currentUser = data,
                 error => alert(Error),
-                    () => this.gridElements = this.currentUser[0].documents
+                    () => this.gridElements = this.currentUser[1].documents[0].content
             );
     }
 
