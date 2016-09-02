@@ -12,7 +12,6 @@
 .bar-graph-module .progress {
     height: 18px;
     border-radius: 0;
-
 }
 .bar-graph-module .progress:hover {
     cursor: pointer;

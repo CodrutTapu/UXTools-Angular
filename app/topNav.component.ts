@@ -40,7 +40,7 @@ export class TopNavComponent {
             .subscribe(
                 data => this.currentUser = data,
                 error => alert(Error),
-                    () => this.gridElements = this.currentUser[1].documents[0].content
+                    () => this.gridElements = this.currentUser[0].documents[0].content
             );
     }
 

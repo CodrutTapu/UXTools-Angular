@@ -3,23 +3,24 @@
         <div class="grid-block-control" dnd-sortable [sortableIndex]="i">
             <ul>
                 <li class="minus" (click)="minGridElem(gE)"><span class="glyphicon glyphicon-chevron-left"></span></li>
-                <li class="dimension">{{gE.dim / 2}}/6</li>
                 <li class="plus" (click)="maxGridElem(gE)"><span class="glyphicon glyphicon-chevron-right"></span></li>
+                <li class="dimension">{{gE.dim / 2}}/6</li>
                 <li class="delete" (click)="deleteGridElem(gE)"><span class="glyphicon glyphicon-trash"></span></li>
                 <div class="btn-group add">
                     <li data-toggle="dropdown"><span class="glyphicon glyphicon-plus"></span></li>
                     <ul class="dropdown-menu">
                         <li (click)="addTextModule(gE)"><a href="#"><span class="glyphicon glyphicon-text-width"></span> Text</a></li>
                         <li (click)="addImageModule(gE)"><a href="#"><span class="glyphicon glyphicon-picture"></span> Image</a></li>
-                        <li (click)="addBarGraphModule(gE)"><a href="#"><span class="glyphicon glyphicon-tasks"></span> Bar Graph</a></li>
+                        <li (click)="addBarGraphModule(gE)"><a href="#"><i class="fa fa-bar-chart" aria-hidden="true"></i> Bar Graph</a></li>
                         <li (click)="addSocialMediaModule(gE)"><a href="#"><span class="glyphicon glyphicon-user"></span> Social Media</a></li>
-                        <li (click)="addTagModule(gE)"><a href="#"><span class="glyphicon glyphicon-barcode"></span> Tags</a></li>
+                        <li (click)="addTagModule(gE)"><a href="#"><i class="fa fa-tags" aria-hidden="true"></i> Tags</a></li>
                         <li (click)="addEmailModule(gE)"><a href="#"><span class="glyphicon glyphicon-envelope"></span> Email</a></li>
-                        <li (click)="addScaleChartModule(gE)"><a href="#"><span class="glyphicon glyphicon-th-list"></span> Scale Chart</a></li>
-                        <li (click)="addPieChartModule(gE)"><a href="#"><span class="glyphicon glyphicon-record"></span> Pie Chart</a></li>
+                        <li (click)="addScaleChartModule(gE)"><a href="#"><i class="fa fa-balance-scale" aria-hidden="true"></i> Scale Chart</a></li>
+                        <li (click)="addPieChartModule(gE)"><a href="#"><i class="fa fa-pie-chart" aria-hidden="true"></i> Pie Chart</a></li>
                         <li (click)="addAccordionModule(gE)"><a href="#"><span class="glyphicon glyphicon-menu-hamburger"></span> Accordion</a></li>
                         <li (click)="addTabsModule(gE)"><a href="#"><span class="glyphicon glyphicon-option-horizontal"></span> Tabs</a></li>
                         <li (click)="addEmbedModule(gE)"><a href="#"><i class="fa fa-code" aria-hidden="true"></i> Embed</a></li>
+                        <li (click)="addDevicesPlatformsModule(gE)"><a href="#"><i class="fa fa-puzzle-piece" aria-hidden="true"></i> Devices & Platforms</a></li>
                     </ul>
                 </div>
             </ul>
@@ -37,6 +38,7 @@
                     <accordion-module *ngSwitchCase="9" [gE]="gE"></accordion-module>
                     <tabs-module *ngSwitchCase="10" [gE]="gE"></tabs-module>
                     <embed-module *ngSwitchCase="11" [gE]="gE"></embed-module>
+                    <devices-platforms-module *ngSwitchCase="12" [gE]="gE"></devices-platforms-module>
             </div>
         </div>
     </div>

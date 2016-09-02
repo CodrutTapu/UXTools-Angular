@@ -15,6 +15,7 @@ input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer
 3) Preloader
 4) Grid
 5) Others
+6) Buttons
 */
 /*
 ==================================
@@ -87,6 +88,9 @@ input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer
 .embed-module:hover .module-buttons ul {
     display: block;
 }
+.devices-platforms-module:hover .module-buttons ul {
+    display: block;
+}
 /*
 ==================================
     3) Preloader
@@ -122,17 +126,17 @@ input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer
     border-top: none;
     padding: 35px 5px 2px 5px;
 }
-.grid-block  .grid-block-control ul {
+.grid-block .grid-block-control ul {
     list-style-type: none;
-    margin: 0 5px 0 5px;
+    margin: 0 5px 0 0;
     padding: 0;
     line-height: 27px;
 }
 .grid-block  .grid-block-control .dropdown-menu {
     border-radius: 0;
     line-height: 5px;
-    top: 24px;
-    left: -120px;
+    top: 25px;
+    left: -133px;
 }
 .grid-block  .grid-block-control .dropdown-menu li {
     padding: 0;
@@ -146,10 +150,25 @@ input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer
 }
 .grid-block-control ul li {
     display: inline;
-    padding: 0 3px;
+    padding: 0 5px;
 }
 .grid-block-control ul li:hover {
     cursor: pointer;
+}
+.grid-block-control .minus {
+    background: #d9534f;
+    padding: 5px 8px;
+    margin-right: -4px;
+}
+.grid-block-control .minus:hover {
+    background: #c9302c;
+}
+.grid-block-control .plus {
+    background: #5cb85c;
+    padding: 5px 8px;
+}
+.grid-block-control .plus:hover {
+    background: #449d44;
 }
 .grid [class*="col-md"]{
     padding: 0 5px;
@@ -157,7 +176,7 @@ input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer
 .grid-block .grid-block-control {
     background: #001926;
     color: #fff;
-    height: 25px;
+    height: 26px;
     z-index: 999;
     cursor: move;
 }
@@ -256,4 +275,20 @@ input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer
 }
 .tabs-module .note-editable {
     padding: 10px !important;
+}
+/*
+==================================
+    5) Buttons
+==================================
+*/
+.btn-custom-1 {
+    border-radius: 0;
+    color: #fff;
+    background: #074c70;
+    font-weight: bold;
+    transition: background .5s;
+}
+.btn-custom-1:hover {
+    color: #fff;
+    background: #001926;
 }

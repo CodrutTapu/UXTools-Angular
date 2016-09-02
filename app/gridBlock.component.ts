@@ -28,6 +28,9 @@ import {tabsModule} from './tabsModule';
 import {tabsItem} from './tabsItem';
 import {EmbedModule} from './embed.module';
 import {embedModule} from './embedModule';
+import {DevicesPlatformsModule} from './devices-platforms.module';
+import {devicesPlatformsModule} from './devicesPlatformsModule';
+import {devicePlatform} from './devicePlatform';
 
 declare var $: any;
 
@@ -35,7 +38,7 @@ declare var $: any;
     selector: 'grid-block',
     templateUrl: 'app/grid-block.html',
     inputs: ['gridElements','currentUser'],
-    directives: [DND_DIRECTIVES, TextModule, ImageModule, BarGraphModule, SocialMediaModule, TagModule, EmailModule, ScaleChartModule, PieChartModule, AccordionModule, TabsModule, EmbedModule]
+    directives: [DND_DIRECTIVES, TextModule, ImageModule, BarGraphModule, SocialMediaModule, TagModule, EmailModule, ScaleChartModule, PieChartModule, AccordionModule, TabsModule, EmbedModule, DevicesPlatformsModule]
 })
 
 export class GridBlock {
@@ -91,6 +94,20 @@ export class GridBlock {
     }
     addEmbedModule(gE) {
         gE.moduleType = new embedModule(11,'embed-module','<h1>Embed</h1>','https://www.youtube.com/embed/rn5s6H_Yamo');
+    }
+    addDevicesPlatformsModule(gE) {
+        gE.moduleType = new devicesPlatformsModule(12,'devices-platforms-module',[new devicePlatform('<i class="fa fa-mobile" aria-hidden="true"></i>',true,'Mobile'),
+                                                                                    new devicePlatform('<i class="fa fa-tablet" aria-hidden="true"></i>',true,'Tablet'),
+                                                                                    new devicePlatform('<i class="fa fa-laptop" aria-hidden="true"></i>',true,'Laptop'),
+                                                                                    new devicePlatform('<i class="fa fa-desktop" aria-hidden="true"></i>',false,'Desktop'),
+                                                                                    new devicePlatform('<i class="fa fa-television" aria-hidden="true"></i>',false,'TV'),
+                                                                                    new devicePlatform('<i class="fa fa-windows" aria-hidden="true"></i>',false,'Windows'),
+                                                                                    new devicePlatform('<i class="fa fa-apple" aria-hidden="true"></i>',false,'Apple'),
+                                                                                    new devicePlatform('<i class="fa fa-linux" aria-hidden="true"></i>',false,'Linux'),
+                                                                                    new devicePlatform('<i class="fa fa-chrome" aria-hidden="true"></i>',false,'Chrome'),
+                                                                                    new devicePlatform('<i class="fa fa-firefox" aria-hidden="true"></i>',false,'Firefox'),
+                                                                                    new devicePlatform('<i class="fa fa-internet-explorer" aria-hidden="true"></i>',false,'IE'),
+                                                                                    new devicePlatform('<i class="fa fa-safari" aria-hidden="true"></i>',false,'Safari')]);
     }
     closeTextEditor(event:any,gE) {
         if( event.srcElement.className == 'row sortable' || event.srcElement.className == 'grid-block-content') {

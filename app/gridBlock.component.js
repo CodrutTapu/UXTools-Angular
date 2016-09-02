@@ -37,6 +37,9 @@ var tabsModule_1 = require('./tabsModule');
 var tabsItem_1 = require('./tabsItem');
 var embed_module_1 = require('./embed.module');
 var embedModule_1 = require('./embedModule');
+var devices_platforms_module_1 = require('./devices-platforms.module');
+var devicesPlatformsModule_1 = require('./devicesPlatformsModule');
+var devicePlatform_1 = require('./devicePlatform');
 var GridBlock = (function () {
     function GridBlock() {
     }
@@ -93,6 +96,20 @@ var GridBlock = (function () {
     };
     GridBlock.prototype.addEmbedModule = function (gE) {
         gE.moduleType = new embedModule_1.embedModule(11, 'embed-module', '<h1>Embed</h1>', 'https://www.youtube.com/embed/rn5s6H_Yamo');
+    };
+    GridBlock.prototype.addDevicesPlatformsModule = function (gE) {
+        gE.moduleType = new devicesPlatformsModule_1.devicesPlatformsModule(12, 'devices-platforms-module', [new devicePlatform_1.devicePlatform('<i class="fa fa-mobile" aria-hidden="true"></i>', true, 'Mobile'),
+            new devicePlatform_1.devicePlatform('<i class="fa fa-tablet" aria-hidden="true"></i>', true, 'Tablet'),
+            new devicePlatform_1.devicePlatform('<i class="fa fa-laptop" aria-hidden="true"></i>', true, 'Laptop'),
+            new devicePlatform_1.devicePlatform('<i class="fa fa-desktop" aria-hidden="true"></i>', false, 'Desktop'),
+            new devicePlatform_1.devicePlatform('<i class="fa fa-television" aria-hidden="true"></i>', false, 'TV'),
+            new devicePlatform_1.devicePlatform('<i class="fa fa-windows" aria-hidden="true"></i>', false, 'Windows'),
+            new devicePlatform_1.devicePlatform('<i class="fa fa-apple" aria-hidden="true"></i>', false, 'Apple'),
+            new devicePlatform_1.devicePlatform('<i class="fa fa-linux" aria-hidden="true"></i>', false, 'Linux'),
+            new devicePlatform_1.devicePlatform('<i class="fa fa-chrome" aria-hidden="true"></i>', false, 'Chrome'),
+            new devicePlatform_1.devicePlatform('<i class="fa fa-firefox" aria-hidden="true"></i>', false, 'Firefox'),
+            new devicePlatform_1.devicePlatform('<i class="fa fa-internet-explorer" aria-hidden="true"></i>', false, 'IE'),
+            new devicePlatform_1.devicePlatform('<i class="fa fa-safari" aria-hidden="true"></i>', false, 'Safari')]);
     };
     GridBlock.prototype.closeTextEditor = function (event, gE) {
         if (event.srcElement.className == 'row sortable' || event.srcElement.className == 'grid-block-content') {
@@ -152,7 +169,7 @@ var GridBlock = (function () {
             selector: 'grid-block',
             templateUrl: 'app/grid-block.html',
             inputs: ['gridElements', 'currentUser'],
-            directives: [ng2_dnd_1.DND_DIRECTIVES, text_module_1.TextModule, image_module_1.ImageModule, bar_graph_module_1.BarGraphModule, social_media_module_1.SocialMediaModule, tag_module_1.TagModule, email_module_1.EmailModule, scale_chart_module_1.ScaleChartModule, pie_chart_module_1.PieChartModule, accordion_module_1.AccordionModule, tabs_module_1.TabsModule, embed_module_1.EmbedModule]
+            directives: [ng2_dnd_1.DND_DIRECTIVES, text_module_1.TextModule, image_module_1.ImageModule, bar_graph_module_1.BarGraphModule, social_media_module_1.SocialMediaModule, tag_module_1.TagModule, email_module_1.EmailModule, scale_chart_module_1.ScaleChartModule, pie_chart_module_1.PieChartModule, accordion_module_1.AccordionModule, tabs_module_1.TabsModule, embed_module_1.EmbedModule, devices_platforms_module_1.DevicesPlatformsModule]
         }), 
         __metadata('design:paramtypes', [])
     ], GridBlock);

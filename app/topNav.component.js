@@ -35,7 +35,7 @@ var TopNavComponent = (function () {
     TopNavComponent.prototype.httpGet = function (currentUser) {
         var _this = this;
         this._httpService.getJSON()
-            .subscribe(function (data) { return _this.currentUser = data; }, function (error) { return alert(Error); }, function () { return _this.gridElements = _this.currentUser[1].documents[0].content; });
+            .subscribe(function (data) { return _this.currentUser = data; }, function (error) { return alert(Error); }, function () { return _this.gridElements = _this.currentUser[0].documents[0].content; });
     };
     TopNavComponent.prototype.httpPost = function (currentUser) {
         var _this = this;

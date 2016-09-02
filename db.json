@@ -20,35 +20,26 @@
             },
             {
               "dim": 4,
-              "id": 2,
-              "moduleType": {
-                "id": 1,
-                "name": "text-module",
-                "content": "<h1>Text Field 2</h1><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In pharetra felis in sem porta feugiat.</p>"
-              }
-            },
-            {
-              "dim": 4,
               "id": 4,
               "moduleType": {
-                "id": 9,
-                "name": "accordion-module",
-                "title": "<h1>Accordion</h1>",
-                "items": [
+                "id": 7,
+                "name": "scale-chart-module",
+                "title": "<h1>Scale Chart</h1>",
+                "scales": [
                   {
-                    "id": "item1",
-                    "title": "<p>Item 1</p>",
-                    "content": "<p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.</p>"
+                    "sideA": "<p>Side A</p>",
+                    "sideB": "<p>Side B</p>",
+                    "value": "60"
                   },
                   {
-                    "id": "item2",
-                    "title": "<p>Item 2</p>",
-                    "content": "<p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.</p>"
+                    "sideA": "<p>Side A</p>",
+                    "sideB": "<p>Side B</p>",
+                    "value": "19"
                   },
                   {
-                    "id": "item3",
-                    "title": "<p>Item 3</p>",
-                    "content": "<p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.</p>"
+                    "sideA": "<p>Side A</p>",
+                    "sideB": "<p>Side B</p>",
+                    "value": 100
                   }
                 ]
               }
@@ -56,162 +47,7 @@
           ]
         }
       ]
-    },
-    {
-      "id": 896233,
-      "firstName": "Jane",
-      "lastName": "Doe",
-      "email": "jonendoe@gmail.com",
-      "documents": [
-        {
-          "name": "default-persona",
-          "content": [
-            {
-              "dim": 4,
-              "id": 1,
-              "moduleType": {
-                "id": 1,
-                "name": "text-module",
-                "content": "<h1>Text Field 1</h1><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In pharetra felis in sem porta feugiat.</p>"
-              }
-            },
-            {
-              "dim": 4,
-              "id": 4,
-              "moduleType": {
-                "id": 9,
-                "name": "accordion-module",
-                "title": "<h1>Accordion</h1>",
-                "items": [
-                  {
-                    "id": "item1",
-                    "title": "<p>Item 1</p>",
-                    "content": "<p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.</p>"
-                  },
-                  {
-                    "id": "item2",
-                    "title": "<p>Item 2</p>",
-                    "content": "<p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.</p>"
-                  },
-                  {
-                    "id": "item3",
-                    "title": "<p>Item 3</p>",
-                    "content": "<p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.</p>"
-                  }
-                ]
-              }
-            }
-          ]
-        }
-      ]
-    },
-    [
-      {
-        "id": 99087,
-        "firstName": "John",
-        "lastName": "Doe",
-        "email": "johndoe@gmail.com",
-        "documents": [
-          {
-            "name": "default-persona",
-            "content": [
-              {
-                "dim": 4,
-                "id": 1,
-                "moduleType": {
-                  "id": 1,
-                  "name": "text-module",
-                  "content": "<h1>Text Field 1</h1><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In pharetra felis in sem porta feugiat.</p>"
-                }
-              },
-              {
-                "dim": 4,
-                "id": 2,
-                "moduleType": {
-                  "id": 1,
-                  "name": "text-module",
-                  "content": "<h1>Text Field 2</h1><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In pharetra felis in sem porta feugiat.</p>"
-                }
-              },
-              {
-                "dim": 4,
-                "id": 4,
-                "moduleType": {
-                  "id": 9,
-                  "name": "accordion-module",
-                  "title": "<h1>Accordion</h1>",
-                  "items": [
-                    {
-                      "id": "item1",
-                      "title": "<p>Item 1</p>",
-                      "content": "<p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.</p>"
-                    },
-                    {
-                      "id": "item2",
-                      "title": "<p>Item 2</p>",
-                      "content": "<p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.</p>"
-                    },
-                    {
-                      "id": "item3",
-                      "title": "<p>Item 3</p>",
-                      "content": "<p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.</p>"
-                    }
-                  ]
-                }
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "id": 896233,
-        "firstName": "Jane",
-        "lastName": "Doe",
-        "email": "jonendoe@gmail.com",
-        "documents": [
-          {
-            "name": "default-persona",
-            "content": [
-              {
-                "dim": 4,
-                "id": 4,
-                "moduleType": {
-                  "id": 9,
-                  "name": "accordion-module",
-                  "title": "<h1>Accordion</h1>",
-                  "items": [
-                    {
-                      "id": "item1",
-                      "title": "<p>Item 1</p>",
-                      "content": "<p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.</p>"
-                    },
-                    {
-                      "id": "item2",
-                      "title": "<p>Item 2</p>",
-                      "content": "<p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.</p>"
-                    },
-                    {
-                      "id": "item3",
-                      "title": "<p>Item 3</p>",
-                      "content": "<p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.</p>"
-                    }
-                  ]
-                }
-              },
-              {
-                "dim": 4,
-                "id": 1,
-                "moduleType": {
-                  "id": 1,
-                  "name": "text-module",
-                  "content": "<h1>Text Field 1</h1><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In pharetra felis in sem porta feugiat.</p>"
-                }
-              }
-            ]
-          }
-        ]
-      }
-    ]
+    }
   ],
   "comments": [
     {
