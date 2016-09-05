@@ -11,7 +11,7 @@ export class user {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
-        this.password = this.password;
+        this.password = password;
         this.documents = documents;
     }
 }

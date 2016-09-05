@@ -40,6 +40,9 @@ var embedModule_1 = require('./embedModule');
 var devices_platforms_module_1 = require('./devices-platforms.module');
 var devicesPlatformsModule_1 = require('./devicesPlatformsModule');
 var devicePlatform_1 = require('./devicePlatform');
+var about_module_1 = require('./about.module');
+var aboutModule_1 = require('./aboutModule');
+var aboutItem_1 = require('./aboutItem');
 var GridBlock = (function () {
     function GridBlock() {
     }
@@ -111,6 +114,15 @@ var GridBlock = (function () {
             new devicePlatform_1.devicePlatform('<i class="fa fa-internet-explorer" aria-hidden="true"></i>', false, 'IE'),
             new devicePlatform_1.devicePlatform('<i class="fa fa-safari" aria-hidden="true"></i>', false, 'Safari')]);
     };
+    GridBlock.prototype.addAboutModule = function (gE) {
+        gE.moduleType = new aboutModule_1.aboutModule(13, 'about-module', [new aboutItem_1.aboutItem('<p>age</p>', '<p>1-100</p>'),
+            new aboutItem_1.aboutItem('<p>occupation</p>', '<p>What they do</p>'),
+            new aboutItem_1.aboutItem('<p>status</p>', '<p>Single, Marries, Etc</p>'),
+            new aboutItem_1.aboutItem('<p>location</p>', '<p>Where they live/work</p>'),
+            new aboutItem_1.aboutItem('<p>tier</p>', '<p>Frequency of use</p>'),
+            new aboutItem_1.aboutItem('<p>archetype</p>', '<p>Character model</p>'),
+        ]);
+    };
     GridBlock.prototype.closeTextEditor = function (event, gE) {
         if (event.srcElement.className == 'row sortable' || event.srcElement.className == 'grid-block-content') {
             $('.editable').each(function () {
@@ -162,6 +174,12 @@ var GridBlock = (function () {
             $('.editable-embed-title').each(function () {
                 $(this).summernote('destroy');
             });
+            $('.editable-about-item-name').each(function () {
+                $(this).summernote('destroy');
+            });
+            $('.editable-about-item-value').each(function () {
+                $(this).summernote('destroy');
+            });
         }
     };
     GridBlock = __decorate([
@@ -169,7 +187,7 @@ var GridBlock = (function () {
             selector: 'grid-block',
             templateUrl: 'app/grid-block.html',
             inputs: ['gridElements', 'currentUser'],
-            directives: [ng2_dnd_1.DND_DIRECTIVES, text_module_1.TextModule, image_module_1.ImageModule, bar_graph_module_1.BarGraphModule, social_media_module_1.SocialMediaModule, tag_module_1.TagModule, email_module_1.EmailModule, scale_chart_module_1.ScaleChartModule, pie_chart_module_1.PieChartModule, accordion_module_1.AccordionModule, tabs_module_1.TabsModule, embed_module_1.EmbedModule, devices_platforms_module_1.DevicesPlatformsModule]
+            directives: [ng2_dnd_1.DND_DIRECTIVES, text_module_1.TextModule, image_module_1.ImageModule, bar_graph_module_1.BarGraphModule, social_media_module_1.SocialMediaModule, tag_module_1.TagModule, email_module_1.EmailModule, scale_chart_module_1.ScaleChartModule, pie_chart_module_1.PieChartModule, accordion_module_1.AccordionModule, tabs_module_1.TabsModule, embed_module_1.EmbedModule, devices_platforms_module_1.DevicesPlatformsModule, about_module_1.AboutModule]
         }), 
         __metadata('design:paramtypes', [])
     ], GridBlock);

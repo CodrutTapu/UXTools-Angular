@@ -12,6 +12,7 @@ declare var $: any;
 
 })
 export class TextModule {
+    test;
     deleteTextModule(gE) {
         gE.moduleType = {};
     }
@@ -29,5 +30,8 @@ export class TextModule {
                 }
             });
         });
+    }
+    testa(gE) {
+        gE.bgColor = this.test;
     }
 }

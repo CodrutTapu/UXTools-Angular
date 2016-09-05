@@ -31,14 +31,16 @@ import {embedModule} from './embedModule';
 import {DevicesPlatformsModule} from './devices-platforms.module';
 import {devicesPlatformsModule} from './devicesPlatformsModule';
 import {devicePlatform} from './devicePlatform';
-
+import {AboutModule} from './about.module';
+import {aboutModule} from './aboutModule';
+import {aboutItem} from './aboutItem';
 declare var $: any;
 
 @Component({
     selector: 'grid-block',
     templateUrl: 'app/grid-block.html',
     inputs: ['gridElements','currentUser'],
-    directives: [DND_DIRECTIVES, TextModule, ImageModule, BarGraphModule, SocialMediaModule, TagModule, EmailModule, ScaleChartModule, PieChartModule, AccordionModule, TabsModule, EmbedModule, DevicesPlatformsModule]
+    directives: [DND_DIRECTIVES, TextModule, ImageModule, BarGraphModule, SocialMediaModule, TagModule, EmailModule, ScaleChartModule, PieChartModule, AccordionModule, TabsModule, EmbedModule, DevicesPlatformsModule, AboutModule]
 })
 
 export class GridBlock {
@@ -109,6 +111,15 @@ export class GridBlock {
                                                                                     new devicePlatform('<i class="fa fa-internet-explorer" aria-hidden="true"></i>',false,'IE'),
                                                                                     new devicePlatform('<i class="fa fa-safari" aria-hidden="true"></i>',false,'Safari')]);
     }
+    addAboutModule(gE) {
+        gE.moduleType = new aboutModule(13,'about-module',[new aboutItem('<p>age</p>','<p>1-100</p>'),
+                                                            new aboutItem('<p>occupation</p>','<p>What they do</p>'),
+                                                            new aboutItem('<p>status</p>','<p>Single, Marries, Etc</p>'),
+                                                            new aboutItem('<p>location</p>','<p>Where they live/work</p>'),
+                                                            new aboutItem('<p>tier</p>','<p>Frequency of use</p>'),
+                                                            new aboutItem('<p>archetype</p>','<p>Character model</p>'),
+                                                            ]);
+    }
     closeTextEditor(event:any,gE) {
         if( event.srcElement.className == 'row sortable' || event.srcElement.className == 'grid-block-content') {
             $('.editable').each(function(){
@@ -158,6 +169,12 @@ export class GridBlock {
                 $(this).summernote('destroy');
             });
             $('.editable-embed-title').each(function(){
+                $(this).summernote('destroy');
+            });
+            $('.editable-about-item-name').each(function(){
+                $(this).summernote('destroy');
+            });
+            $('.editable-about-item-value').each(function(){
                 $(this).summernote('destroy');
             });
         }

@@ -30,6 +30,9 @@ var TextModule = (function () {
             });
         });
     };
+    TextModule.prototype.testa = function (gE) {
+        gE.bgColor = this.test;
+    };
     TextModule = __decorate([
         core_1.Component({
             selector: 'text-module',

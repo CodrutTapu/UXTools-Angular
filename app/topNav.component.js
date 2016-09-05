@@ -25,11 +25,11 @@ var TopNavComponent = (function () {
         this.id = 3;
     }
     TopNavComponent.prototype.addPersona = function () {
-        this.currentUser.documents.push(new persona_1.persona('default-persona', [new gridElem_1.gridElem(4, 1, new textModule_1.textModule(1, 'text-module', '<h1>Text Field 1</h1><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In pharetra felis in sem porta feugiat.</p>')), new gridElem_1.gridElem(4, 2, new textModule_1.textModule(1, 'text-module', '<h1>Text Field 2</h1><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In pharetra felis in sem porta feugiat.</p>')), new gridElem_1.gridElem(4, 3, new textModule_1.textModule(1, 'text-module', '<h1>Text Field 3</h1><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In pharetra felis in sem porta feugiat.</p>'))]));
+        this.currentUser.documents.push(new persona_1.persona('default-persona', [new gridElem_1.gridElem(4, 1, new textModule_1.textModule(1, 'text-module', '<h1>Text Field 1</h1><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In pharetra felis in sem porta feugiat.</p>'), ''), new gridElem_1.gridElem(4, 2, new textModule_1.textModule(1, 'text-module', '<h1>Text Field 2</h1><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In pharetra felis in sem porta feugiat.</p>'), ''), new gridElem_1.gridElem(4, 3, new textModule_1.textModule(1, 'text-module', '<h1>Text Field 3</h1><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In pharetra felis in sem porta feugiat.</p>'), '')]));
         this.gridElements = this.currentUser.documents[0].content;
     };
     TopNavComponent.prototype.addGridElement = function (dim) {
-        this.gridElements.push(new gridElem_1.gridElem(dim, this.id + 1, 0));
+        this.gridElements.push(new gridElem_1.gridElem(dim, this.id + 1, 0, ''));
         this.id = this.id + 1;
     };
     TopNavComponent.prototype.httpGet = function (currentUser) {

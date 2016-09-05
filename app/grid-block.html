@@ -21,6 +21,7 @@
                         <li (click)="addTabsModule(gE)"><a href="#"><span class="glyphicon glyphicon-option-horizontal"></span> Tabs</a></li>
                         <li (click)="addEmbedModule(gE)"><a href="#"><i class="fa fa-code" aria-hidden="true"></i> Embed</a></li>
                         <li (click)="addDevicesPlatformsModule(gE)"><a href="#"><i class="fa fa-puzzle-piece" aria-hidden="true"></i> Devices & Platforms</a></li>
+                        <li (click)="addAboutModule(gE)"><a href="#"><i class="fa fa-th-list" aria-hidden="true"></i> About</a></li>
                     </ul>
                 </div>
             </ul>
@@ -39,11 +40,11 @@
                     <tabs-module *ngSwitchCase="10" [gE]="gE"></tabs-module>
                     <embed-module *ngSwitchCase="11" [gE]="gE"></embed-module>
                     <devices-platforms-module *ngSwitchCase="12" [gE]="gE"></devices-platforms-module>
+                    <about-module *ngSwitchCase="13" [gE]="gE"></about-module>
             </div>
         </div>
     </div>
 </div>
-
 
 <pre>
     {{currentUser | json}}

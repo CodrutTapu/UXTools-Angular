@@ -5,6 +5,7 @@
       "firstName": "John",
       "lastName": "Doe",
       "email": "johndoe@gmail.com",
+      "password": "pa$$w0rd",
       "documents": [
         {
           "name": "default-persona",
@@ -13,14 +14,65 @@
               "dim": 4,
               "id": 1,
               "moduleType": {
-                "id": 1,
-                "name": "text-module",
-                "content": "<h1>Text Field 1</h1><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In pharetra felis in sem porta feugiat.</p>"
+                "id": 8,
+                "name": "pie-chart-module",
+                "title": "<h1>Pie Chart</h1>",
+                "labels": [
+                  "Red",
+                  "Blue",
+                  "Yellow"
+                ],
+                "data": [
+                  12,
+                  19,
+                  3
+                ]
               }
             },
             {
               "dim": 4,
               "id": 4,
+              "moduleType": {
+                "id": 9,
+                "name": "accordion-module",
+                "title": "<h1>Accordion</h1>",
+                "items": [
+                  {
+                    "id": "item1",
+                    "title": "<p>Item 1</p>",
+                    "content": "<p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.</p>"
+                  },
+                  {
+                    "id": "item2",
+                    "title": "<p>Item 2</p>",
+                    "content": "<p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.</p>"
+                  },
+                  {
+                    "id": "item3",
+                    "title": "<p>Item 3</p>",
+                    "content": "<p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.</p>"
+                  },
+                  {
+                    "id": "item4",
+                    "title": "<p>New Item</p>",
+                    "content": "<p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.</p>"
+                  },
+                  {
+                    "id": "item5",
+                    "title": "<p>New Item</p>",
+                    "content": "<p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.</p>"
+                  },
+                  {
+                    "id": "item6",
+                    "title": "<p>New Item</p>",
+                    "content": "<p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.</p>"
+                  }
+                ]
+              }
+            },
+            {
+              "dim": 4,
+              "id": 5,
               "moduleType": {
                 "id": 7,
                 "name": "scale-chart-module",
@@ -29,17 +81,37 @@
                   {
                     "sideA": "<p>Side A</p>",
                     "sideB": "<p>Side B</p>",
-                    "value": "60"
+                    "value": 0
                   },
                   {
                     "sideA": "<p>Side A</p>",
                     "sideB": "<p>Side B</p>",
-                    "value": "19"
+                    "value": 50
                   },
                   {
                     "sideA": "<p>Side A</p>",
                     "sideB": "<p>Side B</p>",
                     "value": 100
+                  },
+                  {
+                    "sideA": "side A",
+                    "sideB": "side B",
+                    "value": "25"
+                  },
+                  {
+                    "sideA": "side A",
+                    "sideB": "side B",
+                    "value": "84"
+                  },
+                  {
+                    "sideA": "side A",
+                    "sideB": "side B",
+                    "value": "28"
+                  },
+                  {
+                    "sideA": "side A",
+                    "sideB": "side B",
+                    "value": "77"
                   }
                 ]
               }

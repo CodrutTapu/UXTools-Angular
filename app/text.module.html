@@ -1,7 +1,9 @@
-<div class="text-module white-brd"><!-- Text Module -->
+<div class="text-module white-brd" [style.background]="gE.bgColor"><!-- Text Module -->
     <div class="module-buttons">
         <ul class="no-pad">
-            <li (click)="deleteTextModule(gE)" class="delete"><i class="fa fa-trash fa-lg" aria-hidden="true"></i></li>
+            <!-- <li><input type="text" name="name" value="" [(ngModel)]="test" (keyup)="testa(gE)"></li> -->
+            <li title="Background Color"><i class="fa fa-tint fa-lg" aria-hidden="true"></i></li>
+            <li (click)="deleteTextModule(gE)" class="delete" title="Delete Module"><i class="fa fa-trash fa-lg" aria-hidden="true"></i></li>
         </ul>
     </div>
     <div class="editable-text-content" [innerHTML]="gE.moduleType.content" (click)="updateTextModule(gE)"></div>
