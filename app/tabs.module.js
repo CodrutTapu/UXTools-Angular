@@ -10,6 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var tabsItem_1 = require('./tabsItem');
+var bgColor_module_1 = require('./bgColor.module');
 var TabsModule = (function () {
     function TabsModule() {
         this.i = 4;
@@ -59,6 +60,7 @@ var TabsModule = (function () {
             selector: 'tabs-module',
             templateUrl: 'app/tabs.module.html',
             styleUrls: ['app/tabs.module.css'],
+            directives: [bgColor_module_1.bgColorModule],
             inputs: ['gE']
         }), 
         __metadata('design:paramtypes', [])

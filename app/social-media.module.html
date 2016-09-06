@@ -1,8 +1,9 @@
-<div class="social-media-module white-brd">
+<div class="social-media-module white-brd" [style.background]="gE.bgColor"><!-- Social Media Module -->
     <div class="module-buttons">
         <ul class="no-pad">
-            <li class="edit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></li>
-            <li class="delete" (click)="deleteSocialMediaModule(gE)"><i class="fa fa-trash fa-lg" aria-hidden="true"></i></li>
+            <li class="edit" title="Edit Social Links"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></li>
+            <li class="delete" (click)="deleteSocialMediaModule(gE)" title="Delete Module"><i class="fa fa-trash fa-lg" aria-hidden="true"></i></li>
+            <bgColor-module [gE]="gE"></bgColor-module>
         </ul>
     </div>
     <div class="edit-social-links">

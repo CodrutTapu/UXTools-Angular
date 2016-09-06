@@ -3,15 +3,17 @@ import {AppComponent} from './app.component';
 import {bootstrap} from '@angular/platform-browser-dynamic';
 import {GridBlock} from './gridBlock.component';
 import { SafeResourceUrl, DomSanitizationService } from '@angular/platform-browser';
+import {bgColorModule} from './bgColor.module';
 declare var $: any;
 
 @Component({
   selector: 'embed-module',
   templateUrl: 'app/embed.module.html',
   styleUrls: ['app/embed.module.css'],
+  directives: [bgColorModule],
   inputs: ['gE']
-
 })
+
 export class EmbedModule {
     embedUrl;
     url: SafeResourceUrl;

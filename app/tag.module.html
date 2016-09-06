@@ -1,12 +1,13 @@
-<div class="tag-module white-brd clearfix">
+<div class="tag-module white-brd clearfix" [style.background]="gE.bgColor"><!-- Tag Module -->
     <div class="module-buttons">
         <ul class="no-pad">
-            <li class="add" (click)="addTag(gE)"><i class="fa fa-plus fa-lg" aria-hidden="true"></i></li>
-            <li class="delete" (click)="deleteTagModule(gE)"><i class="fa fa-trash fa-lg" aria-hidden="true"></i></li>
+            <li class="add" (click)="addTag(gE)" title="Add Tag"><i class="fa fa-plus fa-lg" aria-hidden="true"></i></li>
+            <li class="delete" (click)="deleteTagModule(gE)" title="Delete Module"><i class="fa fa-trash fa-lg" aria-hidden="true"></i></li>
+            <bgColor-module [gE]="gE"></bgColor-module>
         </ul>
     </div>
     <div class="tag" *ngFor="let tag of gE.moduleType.tags">
         <div class="editable-tag" [innerHTML]="tag.name" (click)="updateTag(tag)"></div>
-        <div class="delete-tag" (click)="deleteTag(gE, tag)"><i class="fa fa-times" aria-hidden="true"></i></div>
+        <div class="delete-tag" (click)="deleteTag(gE, tag)" title="Delete Tag"><i class="fa fa-times" aria-hidden="true"></i></div>
     </div>
 </div>

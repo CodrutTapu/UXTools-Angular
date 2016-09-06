@@ -2,12 +2,14 @@ import { Component } from '@angular/core';
 import {AppComponent} from './app.component';
 import {bootstrap} from '@angular/platform-browser-dynamic';
 import {GridBlock} from './gridBlock.component';
+import {bgColorModule} from './bgColor.module';
 declare var $: any;
 
 @Component({
   selector: 'email-module',
   templateUrl: 'app/email.module.html',
   styleUrls: ['app/email.module.css'],
+  directives: [bgColorModule],
   inputs: ['gE']
 
 })

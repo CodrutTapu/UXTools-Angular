@@ -2,17 +2,18 @@ import { Component } from '@angular/core';
 import {AppComponent} from './app.component';
 import {bootstrap} from '@angular/platform-browser-dynamic';
 import {GridBlock} from './gridBlock.component';
+import {bgColorModule} from './bgColor.module';
 declare var $: any;
 
 @Component({
   selector: 'text-module',
   templateUrl: 'app/text.module.html',
   styleUrls:  ['app/text.module.css'],
+  directives: [bgColorModule],
   inputs: ['gE']
 
 })
 export class TextModule {
-    test;
     deleteTextModule(gE) {
         gE.moduleType = {};
     }
@@ -30,8 +31,5 @@ export class TextModule {
                 }
             });
         });
-    }
-    testa(gE) {
-        gE.bgColor = this.test;
     }
 }

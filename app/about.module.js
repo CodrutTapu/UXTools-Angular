@@ -10,6 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var aboutItem_1 = require('./aboutItem');
+var bgColor_module_1 = require('./bgColor.module');
 var AboutModule = (function () {
     function AboutModule() {
     }
@@ -57,6 +58,7 @@ var AboutModule = (function () {
             selector: 'about-module',
             templateUrl: 'app/about.module.html',
             styleUrls: ['app/about.module.css'],
+            directives: [bgColor_module_1.bgColorModule],
             inputs: ['gE']
         }), 
         __metadata('design:paramtypes', [])

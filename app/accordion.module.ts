@@ -3,12 +3,14 @@ import {AppComponent} from './app.component';
 import {bootstrap} from '@angular/platform-browser-dynamic';
 import {GridBlock} from './gridBlock.component';
 import {accordionItem} from './accordionItem';
+import {bgColorModule} from './bgColor.module';
 declare var $: any;
 
 @Component({
   selector: 'accordion-module',
   templateUrl: 'app/accordion.module.html',
   styleUrls: ['app/accordion.module.css'],
+  directives: [bgColorModule],
   inputs: ['gE']
 
 })
@@ -71,7 +73,7 @@ export class AccordionModule {
     }
     ngOnInit() {
         $('.accordion-module').on('show.bs.collapse','.collapse', function() {
-            
+
             $(this).parents().eq(2).find('.collapse.in').collapse('hide');
         });
     }

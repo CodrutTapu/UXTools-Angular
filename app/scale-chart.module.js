@@ -10,6 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var scaleChartModuleScale_1 = require('./scaleChartModuleScale');
+var bgColor_module_1 = require('./bgColor.module');
 var ScaleChartModule = (function () {
     function ScaleChartModule() {
     }
@@ -75,6 +76,7 @@ var ScaleChartModule = (function () {
             selector: 'scale-chart-module',
             templateUrl: 'app/scale-chart.module.html',
             styleUrls: ['app/scale-chart.module.css'],
+            directives: [bgColor_module_1.bgColorModule],
             inputs: ['gE']
         }), 
         __metadata('design:paramtypes', [])

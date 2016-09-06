@@ -9,6 +9,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var bgColor_module_1 = require('./bgColor.module');
 var EmailModule = (function () {
     function EmailModule() {
     }
@@ -38,6 +39,7 @@ var EmailModule = (function () {
             selector: 'email-module',
             templateUrl: 'app/email.module.html',
             styleUrls: ['app/email.module.css'],
+            directives: [bgColor_module_1.bgColorModule],
             inputs: ['gE']
         }), 
         __metadata('design:paramtypes', [])

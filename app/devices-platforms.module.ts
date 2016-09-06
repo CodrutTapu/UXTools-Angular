@@ -1,12 +1,14 @@
 import { Component, Input } from '@angular/core';
 import {AppComponent} from './app.component';
 import {bootstrap} from '@angular/platform-browser-dynamic';
+import {bgColorModule} from './bgColor.module';
 declare var $: any;
 
 @Component({
   selector: 'devices-platforms-module',
   templateUrl: 'app/devices-platforms.module.html',
   styleUrls: ['app/devices-platforms.module.css'],
+  directives: [bgColorModule],
   inputs: ['gE']
 
 })
@@ -15,7 +17,6 @@ export class DevicesPlatformsModule {
         setTimeout(function(){
             $('[data-toggle="tooltip"]').tooltip()
         }, 500);
-
     }
     deleteDevicesPlatformsModule(option) {
         option.status = {};

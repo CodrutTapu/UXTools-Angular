@@ -9,6 +9,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var bgColor_module_1 = require('./bgColor.module');
 var DevicesPlatformsModule = (function () {
     function DevicesPlatformsModule() {
     }
@@ -31,6 +32,7 @@ var DevicesPlatformsModule = (function () {
             selector: 'devices-platforms-module',
             templateUrl: 'app/devices-platforms.module.html',
             styleUrls: ['app/devices-platforms.module.css'],
+            directives: [bgColor_module_1.bgColorModule],
             inputs: ['gE']
         }), 
         __metadata('design:paramtypes', [])

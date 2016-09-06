@@ -10,6 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var barGraphBar_1 = require('./barGraphBar');
+var bgColor_module_1 = require('./bgColor.module');
 var BarGraphModule = (function () {
     function BarGraphModule() {
     }
@@ -61,6 +62,7 @@ var BarGraphModule = (function () {
             selector: 'bar-graph-module',
             templateUrl: 'app/bar-graph.module.html',
             styleUrls: ['app/bar-graph.module.css'],
+            directives: [bgColor_module_1.bgColorModule],
             inputs: ['gE']
         }), 
         __metadata('design:paramtypes', [])

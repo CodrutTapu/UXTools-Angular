@@ -10,6 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var accordionItem_1 = require('./accordionItem');
+var bgColor_module_1 = require('./bgColor.module');
 var AccordionModule = (function () {
     function AccordionModule() {
         this.i = 4;
@@ -79,6 +80,7 @@ var AccordionModule = (function () {
             selector: 'accordion-module',
             templateUrl: 'app/accordion.module.html',
             styleUrls: ['app/accordion.module.css'],
+            directives: [bgColor_module_1.bgColorModule],
             inputs: ['gE']
         }), 
         __metadata('design:paramtypes', [])

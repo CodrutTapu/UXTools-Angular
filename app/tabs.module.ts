@@ -3,12 +3,14 @@ import {AppComponent} from './app.component';
 import {bootstrap} from '@angular/platform-browser-dynamic';
 import {GridBlock} from './gridBlock.component';
 import {tabsItem} from './tabsItem';
+import {bgColorModule} from './bgColor.module';
 declare var $: any;
 
 @Component({
   selector: 'tabs-module',
   templateUrl: 'app/tabs.module.html',
   styleUrls: ['app/tabs.module.css'],
+  directives: [bgColorModule],
   inputs: ['gE']
 
 })

@@ -3,12 +3,14 @@ import {AppComponent} from './app.component';
 import {bootstrap} from '@angular/platform-browser-dynamic';
 import {GridBlock} from './gridBlock.component';
 import {scaleChartModuleScale} from './scaleChartModuleScale';
+import {bgColorModule} from './bgColor.module';
 declare var $: any;
 
 @Component({
   selector: 'scale-chart-module',
   templateUrl: 'app/scale-chart.module.html',
   styleUrls: ['app/scale-chart.module.css'],
+  directives: [bgColorModule],
   inputs: ['gE']
 })
 

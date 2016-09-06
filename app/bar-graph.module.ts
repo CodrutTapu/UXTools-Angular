@@ -3,12 +3,14 @@ import {AppComponent} from './app.component';
 import {bootstrap} from '@angular/platform-browser-dynamic';
 import {GridBlock} from './gridBlock.component';
 import {barGraphBar} from './barGraphBar';
+import {bgColorModule} from './bgColor.module';
 declare var $: any;
 
 @Component({
   selector: 'bar-graph-module',
   templateUrl: 'app/bar-graph.module.html',
   styleUrls: ['app/bar-graph.module.css'],
+  directives: [bgColorModule],
   inputs: ['gE']
 
 })

@@ -3,12 +3,14 @@ import {AppComponent} from './app.component';
 import {bootstrap} from '@angular/platform-browser-dynamic';
 import {GridBlock} from './gridBlock.component';
 import {tagModuleTag} from './tagModuleTag';
+import {bgColorModule} from './bgColor.module';
 declare var $: any;
 
 @Component({
   selector: 'tag-module',
   templateUrl: 'app/tag.module.html',
   styleUrls: ['app/tag.module.css'],
+  directives: [bgColorModule],
   inputs: ['gE']
 
 })

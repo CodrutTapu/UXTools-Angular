@@ -1,8 +1,9 @@
-<div class="accordion-module white-brd"><!-- Accordion Module -->
+<div class="accordion-module white-brd" [style.background]="gE.bgColor"><!-- Accordion Module -->
     <div class="module-buttons">
         <ul class="no-pad">
-            <li class="add" (click)="addAccordionItem(gE)"><i class="fa fa-plus fa-lg" aria-hidden="true"></i></li>
-            <li class="delete" (click)="deleteAccordionModule(gE)"><i class="fa fa-trash fa-lg" aria-hidden="true"></i></li>
+            <li class="add" (click)="addAccordionItem(gE)" title="Add Item"><i class="fa fa-plus fa-lg" aria-hidden="true"></i></li>
+            <li class="delete" (click)="deleteAccordionModule(gE)" title="Delete Module"><i class="fa fa-trash fa-lg" aria-hidden="true"></i></li>
+            <bgColor-module [gE]="gE"></bgColor-module>
         </ul>
     </div>
     <div class="editable-accordion-title" [innerHtml]="gE.moduleType.title" (click)="updateAccordionTitle(gE)"></div>
@@ -12,7 +13,7 @@
           <h4 class="panel-title">
               <a class="collapsed" role="button" data-toggle="collapse"  href="#{{item.id}}{{gE.id}}" aria-expanded="false" [innerHTML]="item.title" (click)="updateAccordionItemTitle(item)"></a>
           </h4>
-          <div class="delete-accordion-item" (click)="deleteAccordionItem(gE,item)">
+          <div class="delete-accordion-item" (click)="deleteAccordionItem(gE,item)" title="Delete Item">
               <i aria-hidden="true" class="fa fa-times"></i>
           </div>
         </div>

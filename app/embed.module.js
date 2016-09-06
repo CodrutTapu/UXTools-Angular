@@ -10,6 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var platform_browser_1 = require('@angular/platform-browser');
+var bgColor_module_1 = require('./bgColor.module');
 var EmbedModule = (function () {
     function EmbedModule(sanitizer) {
         this.sanitizer = sanitizer;
@@ -44,6 +45,7 @@ var EmbedModule = (function () {
             selector: 'embed-module',
             templateUrl: 'app/embed.module.html',
             styleUrls: ['app/embed.module.css'],
+            directives: [bgColor_module_1.bgColorModule],
             inputs: ['gE']
         }), 
         __metadata('design:paramtypes', [platform_browser_1.DomSanitizationService])

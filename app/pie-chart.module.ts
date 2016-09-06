@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import {AppComponent} from './app.component';
 import {bootstrap} from '@angular/platform-browser-dynamic';
 import {GridBlock} from './gridBlock.component';
+import {bgColorModule} from './bgColor.module';
 declare var $: any;
 declare var Chart:any;
 
@@ -9,6 +10,7 @@ declare var Chart:any;
   selector: 'pie-chart-module',
   templateUrl: 'app/pie-chart.module.html',
   styleUrls: ['app/pie-chart.module.css'],
+  directives: [bgColorModule],
   inputs: ['gE']
 
 })

@@ -9,6 +9,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var bgColor_module_1 = require('./bgColor.module');
 var TextModule = (function () {
     function TextModule() {
     }
@@ -30,14 +31,12 @@ var TextModule = (function () {
             });
         });
     };
-    TextModule.prototype.testa = function (gE) {
-        gE.bgColor = this.test;
-    };
     TextModule = __decorate([
         core_1.Component({
             selector: 'text-module',
             templateUrl: 'app/text.module.html',
             styleUrls: ['app/text.module.css'],
+            directives: [bgColor_module_1.bgColorModule],
             inputs: ['gE']
         }), 
         __metadata('design:paramtypes', [])

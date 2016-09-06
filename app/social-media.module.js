@@ -9,6 +9,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var bgColor_module_1 = require('./bgColor.module');
 var SocialMediaModule = (function () {
     function SocialMediaModule() {
     }
@@ -26,6 +27,7 @@ var SocialMediaModule = (function () {
             selector: 'social-media-module',
             templateUrl: 'app/social-media.module.html',
             styleUrls: ['app/social-media.module.css'],
+            directives: [bgColor_module_1.bgColorModule],
             inputs: ['gE']
         }), 
         __metadata('design:paramtypes', [])

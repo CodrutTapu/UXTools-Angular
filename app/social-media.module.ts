@@ -2,11 +2,13 @@ import { Component } from '@angular/core';
 import {AppComponent} from './app.component';
 import {bootstrap} from '@angular/platform-browser-dynamic';
 import {GridBlock} from './gridBlock.component';
+import {bgColorModule} from './bgColor.module';
 
 @Component({
   selector: 'social-media-module',
   templateUrl: 'app/social-media.module.html',
   styleUrls: ['app/social-media.module.css'],
+  directives: [bgColorModule],
   inputs: ['gE']
 
 })

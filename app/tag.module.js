@@ -10,6 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var tagModuleTag_1 = require('./tagModuleTag');
+var bgColor_module_1 = require('./bgColor.module');
 var TagModule = (function () {
     function TagModule() {
     }
@@ -42,6 +43,7 @@ var TagModule = (function () {
             selector: 'tag-module',
             templateUrl: 'app/tag.module.html',
             styleUrls: ['app/tag.module.css'],
+            directives: [bgColor_module_1.bgColorModule],
             inputs: ['gE']
         }), 
         __metadata('design:paramtypes', [])

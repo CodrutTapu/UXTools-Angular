@@ -2,12 +2,14 @@ import { Component, Input } from '@angular/core';
 import {AppComponent} from './app.component';
 import {bootstrap} from '@angular/platform-browser-dynamic';
 import {aboutItem} from './aboutItem';
+import {bgColorModule} from './bgColor.module';
 declare var $: any;
 
 @Component({
   selector: 'about-module',
   templateUrl: 'app/about.module.html',
   styleUrls: ['app/about.module.css'],
+  directives: [bgColorModule],
   inputs: ['gE']
 
 })

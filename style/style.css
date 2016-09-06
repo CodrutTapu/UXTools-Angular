@@ -58,6 +58,9 @@ input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer
 .text-module:hover .module-buttons ul{
     display: block;
 }
+.text-module:hover .colours-list{
+    display: none;
+}
 .image-module:hover .module-buttons ul{
     display: block;
 }
