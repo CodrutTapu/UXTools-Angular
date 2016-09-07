@@ -34,6 +34,8 @@ import {devicePlatform} from './devicePlatform';
 import {AboutModule} from './about.module';
 import {aboutModule} from './aboutModule';
 import {aboutItem} from './aboutItem';
+import {CountingModule} from './counting.module';
+import {countingModule} from './countingModule';
 declare var $: any;
 
 @Component({
@@ -41,7 +43,7 @@ declare var $: any;
     templateUrl: 'app/grid-block.html',
     styleUrls: ['app/grid-block.css'],
     inputs: ['gridElements','currentUser'],
-    directives: [DND_DIRECTIVES, TextModule, ImageModule, BarGraphModule, SocialMediaModule, TagModule, EmailModule, ScaleChartModule, PieChartModule, AccordionModule, TabsModule, EmbedModule, DevicesPlatformsModule, AboutModule]
+    directives: [DND_DIRECTIVES, TextModule, ImageModule, BarGraphModule, SocialMediaModule, TagModule, EmailModule, ScaleChartModule, PieChartModule, AccordionModule, TabsModule, EmbedModule, DevicesPlatformsModule, AboutModule, CountingModule]
 })
 
 export class GridBlock {
@@ -144,6 +146,11 @@ export class GridBlock {
                                                             new aboutItem('<p>tier</p>','<p>Frequency of use</p>'),
                                                             new aboutItem('<p>archetype</p>','<p>Character model</p>'),
                                                             ]);
+        gE.bgColor = "#FFFFF";
+        $('.add-module-modal').modal('hide');
+    }
+    addCountingModule(gE) {
+        gE.moduleType = new countingModule(14,'counting-module',['<p class="prefix editable-prefix">$</p>','<p class="value">00</p>','<p class="sufix">min</p>','<p>Something you want to count</p>']);
         gE.bgColor = "#FFFFF";
         $('.add-module-modal').modal('hide');
     }

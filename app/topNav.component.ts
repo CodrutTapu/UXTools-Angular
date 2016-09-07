@@ -8,11 +8,12 @@ import {user} from './user';
 import {persona} from './persona';
 import {textModule} from './textModule';
 import {HTTTPService} from './http.service';
+import {colorSchemeModule} from './colorScheme.module';
 
 @Component({
     selector: 'top-navigation',
     templateUrl: 'app/topNav.component.html',
-    directives: [DND_DIRECTIVES, GridBlock],
+    directives: [DND_DIRECTIVES, GridBlock, colorSchemeModule],
     providers: [HTTTPService],
 })
 
@@ -24,12 +25,12 @@ export class TopNavComponent {
     id:number= 3;
 
     addPersona() {
-        this.currentUser.documents.push(new persona('default-persona',[new gridElem(4,1,new textModule(1,'text-module','<h1>Text Field 1</h1><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In pharetra felis in sem porta feugiat.</p>'),''), new gridElem(4,2,new textModule(1,'text-module','<h1>Text Field 2</h1><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In pharetra felis in sem porta feugiat.</p>'),''), new gridElem(4,3,new textModule(1,'text-module','<h1>Text Field 3</h1><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In pharetra felis in sem porta feugiat.</p>'),'')]));
+        this.currentUser.documents.push(new persona('default-persona',[new gridElem(4,1,new textModule(1,'text-module','<h1>Text Field 1</h1><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In pharetra felis in sem porta feugiat.</p>'),'',''), new gridElem(4,2,new textModule(1,'text-module','<h1>Text Field 2</h1><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In pharetra felis in sem porta feugiat.</p>'),'',''), new gridElem(4,3,new textModule(1,'text-module','<h1>Text Field 3</h1><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In pharetra felis in sem porta feugiat.</p>'),'','')]));
         this.gridElements = this.currentUser.documents[0].content;
     }
 
     addGridElement(dim:number) {
-        this.gridElements.push(new gridElem(dim,this.id+1,0,''));
+        this.gridElements.push(new gridElem(dim,this.id+1,0,'#FFFFFF','#333333'));
         this.id = this.id+1;
     }
 

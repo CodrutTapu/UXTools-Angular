@@ -43,6 +43,8 @@ var devicePlatform_1 = require('./devicePlatform');
 var about_module_1 = require('./about.module');
 var aboutModule_1 = require('./aboutModule');
 var aboutItem_1 = require('./aboutItem');
+var counting_module_1 = require('./counting.module');
+var countingModule_1 = require('./countingModule');
 var GridBlock = (function () {
     function GridBlock() {
     }
@@ -149,6 +151,11 @@ var GridBlock = (function () {
         gE.bgColor = "#FFFFF";
         $('.add-module-modal').modal('hide');
     };
+    GridBlock.prototype.addCountingModule = function (gE) {
+        gE.moduleType = new countingModule_1.countingModule(14, 'counting-module', ['<p class="prefix editable-prefix">$</p>', '<p class="value">00</p>', '<p class="sufix">min</p>', '<p>Something you want to count</p>']);
+        gE.bgColor = "#FFFFF";
+        $('.add-module-modal').modal('hide');
+    };
     GridBlock.prototype.closeTextEditor = function (event, gE) {
         if (event.srcElement.className == 'row sortable' || event.srcElement.className == 'grid-block-content') {
             $('.editable').each(function () {
@@ -214,7 +221,7 @@ var GridBlock = (function () {
             templateUrl: 'app/grid-block.html',
             styleUrls: ['app/grid-block.css'],
             inputs: ['gridElements', 'currentUser'],
-            directives: [ng2_dnd_1.DND_DIRECTIVES, text_module_1.TextModule, image_module_1.ImageModule, bar_graph_module_1.BarGraphModule, social_media_module_1.SocialMediaModule, tag_module_1.TagModule, email_module_1.EmailModule, scale_chart_module_1.ScaleChartModule, pie_chart_module_1.PieChartModule, accordion_module_1.AccordionModule, tabs_module_1.TabsModule, embed_module_1.EmbedModule, devices_platforms_module_1.DevicesPlatformsModule, about_module_1.AboutModule]
+            directives: [ng2_dnd_1.DND_DIRECTIVES, text_module_1.TextModule, image_module_1.ImageModule, bar_graph_module_1.BarGraphModule, social_media_module_1.SocialMediaModule, tag_module_1.TagModule, email_module_1.EmailModule, scale_chart_module_1.ScaleChartModule, pie_chart_module_1.PieChartModule, accordion_module_1.AccordionModule, tabs_module_1.TabsModule, embed_module_1.EmbedModule, devices_platforms_module_1.DevicesPlatformsModule, about_module_1.AboutModule, counting_module_1.CountingModule]
         }), 
         __metadata('design:paramtypes', [])
     ], GridBlock);

@@ -11,8 +11,7 @@
         <div class="progress-wrapper clearfix">
             <div class="editable-bar-label" [innerHtml]="bar.label" (click)="updateBarLabel(bar)"></div>
             <div class="progress" (click)="adjustBarLength($event,bar)">
-                <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" [style.width]="bar.value+'%'">
-                </div>
+                <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" [style.width]="bar.value+'%'" [style.background]="gE.csColor"></div>
             </div>
             <div class="delete-progress-bar" (click)="deleteBar(gE,bar)" title="Delete Bar">
                 <i aria-hidden="true" class="fa fa-times"></i>

@@ -8,8 +8,8 @@
     </div>
     <div>
       <!-- Nav tabs -->
-      <ul class="nav nav-tabs" role="tablist">
-        <li *ngFor="let item of gE.moduleType.items; let index = index" [class.active]="index == 0" role="presentation" class="tab-title"><a href="#{{item.id}}{{gE.id}}" aria-controls="home" role="tab" data-toggle="tab" [innerHTML]="item.title" (click)="updateTabsItemTitle(item)"></a>
+      <ul class="nav nav-tabs" role="tablist" [style.border-color]="gE.csColor">
+        <li *ngFor="let item of gE.moduleType.items; let index = index" [class.active]="index == 0" role="presentation" class="tab-title"><a href="#{{item.id}}{{gE.id}}" aria-controls="home" role="tab" data-toggle="tab" [innerHTML]="item.title" (click)="updateTabsItemTitle(item)" [style.background]="gE.csColor"></a>
             <div class="delete-tabs-item" (click)="deleteTabsItem(gE,item)" title="Delete Item">
                 <i aria-hidden="true" class="fa fa-times"></i>
             </div>

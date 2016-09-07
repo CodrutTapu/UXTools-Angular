@@ -97,6 +97,9 @@ input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer
 .about-module:hover .module-buttons ul {
     display: block;
 }
+.counting-module:hover .module-buttons ul {
+    display: block;
+}
 /*
 ==================================
     3) Preloader
@@ -121,6 +124,7 @@ input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer
     margin-top: 100px;
     border: 1px dashed #001926;
     min-height: 30px;
+    position: relative;
 }
 .grid-block {
     margin: 10px 0;
@@ -205,6 +209,23 @@ input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer
     padding: 8px 20px;
     border-bottom: 1px solid #001926;
 }
+.grid-control-menu ul {
+    list-style-type: none;
+    position: absolute;
+    top: -25px;
+    left: -1px;
+    width: 100px;
+}
+.grid-control-menu ul li {
+    display: inline;
+    background: #001926;
+    color: #fff;
+    padding: 7px;
+    cursor: pointer;
+}
+.grid-control-menu ul li:hover {
+    background: #333;
+}
 /*
 ==================================
     5) Others
@@ -281,6 +302,17 @@ input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer
 }
 .tabs-module .note-editable {
     padding: 10px !important;
+}
+.counting-module .value {
+    font-size: 50px;
+    color: #333;
+    margin: 0 5px;
+}
+
+.counting-module .prefix, .counting-module .sufix {
+    font-size: 30px;
+    color: #666;
+    margin: 0;
 }
 /*
 ==================================

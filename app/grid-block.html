@@ -74,6 +74,10 @@
                                         <h3><i class="fa fa-th-list" aria-hidden="true"></i></h3>
                                         <p>About</p>
                                     </div>
+                                    <div class="col-md-3 module-icon" (click)="addCountingModule(gE)">
+                                        <h3><i class="fa fa-sort-numeric-asc" aria-hidden="true"></i></h3>
+                                        <p>Counting</p>
+                                    </div>
                                 </div>
                               </div>
                           <div class="modal-footer">
@@ -100,6 +104,7 @@
                     <embed-module *ngSwitchCase="11" [gE]="gE"></embed-module>
                     <devices-platforms-module *ngSwitchCase="12" [gE]="gE"></devices-platforms-module>
                     <about-module *ngSwitchCase="13" [gE]="gE"></about-module>
+                    <counting-module *ngSwitchCase="14" [gE]="gE"></counting-module>
             </div>
         </div>
     </div>
