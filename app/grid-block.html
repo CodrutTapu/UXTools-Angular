@@ -7,7 +7,7 @@
                 <li class="dimension">{{gE.dim / 2}}/6</li>
                 <li class="delete" (click)="deleteGridElem(gE)" title="Delete"><span class="glyphicon glyphicon-trash"></span></li>
                 <div class="btn-group add">
-                    <li data-toggle="dropdown" data-toggle="modal" [attr.data-target]="'#addModule' + gE.id" title="Add Module"><span class="glyphicon glyphicon-plus"></span></li>
+                    <li data-toggle="modal" [attr.data-target]="'#addModule' + gE.id" title="Add Module"><span class="glyphicon glyphicon-plus"></span></li>
                     <div class="add-module-modal modal fade" id="addModule{{gE.id}}" tabindex="-1" role="dialog">
                       <div class="modal-dialog" role="document">
                         <div class="modal-content">
@@ -74,9 +74,23 @@
                                         <h3><i class="fa fa-th-list" aria-hidden="true"></i></h3>
                                         <p>About</p>
                                     </div>
-                                    <div class="col-md-3 module-icon" (click)="addCountingModule(gE)">
+                                    <div class="col-md-3 module-icon dropdown-toggle" (click)="addSimpleCountingModule(gE)">
                                         <h3><i class="fa fa-sort-numeric-asc" aria-hidden="true"></i></h3>
-                                        <p>Counting</p>
+                                        <p>Simple Counting</p>
+                                    </div>
+                                    <div class="col-md-3 module-icon dropdown-toggle" (click)="addSufixedCountingModule(gE)">
+                                        <h3><i class="fa fa-sort-numeric-asc" aria-hidden="true"></i></h3>
+                                        <p>Sufixed Counting</p>
+                                    </div>
+                                    <div class="col-md-3 module-icon dropdown-toggle" (click)="addIntervalCountingModule(gE)">
+                                        <h3><i class="fa fa-sort-numeric-asc" aria-hidden="true"></i></h3>
+                                        <p>Interval Counting</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-3 module-icon dropdown-toggle" (click)="addPrefixedCountingModule(gE)">
+                                        <h3><i class="fa fa-sort-numeric-asc" aria-hidden="true"></i></h3>
+                                        <p>Prefixed Counting</p>
                                     </div>
                                 </div>
                               </div>

@@ -9,7 +9,7 @@
     <div class="editable-barGrpah-title" [innerHtml]="gE.moduleType.title" (click)="updateBarGraphTitle(gE)"></div>
     <div *ngFor="let bar of gE.moduleType.bars">
         <div class="progress-wrapper clearfix">
-            <div class="editable-bar-label" [innerHtml]="bar.label" (click)="updateBarLabel(bar)"></div>
+            <div class="editable-bar-label" [innerHtml]="bar.label" (click)="updateBarLabel(bar,gE)"></div>
             <div class="progress" (click)="adjustBarLength($event,bar)">
                 <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" [style.width]="bar.value+'%'" [style.background]="gE.csColor"></div>
             </div>

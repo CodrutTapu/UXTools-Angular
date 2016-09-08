@@ -25,12 +25,12 @@ export class TopNavComponent {
     id:number= 3;
 
     addPersona() {
-        this.currentUser.documents.push(new persona('default-persona',[new gridElem(4,1,new textModule(1,'text-module','<h1>Text Field 1</h1><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In pharetra felis in sem porta feugiat.</p>'),'',''), new gridElem(4,2,new textModule(1,'text-module','<h1>Text Field 2</h1><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In pharetra felis in sem porta feugiat.</p>'),'',''), new gridElem(4,3,new textModule(1,'text-module','<h1>Text Field 3</h1><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In pharetra felis in sem porta feugiat.</p>'),'','')]));
+        this.currentUser.documents.push(new persona('default-persona',[new gridElem(4,1,new textModule(1,'text-module','<h1>Text Field 1</h1><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In pharetra felis in sem porta feugiat.</p>'),'#F8F8F8','#4c7ba0'), new gridElem(4,2,new textModule(1,'text-module','<h1>Text Field 2</h1><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In pharetra felis in sem porta feugiat.</p>'),'#F8F8F8','#4c7ba0'), new gridElem(4,3,new textModule(1,'text-module','<h1>Text Field 3</h1><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In pharetra felis in sem porta feugiat.</p>'),'#F8F8F8','#4c7ba0')]));
         this.gridElements = this.currentUser.documents[0].content;
     }
 
     addGridElement(dim:number) {
-        this.gridElements.push(new gridElem(dim,this.id+1,0,'#FFFFFF','#333333'));
+        this.gridElements.push(new gridElem(dim,this.id+1,0,'#F8F8F8','#4c7ba0'));
         this.id = this.id+1;
     }
 

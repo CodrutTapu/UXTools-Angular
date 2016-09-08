@@ -26,7 +26,7 @@ export class TabsModule {
     deleteTabsItem(gE,item) {
         gE.moduleType.items.splice(gE.moduleType.items.indexOf(item), 1);
     }
-    updateTabsItemContent(item) {
+    updateTabsItemContent(item,gE) {
         $(document).off('click','.editable-tabs-item-content').on('click','.editable-tabs-item-content',function(){
             $(this).summernote({
                 toolbar: [
@@ -39,9 +39,10 @@ export class TabsModule {
                     }
                 }
             });
+            $(this).parent().find('.note-editable').css('background',gE.bgColor);
         });
     }
-    updateTabsItemTitle(item) {
+    updateTabsItemTitle(item,gE) {
         $(document).off('click','.editable-tabs-item-title').on('click','.editable-tabs-item-title',function(){
             $(this).summernote({
                 toolbar: [
@@ -54,6 +55,7 @@ export class TabsModule {
                     }
                 }
             });
+            $(this).parent().find('.note-editable').css('background',gE.bgColor);
         });
     }
 }

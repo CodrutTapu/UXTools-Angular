@@ -19,7 +19,7 @@
     position: relative;
     background: #fff;
 }
-.accordion-module .delete-accordion-item{
+.accordion-module .delete-accordion-item {
     position: absolute;
     right: 0px;
     top: 0;
@@ -33,6 +33,6 @@
     cursor: pointer;
     display: none;
 }
-.accordion-module .note-editable {
-    background: #fff !important;
+.editable-accordion-title {
+    margin-left: 10px;
 }

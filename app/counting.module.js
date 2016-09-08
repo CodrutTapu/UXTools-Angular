@@ -16,8 +16,8 @@ var CountingModule = (function () {
     CountingModule.prototype.deleteCountingModule = function (gE) {
         gE.moduleType = {};
     };
-    CountingModule.prototype.updatePrefix = function (gE) {
-        $(document).off('click', '.editable-prefix').on('click', '.editable-prefix', function () {
+    CountingModule.prototype.updateCountingValue = function (gE) {
+        $(document).off('click', '.editable-counting-value').on('click', '.editable-counting-value', function () {
             $(this).summernote({
                 toolbar: [
                     ['all', ['style', 'fontname', 'fontsize', 'color', 'bold', 'italic', 'underline', 'strikethrough', 'clear', 'paragraph', 'hr', 'ol', 'ul', 'picture', 'video', 'link', 'codeview', 'table', 'undo']]
@@ -29,6 +29,23 @@ var CountingModule = (function () {
                     }
                 }
             });
+            $(this).parent().find('.note-editable').css('background', gE.bgColor);
+        });
+    };
+    CountingModule.prototype.updateCountingDescription = function (gE) {
+        $(document).off('click', '.editable-counting-description').on('click', '.editable-counting-description', function () {
+            $(this).summernote({
+                toolbar: [
+                    ['all', ['style', 'fontname', 'fontsize', 'color', 'bold', 'italic', 'underline', 'strikethrough', 'clear', 'paragraph', 'hr', 'ol', 'ul', 'picture', 'video', 'link', 'codeview', 'table', 'undo']]
+                ],
+                disableDragAndDrop: true,
+                callbacks: {
+                    onChange: function (contents, $editable) {
+                        gE.moduleType.content[1] = contents;
+                    }
+                }
+            });
+            $(this).parent().find('.note-editable').css('background', gE.bgColor);
         });
     };
     CountingModule = __decorate([

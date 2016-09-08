@@ -40,9 +40,10 @@ var BarGraphModule = (function () {
                     }
                 }
             });
+            $(this).parent().find('.note-editable').css('background', gE.bgColor);
         });
     };
-    BarGraphModule.prototype.updateBarLabel = function (bar) {
+    BarGraphModule.prototype.updateBarLabel = function (bar, gE) {
         $(document).off('click', '.editable-bar-label').on('click', '.editable-bar-label', function () {
             $(this).summernote({
                 toolbar: [
@@ -55,6 +56,7 @@ var BarGraphModule = (function () {
                     }
                 }
             });
+            $(this).parent().find('.note-editable').css('background', gE.bgColor);
         });
     };
     BarGraphModule = __decorate([

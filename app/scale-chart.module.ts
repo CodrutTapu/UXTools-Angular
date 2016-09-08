@@ -40,9 +40,10 @@ export class ScaleChartModule {
                     }
                 }
             });
+            $(this).parent().find('.note-editable').css('background',gE.bgColor);
         });
     }
-    updateScaleSideA(scale) {
+    updateScaleSideA(scale,gE) {
         $(document).off('click','.editable-sideA').on('click','.editable-sideA',function(){
             $(this).summernote({
                 toolbar: [
@@ -55,9 +56,10 @@ export class ScaleChartModule {
                     }
                 }
             });
+            $(this).parent().find('.note-editable').css('background',gE.bgColor);
         });
     }
-    updateScaleSideB(scale) {
+    updateScaleSideB(scale,gE) {
         $(document).off('click','.editable-sideB').on('click','.editable-sideB',function(){
             $(this).summernote({
                 toolbar: [
@@ -70,6 +72,7 @@ export class ScaleChartModule {
                     }
                 }
             });
+            $(this).parent().find('.note-editable').css('background',gE.bgColor);
         });
     }
 }

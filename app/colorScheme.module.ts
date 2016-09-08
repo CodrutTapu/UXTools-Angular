@@ -27,12 +27,13 @@ export class colorSchemeModule {
         for (i = 0; i < this.gridElements.length; i++) {
             this.gridElements[i].csColor = this.customCsColor;
         }
+        $("<style type='text/css'>.scale-chart-module input[type=range]::-webkit-slider-thumb{background:" + this.customCsColor + "!important}</style>").appendTo($("head"));
     }
     selectColorSchemeColor(sC) {
         var i;
         for (i = 0; i < this.gridElements.length; i++) {
             this.gridElements[i].csColor = sC;
         }
-        $('#tst').css('color',sC);
+        $("<style type='text/css'>.scale-chart-module input[type=range]::-webkit-slider-thumb{background:" + sC + "!important}</style>").appendTo($("head"));
     }
 }

@@ -13,12 +13,16 @@ var tagModuleTag_1 = require('./tagModuleTag');
 var bgColor_module_1 = require('./bgColor.module');
 var TagModule = (function () {
     function TagModule() {
+        this.i = 4;
+        this.bgColors = ['#4c7ba0', '#ffffff', '#ee4039', '#f07171', '#124666', '#737373', '#f8b13d', '#00b5c8', '#81bda4', '#b05574'];
+        this.customTagBgColor = '#E3E5E6';
     }
     TagModule.prototype.deleteTagModule = function (gE) {
         gE.moduleType = {};
     };
     TagModule.prototype.addTag = function (gE) {
-        gE.moduleType.tags.push(new tagModuleTag_1.tagModuleTag('<p>New Tag</p>'));
+        gE.moduleType.tags.push(new tagModuleTag_1.tagModuleTag(this.i, '<p>New Tag</p>', '#e3e5e6'));
+        this.i += 1;
     };
     TagModule.prototype.deleteTag = function (gE, tag) {
         gE.moduleType.tags.splice(gE.moduleType.tags.indexOf(tag), 1);
@@ -36,7 +40,23 @@ var TagModule = (function () {
                     }
                 }
             });
+            console.log(this);
+            $(this).parent().find('.note-editable').css('background', tag.color);
         });
+    };
+    TagModule.prototype.tagBgColorToggle = function (tag) {
+        var tagId = tag.id;
+        $('.tag-bg-colors-list-' + tagId).toggle();
+    };
+    TagModule.prototype.updateTagBgColor = function (tag) {
+        if (this.customTagBgColor[0] != '#') {
+            this.customTagBgColor = "#" + this.customTagBgColor;
+        }
+        ;
+        tag.color = this.customTagBgColor;
+    };
+    TagModule.prototype.selectTagBgColor = function (tag, bgC) {
+        tag.color = bgC;
     };
     TagModule = __decorate([
         core_1.Component({

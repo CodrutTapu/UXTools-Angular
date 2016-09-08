@@ -35,6 +35,7 @@ export class EmailModule {
                     }
                 }
             });
+            $(this).parent().find('.note-editable').css('background',gE.bgColor);
         });
     }
 }

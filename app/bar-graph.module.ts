@@ -41,9 +41,10 @@ export class BarGraphModule {
                    }
                }
            });
+           $(this).parent().find('.note-editable').css('background',gE.bgColor);
        });
    }
-   updateBarLabel(bar) {
+   updateBarLabel(bar,gE) {
        $(document).off('click','.editable-bar-label').on('click','.editable-bar-label',function(){
            $(this).summernote({
                toolbar: [
@@ -56,6 +57,7 @@ export class BarGraphModule {
                    }
                }
            });
+           $(this).parent().find('.note-editable').css('background',gE.bgColor);
        });
    }
 }

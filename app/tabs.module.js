@@ -25,7 +25,7 @@ var TabsModule = (function () {
     TabsModule.prototype.deleteTabsItem = function (gE, item) {
         gE.moduleType.items.splice(gE.moduleType.items.indexOf(item), 1);
     };
-    TabsModule.prototype.updateTabsItemContent = function (item) {
+    TabsModule.prototype.updateTabsItemContent = function (item, gE) {
         $(document).off('click', '.editable-tabs-item-content').on('click', '.editable-tabs-item-content', function () {
             $(this).summernote({
                 toolbar: [
@@ -38,9 +38,10 @@ var TabsModule = (function () {
                     }
                 }
             });
+            $(this).parent().find('.note-editable').css('background', gE.bgColor);
         });
     };
-    TabsModule.prototype.updateTabsItemTitle = function (item) {
+    TabsModule.prototype.updateTabsItemTitle = function (item, gE) {
         $(document).off('click', '.editable-tabs-item-title').on('click', '.editable-tabs-item-title', function () {
             $(this).summernote({
                 toolbar: [
@@ -53,6 +54,7 @@ var TabsModule = (function () {
                     }
                 }
             });
+            $(this).parent().find('.note-editable').css('background', gE.bgColor);
         });
     };
     TabsModule = __decorate([

@@ -29,6 +29,7 @@ var TextModule = (function () {
                     }
                 }
             });
+            $(this).parent().find('.note-editable').css('background', gE.bgColor);
         });
     };
     TextModule = __decorate([

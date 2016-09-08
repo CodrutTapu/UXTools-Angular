@@ -114,6 +114,7 @@ export class PieChartModule {
                     }
                 }
             });
+            $(this).parent().find('.note-editable').css('background',gE.bgColor);
         });
     }
 }

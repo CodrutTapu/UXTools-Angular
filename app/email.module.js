@@ -32,6 +32,7 @@ var EmailModule = (function () {
                     }
                 }
             });
+            $(this).parent().find('.note-editable').css('background', gE.bgColor);
         });
     };
     EmailModule = __decorate([

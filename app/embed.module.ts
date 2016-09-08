@@ -41,6 +41,7 @@ export class EmbedModule {
                     }
                 }
             });
+            $(this).parent().find('.note-editable').css('background',gE.bgColor);
         });
     }
 }

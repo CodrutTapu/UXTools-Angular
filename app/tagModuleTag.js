@@ -1,7 +1,9 @@
 "use strict";
 var tagModuleTag = (function () {
-    function tagModuleTag(name) {
+    function tagModuleTag(id, name, color) {
+        this.id = id;
         this.name = name;
+        this.color = color;
     }
     return tagModuleTag;
 }());

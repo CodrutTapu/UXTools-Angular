@@ -38,6 +38,7 @@ var AccordionModule = (function () {
                     }
                 }
             });
+            $(this).parent().find('.note-editable').css('background', gE.bgColor);
         });
     };
     AccordionModule.prototype.updateAccordionItemTitle = function (item) {

@@ -11,13 +11,13 @@
         <div class="slide-wrapper">
             <div class="slide-header clearfix">
                 <div class="side-left">
-                    <p class="editable-sideA" (click)="updateScaleSideA(scale)" [innerHTML]="scale.sideA"></p>
+                    <p class="editable-sideA" (click)="updateScaleSideA(scale,gE)" [innerHTML]="scale.sideA"></p>
                 </div>
                 <div class="side-right">
-                    <p class="editable-sideB" (click)="updateScaleSideB(scale)" [innerHTML]="scale.sideB"></p>
+                    <p class="editable-sideB" (click)="updateScaleSideB(scale,gE)" [innerHTML]="scale.sideB"></p>
                 </div>
             </div>
-            <input type="range" value="{{scale.value}}" (click)="updateScaleValue($event,scale)">
+            <input class="tst" type="range" value="{{scale.value}}" (click)="updateScaleValue($event,scale)">
             <div class="delete-slide" (click)=deleteScale(gE,scale) title="Delete Scale">
                 <i class="fa fa-times" aria-hidden="true"></i>
             </div>

@@ -39,9 +39,10 @@ var ScaleChartModule = (function () {
                     }
                 }
             });
+            $(this).parent().find('.note-editable').css('background', gE.bgColor);
         });
     };
-    ScaleChartModule.prototype.updateScaleSideA = function (scale) {
+    ScaleChartModule.prototype.updateScaleSideA = function (scale, gE) {
         $(document).off('click', '.editable-sideA').on('click', '.editable-sideA', function () {
             $(this).summernote({
                 toolbar: [
@@ -54,9 +55,10 @@ var ScaleChartModule = (function () {
                     }
                 }
             });
+            $(this).parent().find('.note-editable').css('background', gE.bgColor);
         });
     };
-    ScaleChartModule.prototype.updateScaleSideB = function (scale) {
+    ScaleChartModule.prototype.updateScaleSideB = function (scale, gE) {
         $(document).off('click', '.editable-sideB').on('click', '.editable-sideB', function () {
             $(this).summernote({
                 toolbar: [
@@ -69,6 +71,7 @@ var ScaleChartModule = (function () {
                     }
                 }
             });
+            $(this).parent().find('.note-editable').css('background', gE.bgColor);
         });
     };
     ScaleChartModule = __decorate([

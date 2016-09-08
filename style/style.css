@@ -142,19 +142,6 @@ input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer
     padding: 0;
     line-height: 27px;
 }
-.grid-block  .grid-block-control .dropdown-menu {
-    border-radius: 0;
-    line-height: 5px;
-    top: 25px;
-    left: -133px;
-}
-.grid-block  .grid-block-control .dropdown-menu li {
-    padding: 0;
-}
-.grid-block  .grid-block-control .dropdown-menu a:hover {
-    background: #001926;
-    color: #fff;
-}
 .grid-block-control .delete, .grid-block-control .add {
     float: right;
 }
@@ -180,7 +167,7 @@ input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer
 .grid-block-control .plus:hover {
     background: #449d44;
 }
-.grid [class*="col-md"]{
+.grid [class*="col-md"] {
     padding: 0 5px;
 }
 .grid-block .grid-block-control {
@@ -204,10 +191,6 @@ input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer
   -webkit-transform:scale(0.9);
   transform:scale(0.9);
   opacity:0.7;
-}
-.grid-block .grid-block-control .add .dropdown-menu li a {
-    padding: 8px 20px;
-    border-bottom: 1px solid #001926;
 }
 .grid-control-menu ul {
     list-style-type: none;
@@ -263,21 +246,13 @@ input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer
     border: 2px dashed #001926;
     padding: 40px 30px;
 }
-.note-editable {
-    background: #F8F8F8 !important;
-}
-.tag-module .note-editable {
-    background: #e3e5e6 !important;
-}
 .note-popover .popover-content, .panel-heading.note-toolbar {
     position: fixed;
     top: 0;
     left: 0;
 }
 .accordion-module .note-editable.panel-body {
-    border-top: 1px solid #ddd;
-    padding: 15px !important;
-    background: #fff !important;
+    margin-left: 10px !important;
 }
 .tag-module .tag p {
     margin: 0;
@@ -303,16 +278,17 @@ input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer
 .tabs-module .note-editable {
     padding: 10px !important;
 }
-.counting-module .value {
-    font-size: 50px;
-    color: #333;
-    margin: 0 5px;
-}
-
-.counting-module .prefix, .counting-module .sufix {
-    font-size: 30px;
-    color: #666;
+.counting-module .counting-value, .counting-module .editable-counting-value {
     margin: 0;
+}
+.counting-module .counting-value .number {
+    font-size: 50px;
+}
+.counting-module .counting-value {
+    font-size: 30px;
+}
+.counting-module .counting-prefix, .counting-module .counting-sufix{
+    font-size: 30px;
 }
 /*
 ==================================

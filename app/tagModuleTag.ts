@@ -1,7 +1,11 @@
 export class tagModuleTag {
+    id:number;
     name:string;
+    color:string;
 
-    constructor(name:string) {
+    constructor(id:number,name:string,color:string) {
+        this.id = id;
         this.name = name;
+        this.color = color;
     }
 }

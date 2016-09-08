@@ -38,6 +38,7 @@ var EmbedModule = (function () {
                     }
                 }
             });
+            $(this).parent().find('.note-editable').css('background', gE.bgColor);
         });
     };
     EmbedModule = __decorate([

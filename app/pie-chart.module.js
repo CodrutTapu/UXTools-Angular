@@ -110,6 +110,7 @@ var PieChartModule = (function () {
                     }
                 }
             });
+            $(this).parent().find('.note-editable').css('background', gE.bgColor);
         });
     };
     PieChartModule = __decorate([

@@ -23,7 +23,7 @@ export class AboutModule {
     deleteAboutItem(gE,item) {
         gE.moduleType.content.splice(gE.moduleType.content.indexOf(item), 1);
     }
-    updateAboutItemName(aI) {
+    updateAboutItemName(aI,gE) {
         $(document).off('click','.editable-about-item-name').on('click','.editable-about-item-name',function(){
             $(this).summernote({
                 toolbar: [
@@ -36,9 +36,10 @@ export class AboutModule {
                     }
                 }
             });
+            $(this).parent().find('.note-editable').css('background',gE.bgColor);
         });
     }
-    updateAboutItemValue(aI) {
+    updateAboutItemValue(aI,gE) {
         $(document).off('click','.editable-about-item-value').on('click','.editable-about-item-value',function(){
             $(this).summernote({
                 toolbar: [
@@ -51,6 +52,7 @@ export class AboutModule {
                     }
                 }
             });
+            $(this).parent().find('.note-editable').css('background',gE.bgColor);
         });
     }
 }

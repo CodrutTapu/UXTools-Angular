@@ -67,9 +67,11 @@ $(document).on("click",".social-media-module .update-social-links",function(){
 */
 $(document).on("mouseenter",".tag-module .tag",function(){
     $(this).find('.delete-tag').stop().show(200);
+    $(this).find('.tag-bg').stop().show(200);
 });
 $(document).on("mouseleave",".tag-module .tag",function(){
     $(this).find('.delete-tag').stop().hide(200);
+    $(this).find('.tag-bg').stop().hide(200);
 });
 /*
 ==================================
