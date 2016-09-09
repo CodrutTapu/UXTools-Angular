@@ -7,7 +7,9 @@
 input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button {
    opacity: 1;
 }
-
+.persona-action-buttons{
+    margin-top: 115px;
+}
 
 /* TABLE OF CONTENTS
 1) Utility Classes
@@ -121,7 +123,7 @@ input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer
 ==================================
 */
 .grid {
-    margin-top: 100px;
+    margin-top: 50px;
     border: 1px dashed #001926;
     min-height: 30px;
     position: relative;
@@ -140,7 +142,6 @@ input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer
     list-style-type: none;
     margin: 0 5px 0 0;
     padding: 0;
-    line-height: 27px;
 }
 .grid-block-control .delete, .grid-block-control .add {
     float: right;
@@ -154,7 +155,7 @@ input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer
 }
 .grid-block-control .minus {
     background: #d9534f;
-    padding: 5px 8px;
+    display: inline-block;
     margin-right: -4px;
 }
 .grid-block-control .minus:hover {
@@ -162,7 +163,7 @@ input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer
 }
 .grid-block-control .plus {
     background: #5cb85c;
-    padding: 5px 8px;
+    display: inline-block;
 }
 .grid-block-control .plus:hover {
     background: #449d44;
@@ -174,6 +175,7 @@ input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer
     background: #001926;
     color: #fff;
     height: 26px;
+    line-height: 26px;
     z-index: 999;
     cursor: move;
 }
@@ -252,7 +254,9 @@ input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer
     left: 0;
 }
 .accordion-module .note-editable.panel-body {
-    margin-left: 10px !important;
+    margin: 0 !important;
+    padding: 15px !important;
+    border-top: 1px solid #ddd;
 }
 .tag-module .tag p {
     margin: 0;

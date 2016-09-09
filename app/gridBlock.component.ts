@@ -1,41 +1,42 @@
 import {Component} from '@angular/core';
 import {AppComponent} from './app.component';
 import {DND_PROVIDERS, DND_DIRECTIVES} from 'ng2-dnd/ng2-dnd';
-import {TextModule} from './text.module';
-import {textModule} from './textModule';
-import {ImageModule} from './image.module';
-import {imageModule} from './imageModule';
-import {BarGraphModule} from './bar-graph.module';
-import {barGraphModule} from './barGraphModule';
-import {barGraphBar} from './barGraphBar';
-import {SocialMediaModule} from './social-media.module';
-import {socialMediaModule} from './socialMediaModule';
-import {TagModule} from './tag.module';
-import {tagModule} from './tagModule';
-import {tagModuleTag} from './tagModuleTag';
-import {EmailModule} from './email.module';
-import {emailModule} from './emailModule';
-import {ScaleChartModule} from './scale-chart.module';
-import {scaleChartModule} from './scaleChartModule';
-import {scaleChartModuleScale} from './scaleChartModuleScale';
-import {PieChartModule} from './pie-chart.module';
-import {pieChartModule} from './pieChartModule';
-import {AccordionModule} from './accordion.module';
-import {accordionModule} from './accordionModule';
-import {accordionItem} from './accordionItem';
-import {TabsModule} from './tabs.module';
-import {tabsModule} from './tabsModule';
-import {tabsItem} from './tabsItem';
-import {EmbedModule} from './embed.module';
-import {embedModule} from './embedModule';
-import {DevicesPlatformsModule} from './devices-platforms.module';
-import {devicesPlatformsModule} from './devicesPlatformsModule';
-import {devicePlatform} from './devicePlatform';
-import {AboutModule} from './about.module';
-import {aboutModule} from './aboutModule';
-import {aboutItem} from './aboutItem';
-import {CountingModule} from './counting.module';
-import {countingModule} from './countingModule';
+import {TextModule} from './text_module/text.module';
+import {textModule} from './text_module/textModule';
+import {ImageModule} from './image_module/image.module';
+import {imageModule} from './image_module/imageModule';
+import {BarGraphModule} from './bar_graph_module/bar-graph.module';
+import {barGraphModule} from './bar_graph_module/barGraphModule';
+import {barGraphBar} from './bar_graph_module/barGraphBar';
+import {SocialMediaModule} from './social_media_module/social-media.module';
+import {socialMediaModule} from './social_media_module/socialMediaModule';
+import {TagModule} from './tag_module/tag.module';
+import {tagModule} from './tag_module/tagModule';
+import {tagModuleTag} from './tag_module/tagModuleTag';
+import {EmailModule} from './email_module/email.module';
+import {emailModule} from './email_module/emailModule';
+import {ScaleChartModule} from './scale_chart_module/scale-chart.module';
+import {scaleChartModule} from './scale_chart_module/scaleChartModule';
+import {scaleChartModuleScale} from './scale_chart_module/scaleChartModuleScale';
+import {PieChartModule} from './pie_chart_module/pie-chart.module';
+import {pieChartModule} from './pie_chart_module/pieChartModule';
+import {AccordionModule} from './accordion_module/accordion.module';
+import {accordionModule} from './accordion_module/accordionModule';
+import {accordionItem} from './accordion_module/accordionItem';
+import {TabsModule} from './tabs_module/tabs.module';
+import {tabsModule} from './tabs_module/tabsModule';
+import {tabsItem} from './tabs_module/tabsItem';
+import {EmbedModule} from './embed_module/embed.module';
+import {embedModule} from './embed_module/embedModule';
+import {DevicesPlatformsModule} from './devicesPlatforms_module/devices-platforms.module';
+import {devicesPlatformsModule} from './devicesPlatforms_module/devicesPlatformsModule';
+import {devicePlatform} from './devicesPlatforms_module/devicePlatform';
+import {AboutModule} from './about_module/about.module';
+import {aboutModule} from './about_module/aboutModule';
+import {aboutItem} from './about_module/aboutItem';
+import {CountingModule} from './counting_module/counting.module';
+import {countingModule} from './counting_module/countingModule';
+import {colorSchemeModule} from './colorScheme_component/colorScheme.module';
 declare var $: any;
 
 @Component({
@@ -43,7 +44,7 @@ declare var $: any;
     templateUrl: 'app/grid-block.html',
     styleUrls: ['app/grid-block.css'],
     inputs: ['gridElements','currentUser'],
-    directives: [DND_DIRECTIVES, TextModule, ImageModule, BarGraphModule, SocialMediaModule, TagModule, EmailModule, ScaleChartModule, PieChartModule, AccordionModule, TabsModule, EmbedModule, DevicesPlatformsModule, AboutModule, CountingModule]
+    directives: [DND_DIRECTIVES, TextModule, ImageModule, BarGraphModule, SocialMediaModule, TagModule, EmailModule, ScaleChartModule, PieChartModule, AccordionModule, TabsModule, EmbedModule, DevicesPlatformsModule, AboutModule, CountingModule, colorSchemeModule]
 })
 
 export class GridBlock {
@@ -170,8 +171,8 @@ export class GridBlock {
         $('.add-module-modal').modal('hide');
     }
     closeTextEditor(event:any,gE) {
-        if( event.srcElement.className == 'row sortable' || event.srcElement.className == 'grid-block-content') {
-            $('.editable').each(function(){
+        if( event.srcElement.className == 'row sortable' || event.srcElement.className == 'grid-block-content' || event.target.className == 'row sortable' ||  event.target.className == 'grid-block-content') {
+            $('editable').each(function(){
                 $(this).summernote('destroy');
             });
             $('.editable-scale-title').each(function(){

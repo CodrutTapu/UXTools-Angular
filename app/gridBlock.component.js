@@ -10,41 +10,42 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var ng2_dnd_1 = require('ng2-dnd/ng2-dnd');
-var text_module_1 = require('./text.module');
-var textModule_1 = require('./textModule');
-var image_module_1 = require('./image.module');
-var imageModule_1 = require('./imageModule');
-var bar_graph_module_1 = require('./bar-graph.module');
-var barGraphModule_1 = require('./barGraphModule');
-var barGraphBar_1 = require('./barGraphBar');
-var social_media_module_1 = require('./social-media.module');
-var socialMediaModule_1 = require('./socialMediaModule');
-var tag_module_1 = require('./tag.module');
-var tagModule_1 = require('./tagModule');
-var tagModuleTag_1 = require('./tagModuleTag');
-var email_module_1 = require('./email.module');
-var emailModule_1 = require('./emailModule');
-var scale_chart_module_1 = require('./scale-chart.module');
-var scaleChartModule_1 = require('./scaleChartModule');
-var scaleChartModuleScale_1 = require('./scaleChartModuleScale');
-var pie_chart_module_1 = require('./pie-chart.module');
-var pieChartModule_1 = require('./pieChartModule');
-var accordion_module_1 = require('./accordion.module');
-var accordionModule_1 = require('./accordionModule');
-var accordionItem_1 = require('./accordionItem');
-var tabs_module_1 = require('./tabs.module');
-var tabsModule_1 = require('./tabsModule');
-var tabsItem_1 = require('./tabsItem');
-var embed_module_1 = require('./embed.module');
-var embedModule_1 = require('./embedModule');
-var devices_platforms_module_1 = require('./devices-platforms.module');
-var devicesPlatformsModule_1 = require('./devicesPlatformsModule');
-var devicePlatform_1 = require('./devicePlatform');
-var about_module_1 = require('./about.module');
-var aboutModule_1 = require('./aboutModule');
-var aboutItem_1 = require('./aboutItem');
-var counting_module_1 = require('./counting.module');
-var countingModule_1 = require('./countingModule');
+var text_module_1 = require('./text_module/text.module');
+var textModule_1 = require('./text_module/textModule');
+var image_module_1 = require('./image_module/image.module');
+var imageModule_1 = require('./image_module/imageModule');
+var bar_graph_module_1 = require('./bar_graph_module/bar-graph.module');
+var barGraphModule_1 = require('./bar_graph_module/barGraphModule');
+var barGraphBar_1 = require('./bar_graph_module/barGraphBar');
+var social_media_module_1 = require('./social_media_module/social-media.module');
+var socialMediaModule_1 = require('./social_media_module/socialMediaModule');
+var tag_module_1 = require('./tag_module/tag.module');
+var tagModule_1 = require('./tag_module/tagModule');
+var tagModuleTag_1 = require('./tag_module/tagModuleTag');
+var email_module_1 = require('./email_module/email.module');
+var emailModule_1 = require('./email_module/emailModule');
+var scale_chart_module_1 = require('./scale_chart_module/scale-chart.module');
+var scaleChartModule_1 = require('./scale_chart_module/scaleChartModule');
+var scaleChartModuleScale_1 = require('./scale_chart_module/scaleChartModuleScale');
+var pie_chart_module_1 = require('./pie_chart_module/pie-chart.module');
+var pieChartModule_1 = require('./pie_chart_module/pieChartModule');
+var accordion_module_1 = require('./accordion_module/accordion.module');
+var accordionModule_1 = require('./accordion_module/accordionModule');
+var accordionItem_1 = require('./accordion_module/accordionItem');
+var tabs_module_1 = require('./tabs_module/tabs.module');
+var tabsModule_1 = require('./tabs_module/tabsModule');
+var tabsItem_1 = require('./tabs_module/tabsItem');
+var embed_module_1 = require('./embed_module/embed.module');
+var embedModule_1 = require('./embed_module/embedModule');
+var devices_platforms_module_1 = require('./devicesPlatforms_module/devices-platforms.module');
+var devicesPlatformsModule_1 = require('./devicesPlatforms_module/devicesPlatformsModule');
+var devicePlatform_1 = require('./devicesPlatforms_module/devicePlatform');
+var about_module_1 = require('./about_module/about.module');
+var aboutModule_1 = require('./about_module/aboutModule');
+var aboutItem_1 = require('./about_module/aboutItem');
+var counting_module_1 = require('./counting_module/counting.module');
+var countingModule_1 = require('./counting_module/countingModule');
+var colorScheme_module_1 = require('./colorScheme_component/colorScheme.module');
 var GridBlock = (function () {
     function GridBlock() {
     }
@@ -172,8 +173,8 @@ var GridBlock = (function () {
         $('.add-module-modal').modal('hide');
     };
     GridBlock.prototype.closeTextEditor = function (event, gE) {
-        if (event.srcElement.className == 'row sortable' || event.srcElement.className == 'grid-block-content') {
-            $('.editable').each(function () {
+        if (event.srcElement.className == 'row sortable' || event.srcElement.className == 'grid-block-content' || event.target.className == 'row sortable' || event.target.className == 'grid-block-content') {
+            $('editable').each(function () {
                 $(this).summernote('destroy');
             });
             $('.editable-scale-title').each(function () {
@@ -242,7 +243,7 @@ var GridBlock = (function () {
             templateUrl: 'app/grid-block.html',
             styleUrls: ['app/grid-block.css'],
             inputs: ['gridElements', 'currentUser'],
-            directives: [ng2_dnd_1.DND_DIRECTIVES, text_module_1.TextModule, image_module_1.ImageModule, bar_graph_module_1.BarGraphModule, social_media_module_1.SocialMediaModule, tag_module_1.TagModule, email_module_1.EmailModule, scale_chart_module_1.ScaleChartModule, pie_chart_module_1.PieChartModule, accordion_module_1.AccordionModule, tabs_module_1.TabsModule, embed_module_1.EmbedModule, devices_platforms_module_1.DevicesPlatformsModule, about_module_1.AboutModule, counting_module_1.CountingModule]
+            directives: [ng2_dnd_1.DND_DIRECTIVES, text_module_1.TextModule, image_module_1.ImageModule, bar_graph_module_1.BarGraphModule, social_media_module_1.SocialMediaModule, tag_module_1.TagModule, email_module_1.EmailModule, scale_chart_module_1.ScaleChartModule, pie_chart_module_1.PieChartModule, accordion_module_1.AccordionModule, tabs_module_1.TabsModule, embed_module_1.EmbedModule, devices_platforms_module_1.DevicesPlatformsModule, about_module_1.AboutModule, counting_module_1.CountingModule, colorScheme_module_1.colorSchemeModule]
         }), 
         __metadata('design:paramtypes', [])
     ], GridBlock);
